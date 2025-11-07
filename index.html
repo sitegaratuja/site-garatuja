@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garatuja - Transformando Vidas Através da Dança</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="shortcut icon" href="/assets/imagens/marca/Marca_Garatuja_RGB_Grafismo1_Fundo-Escuro.png"
+        type="image/x-icon">
+</head>
+
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html">
+                <div class="nav-logo">
+                    <img src="/assets/imagens/marca/Marca_Garatuja_RGB_Grafismo1_Fundo-Colorido.png" class="nav-logo-icon"
+                        alt="">
+                    <img src="/assets/imagens/marca/Marca_Garatuja_RGB_Colorida_Fundo-Branco .png" class="nav-logo-text"
+                        alt="">
+                </div>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#parceiros" class="nav-link">Parceiros</a></li>
+                <li><a href="#doacoes" class="nav-link btn-donate-nav">Doar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Transformando Vidas Através da Dança</h1>
+            <p class="hero-subtitle">Oferecemos aulas de dança e formação integral para comunidades em situação de
+                vulnerabilidade</p>
+            <div class="hero-buttons">
+                <a href="#doacoes" class="btn btn-primary">Faça uma Doação</a>
+                <a href="#sobre" class="btn btn-secondary">Conheça Nosso Trabalho</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Role para descobrir</span>
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="/assets/imagens/midia/children-learning-dance-in-community-center.jpg"
+                        alt="Crianças dançando">
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-content">
+                    <span class="section-label">Quem Somos</span>
+                    <h2 class="section-title">A Garatuja transforma vidas através da arte do movimento</h2>
+                    <p class="about-text">Somos uma ONG dedicada a oferecer aulas de dança e formação integral para
+                        crianças e jovens em situação de vulnerabilidade social.</p>
+                    <p class="about-text">Através da dança, promovemos desenvolvimento pessoal, disciplina, trabalho em
+                        equipe e expressão artística, abrindo portas para um futuro mais promissor.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Alunos Atendidos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Anos de História</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Apresentações/Ano</span>
+                        </div>
+                        <a href="sobre.html" class="nav-link btn-donate-nav">Conhecer
+                            mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section class="projects" id="projetos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nossos Projetos</span>
+                <h2 class="section-title">Conheça nossas iniciativas</h2>
+            </div>
+            <a href="companhia.html" class="nav-link btn-donate-nav" style="text-decoration: none;">Mais detalhes</a>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded by JavaScript -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Depoimentos Section -->
+    <section class="testimonials" id="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Depoimentos</span>
+                <h2 class="section-title">Histórias que nos inspiram</h2>
+            </div>
+            <div class="testimonials-carousel">
+                <button class="carousel-btn carousel-prev" id="prevTestimonial" aria-label="Anterior">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Testimonials will be loaded by JavaScript -->
+                </div>
+                <button class="carousel-btn carousel-next" id="nextTestimonial" aria-label="Próximo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+            <div class="carousel-dots" id="testimonialDots"></div>
+        </div>
+    </section>
+
+    <!-- Doações Section -->
+    <section class="donations" id="doacoes">
+        <div class="container">
+            <div class="donations-content">
+                <div class="donations-text">
+                    <span class="section-label">Faça a Diferença</span>
+                    <h2 class="section-title">Sua doação transforma vidas</h2>
+                    <p class="donations-description">Com sua contribuição, podemos continuar oferecendo aulas de dança
+                        gratuitas, uniformes, alimentação e oportunidades para centenas de crianças e jovens.</p>
+                    <ul class="donations-list">
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            <span>Aulas de dança gratuitas</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            <span>Uniformes e materiais</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            <span>Alimentação e transporte</span>
+                        </li>
+                        <li>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            <span>Apresentações e eventos</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="donations-form">
+                    <h3>Escolha o valor da sua doação</h3>
+                    <div class="donation-amounts">
+                        <button class="amount-btn" data-amount="50">R$ 50</button>
+                        <button class="amount-btn" data-amount="100">R$ 100</button>
+                        <button class="amount-btn" data-amount="200">R$ 200</button>
+                        <button class="amount-btn" data-amount="500">R$ 500</button>
+                    </div>
+                    <div class="custom-amount">
+                        <label for="customAmount">Ou insira outro valor:</label>
+                        <input type="number" id="customAmount" placeholder="R$ 0,00" min="1">
+                    </div>
+                    <button class="btn btn-primary btn-full" id="donateBtn">Doar Agora</button>
+                    <p class="donations-note">Suas doações são seguras e podem ser deduzidas do Imposto de Renda</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Perguntas Frequentes</span>
+                <h2 class="section-title">Tire suas dúvidas</h2>
+            </div>
+            <div class="faq-list" id="faqList">
+                <!-- FAQ items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Parceiros Section -->
+    <section class="partners" id="parceiros">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Parceiros</span>
+                <h2 class="section-title">Quem apoia nosso trabalho</h2>
+            </div>
+            <div class="partners-grid" id="partnersGrid">
+                <!-- Partners will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Garatuja</h3>
+                    <p>Transformando vidas através da dança desde 2010</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#projetos">Projetos</a></li>
+                        <li><a href="#depoimentos">Depoimentos</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li>contato@garatuja.org.br</li>
+                        <li>(11) 1234-5678</li>
+                        <li>São Paulo, SP</li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Receba nossas novidades</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit" class="btn btn-primary">Inscrever</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Garatuja. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+
+</html>

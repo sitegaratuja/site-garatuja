@@ -1,0 +1,772 @@
+/* Companhia Hero Section */
+.companhia-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #ef4444 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.companhia-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/assets/imagens/midia/dance-company-hero.jpg") center / cover;
+  opacity: 0.3;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.companhia-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.companhia-hero .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.companhia-hero .hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Espetáculos Section */
+.espetaculos-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.subsection-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  margin: 3rem 0 2rem;
+  text-align: center;
+}
+
+/* Agenda de Eventos */
+.agenda-container {
+  margin-bottom: 4rem;
+}
+
+.eventos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.evento-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.evento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(139, 92, 246, 0.2);
+}
+
+.evento-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 1rem;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  border-radius: 8px;
+  color: white;
+}
+
+.date-day {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.date-month {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.evento-info {
+  flex: 1;
+}
+
+.evento-info h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.evento-local,
+.evento-horario {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0.25rem 0;
+}
+
+.btn-evento {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-evento:hover {
+  background: #7c3aed;
+}
+
+/* Repertório */
+.repertorio-container {
+  margin-bottom: 4rem;
+}
+
+.repertorio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.repertorio-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.repertorio-card:hover {
+  transform: translateY(-5px);
+}
+
+.repertorio-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.repertorio-content {
+  padding: 1.5rem;
+}
+
+.repertorio-content h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.repertorio-duracao {
+  font-size: 0.9rem;
+  color: #ec4899;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.repertorio-desc {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.btn-repertorio {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #8b5cf6;
+  border: 2px solid #8b5cf6;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-repertorio:hover {
+  background: #8b5cf6;
+  color: white;
+}
+
+/* Release */
+.release-container {
+  margin-bottom: 4rem;
+}
+
+.release-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.release-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.release-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #8b5cf6;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  display: block;
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Galeria de Espetáculos */
+.galeria-espetaculos {
+  margin-top: 4rem;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.galeria-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.galeria-img:hover {
+  transform: scale(1.05);
+}
+
+/* Formação das Meninas */
+.formacao-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
+}
+
+.formacao-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.formacao-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.formacao-text h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  margin: 2rem 0 1rem;
+}
+
+.formacao-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.formacao-lista li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.formacao-lista li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ec4899;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.formacao-niveis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.nivel-card {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #8b5cf6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nivel-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.nivel-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.formacao-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Apoio para Mães */
+.apoio-maes-section {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+.apoio-maes-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+.apoio-maes-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.apoio-maes-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.apoio-maes-text h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ec4899;
+  margin: 2rem 0 1rem;
+}
+
+.apoio-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.apoio-lista li {
+  padding: 0.75rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.apoio-lista li::before {
+  content: "♥";
+  position: absolute;
+  left: 0;
+  color: #ec4899;
+  font-size: 1.2rem;
+}
+
+.apoio-horarios {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(239, 68, 68, 0.1));
+  border-radius: 8px;
+}
+
+.apoio-horarios h4 {
+  margin-top: 0;
+}
+
+.apoio-horarios p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Projetos Permanentes */
+.projetos-permanentes-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), rgba(236, 72, 153, 0.03));
+}
+
+.projeto-detalhado {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projeto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #8b5cf6;
+}
+
+.projeto-header h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.projeto-badge {
+  padding: 0.5rem 1rem;
+  background: #10b981;
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.projeto-content-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+}
+
+.projeto-desc {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.projeto-info h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  margin: 2rem 0 1.5rem;
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.horario-card {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.05));
+  border-radius: 8px;
+  border: 2px solid #8b5cf6;
+  text-align: center;
+}
+
+.horario-card h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+}
+
+.horario-card p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.horario-idade {
+  font-weight: 600;
+  color: #ec4899;
+  margin-top: 1rem;
+}
+
+.btn-inscricao {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.btn-inscricao:hover {
+  background: #7c3aed;
+}
+
+.projeto-requisitos {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.projeto-requisitos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.projeto-requisitos li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 1rem;
+  color: #333;
+}
+
+.projeto-requisitos li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #8b5cf6;
+  font-size: 1.5rem;
+}
+
+.projeto-gratuito {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #059669;
+}
+
+.projeto-galeria {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.projeto-galeria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Oficinas Lista */
+.oficinas-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.oficina-item {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #ec4899;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.oficina-item h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.oficina-item p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  text-align: center;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: white;
+  color: #8b5cf6;
+}
+
+.btn-primary:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: #8b5cf6;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .companhia-hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .companhia-hero .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .eventos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evento-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .evento-date {
+    width: 100%;
+  }
+
+  .repertorio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formacao-content,
+  .apoio-maes-content,
+  .projeto-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apoio-maes-content {
+    grid-template-columns: 1fr;
+  }
+
+  .apoio-maes-image {
+    order: -1;
+  }
+
+  .horarios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .release-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+  }
+}

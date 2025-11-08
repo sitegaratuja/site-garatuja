@@ -1,7 +1,6 @@
-<div style="display: flex; flex-direction: row; align-items: center; margin-left: 20px justify-content: center"> 
-<img src="assets/imagens/marca/Marca_Garatuja_RGB_Grafismo1_Fundo-Escuro.png" style="width: 50px;">
-<p style="margin-left: 20px; font-size: 50px; color: #8b5cf6">ProjetoGaratuja</p> </div>
-
+<div style="display: flex; align-items: center; justify-content: center; margin-left: 20px; width: 100%;">
+  <img src="assets/imagens/marca/Marca_Garatuja_RGB_Colorida_Fundo-Branco .png" style="width: auto; height: 100px;">
+</div>
 
 ## Árvore de arquivos
 

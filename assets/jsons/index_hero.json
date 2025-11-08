@@ -1,0 +1,53 @@
+[
+    {
+        "image": "contemporary-dance-class-1.jpg",
+        "title": "Companhia de Danca Garatuja",
+        "subtitle": "A arte da dança em movimento, transformando vidas",
+        "buttons": [
+            {
+                "text": "Ajude Nossa Causa",
+                "link": "#doacoes",
+                "class": "btn btn-primary"
+            },
+            {
+                "text": "Conheça Nossa companhia",
+                "link": "companhia.html",
+                "class": "btn btn-secondary"
+            }
+        ]
+    },
+    {
+        "image": "performance-photo-6.jpg",
+        "title": "Formação das Meninas",
+        "subtitle": "Programa completo de desenvolvimento artístico e pessoal",
+        "buttons": [
+            {
+                "text": "Participe",
+                "link": "#inscricoes",
+                "class": "btn btn-primary"
+            },
+            {
+                "text": "Saiba Mais",
+                "link": "formacao.html",
+                "class": "btn btn-secondary"
+            }
+        ]
+    },
+    {
+        "image": "contemporary-dance-class-2.jpg",
+        "title": "Projetos Sociais",
+        "subtitle": "Atividades regulares abertas à comunidade",
+        "buttons": [
+            {
+                "text": "Doe Agora",
+                "link": "#doacoes",
+                "class": "btn btn-primary"
+            },
+            {
+                "text": "Ver Impactos",
+                "link": "projetos.html",
+                "class": "btn btn-secondary"
+            }
+        ]
+    }
+]

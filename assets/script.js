@@ -1,4 +1,5 @@
 import { incluirHtml, carregarDados } from "./js/util.js";
+import { carregarHero } from "./js/index/hero.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -12,6 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         alert(`Obrigado por se inscrever, ${email}! Você receberá nossas novidades em breve.`)
         e.target.reset()
     })
+
+    if(document.getElementById("hero")) carregarHero()
 
     if (document.getElementById("projectsGrid")) loadProjects()
 

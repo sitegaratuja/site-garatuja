@@ -152,22 +152,46 @@ body {
 .hero::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("/assets/imagens/midia/contemporary-dance-performance.jpg") center / cover;
-  opacity: 0.3;
-  animation: kenburns 20s ease-in-out infinite alternate;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* apenas overlay */
+  z-index: 1;
 }
 
-@keyframes kenburns {
-  0% {
-    transform: scale(1);
+
+@keyframes slideshow {
+  0%, 33% {
+    background-image: url("/assets/imagens/midia/contemporary-dance-performance.jpg");
   }
-  100% {
-    transform: scale(1.1);
+  34%, 66% {
+    background-image: url("/assets/imagens/midia/street-dance-session.jpg");
   }
+  67%, 100% {
+    background-image: url("/assets/imagens/midia/classical-ballet-scene.jpg");
+  }
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.hero-image.slide-in-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.hero-image.slide-in-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.hero-image.active {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -264,14 +288,56 @@ body {
 }
 
 @keyframes scroll {
+
   0%,
   100% {
     opacity: 0;
     transform: translateY(0);
   }
+
   50% {
     opacity: 1;
     transform: translateY(10px);
+  }
+}
+
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 3;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+/* Hover: destaca sutilmente */
+.hero-nav:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Botão anterior (esquerda) */
+.hero-prev {
+  left: 20px;
+}
+
+/* Botão próximo (direita) */
+.hero-next {
+  right: 20px;
+}
+
+/* Responsivo: reduz tamanho em telas menores */
+@media (max-width: 768px) {
+  .hero-nav {
+    font-size: 1.6rem;
+    padding: 6px 10px;
   }
 }
 
@@ -977,7 +1043,8 @@ body {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
   border-radius: 20px;

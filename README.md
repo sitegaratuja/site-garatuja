@@ -8,6 +8,6 @@
 
 ### companhia.html
 
-###  formacao.html
+### formacao.html
 
 ### projetos.html

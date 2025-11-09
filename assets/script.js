@@ -1,10 +1,12 @@
-import { incluirHtml, carregarDados } from "./js/util.js";
+import { incluirHtml, carregarDados, carregarTransparencia } from "./js/util.js";
 import { carregarHero } from "./js/index/hero.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     await incluirHtml("header", "menu.html");
     await incluirHtml("footer", "rodape.html");
+
+    carregarTransparencia()
 
     // Newsletter Form
     document.getElementById("newsletterForm").addEventListener("submit", (e) => {
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         e.target.reset()
     })
 
-    if(document.getElementById("hero")) carregarHero()
+    if (document.getElementById("hero")) carregarHero()
 
     if (document.getElementById("projectsGrid")) loadProjects()
 
@@ -98,6 +100,28 @@ document.addEventListener("DOMContentLoaded", async () => {
             navbar.classList.remove("scrolled")
         }
     })
+
+    //////// modal transparencia
+    const openModal = document.getElementById('transparenciaOpenModal');
+    const closeModal = document.getElementById('transparenciaCloseModal');
+    const overlay = document.getElementById('transparenciaModalOverlay');
+    const body = document.body;
+
+    openModal.addEventListener('click', (e) => {
+        e.preventDefault();
+        overlay.style.display = 'flex';
+        body.classList.add('no-scroll'); // trava o body
+    });
+
+    const close = () => {
+        overlay.style.display = 'none';
+        body.classList.remove('no-scroll'); // destrava o body
+    };
+
+    closeModal.addEventListener('click', close);
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) close();
+    });
 
 });
 
@@ -189,15 +213,15 @@ function loadProjects() {
     projectsGrid.innerHTML = projectsData
         .map(
             (project) => `
-        <div class="project-card">
-            <img src="${project.image}" alt="${project.title}" class="project-image">
-            <div class="project-content">
-                <h3 class="project-title">${project.title}</h3>
-                <p class="project-description">${project.description}</p>
-                <span class="project-date">${project.date}</span>
+            <div class="project-card">
+                <img src="${project.image}" alt="${project.title}" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-description">${project.description}</p>
+                    <span class="project-date">${project.date}</span>
+                </div>
             </div>
-        </div>
-    `,
+        `,
         )
         .join("")
 }
@@ -258,18 +282,18 @@ function loadFAQ() {
     faqList.innerHTML = faqData
         .map(
             (item, index) => `
-        <div class="faq-item" data-index="${index}">
-            <button class="faq-question">
-                ${item.question}
-                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M19 9l-7 7-7-7"/>
-                </svg>
-            </button>
-            <div class="faq-answer">
-                <div class="faq-answer-content">${item.answer}</div>
+            <div class="faq-item" data-index="${index}">
+                <button class="faq-question">
+                    ${item.question}
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">${item.answer}</div>
+                </div>
             </div>
-        </div>
-    `,
+        `,
         )
         .join("")
 

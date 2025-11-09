@@ -11,7 +11,7 @@
   margin-top: 3rem;
   align-items: start;
 }
-    
+
 .formacao-text p {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -142,20 +142,4 @@
   left: 0;
   color: #ec4899;
   font-size: 1.2rem;
-}
-
-.apoio-horarios {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(239, 68, 68, 0.1));
-  border-radius: 8px;
-}
-
-.apoio-horarios h4 {
-  margin-top: 0;
-}
-
-.apoio-horarios p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
 }

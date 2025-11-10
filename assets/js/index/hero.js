@@ -50,9 +50,7 @@ export async function carregarHero() {
       // Atualiza textos
       heroTitle.textContent = slides[newIndex].title;
       heroSubtitle.textContent = slides[newIndex].subtitle;
-      heroButtons.innerHTML = slides[newIndex].buttons
-        .map((btn) => `<a href="${btn.link}" class="${btn.class}">${btn.text}</a>`)
-        .join("");
+      heroButtons.innerHTML = `<a href="${slides[newIndex].button.link}" class="btn btn-secondary">${slides[newIndex].button.text}</a>`;
 
       // Remove a imagem anterior após a animação
       setTimeout(() => {
@@ -81,9 +79,7 @@ export async function carregarHero() {
     heroImageContainer.classList.add("active");
     heroTitle.textContent = slides[0].title;
     heroSubtitle.textContent = slides[0].subtitle;
-    heroButtons.innerHTML = slides[0].buttons
-      .map((btn) => `<a href="${btn.link}" class="${btn.class}">${btn.text}</a>`)
-      .join("");
+    heroButtons.innerHTML = `<a href="${slides[0].button.link}" class="btn btn-secondary">${slides[0].button.text}</a>`;
 
     // Autoplay a cada 8s
     setInterval(nextSlide, 8000);

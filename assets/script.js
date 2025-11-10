@@ -43,35 +43,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     }
 
-    if (document.getElementById("doacoes")) {
-
-        // Donation Amount Selection
-        document.querySelectorAll(".amount-btn").forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-                document.querySelectorAll(".amount-btn").forEach((b) => b.classList.remove("active"))
-                e.target.classList.add("active")
-                document.getElementById("customAmount").value = ""
-            })
-        })
-
-        document.getElementById("customAmount").addEventListener("input", () => {
-            document.querySelectorAll(".amount-btn").forEach((b) => b.classList.remove("active"))
-        })
-
-        document.getElementById("donateBtn").addEventListener("click", () => {
-            const selectedAmount = document.querySelector(".amount-btn.active")
-            const customAmount = document.getElementById("customAmount").value
-            const amount = customAmount || (selectedAmount ? selectedAmount.dataset.amount : null)
-
-            if (amount) {
-                alert(`Obrigado por doar R$ ${amount}! Em breve você será redirecionado para a página de pagamento.`)
-            } else {
-                alert("Por favor, selecione ou insira um valor para doar.")
-            }
-        })
-
-    }
-
     if (document.getElementById("faqList")) loadFAQ()
 
     if (document.getElementById("partnersGrid")) loadPartners()

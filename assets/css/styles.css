@@ -64,19 +64,26 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* apenas overlay */
+  background: rgba(0, 0, 0, 0.3);
+  /* apenas overlay */
   z-index: 1;
 }
 
 
 @keyframes slideshow {
-  0%, 33% {
+
+  0%,
+  33% {
     background-image: url("/assets/imagens/midia/contemporary-dance-performance.jpg");
   }
-  34%, 66% {
+
+  34%,
+  66% {
     background-image: url("/assets/imagens/midia/street-dance-session.jpg");
   }
-  67%, 100% {
+
+  67%,
+  100% {
     background-image: url("/assets/imagens/midia/classical-ballet-scene.jpg");
   }
 }
@@ -494,59 +501,32 @@ body {
 /* Donations Section */
 .donations {
   padding: 120px 0;
-  background: var(--color-white);
+  background-image: url('/assets/imagens/midia/doacoes.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-.donations-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+.donations-container {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  gap: 32px;
+  padding: 0 60px;
+  width: 50%;
 }
 
 .donations-description {
   font-size: 18px;
   line-height: 1.8;
-  color: var(--color-gray-800);
+  color: white;
   margin-bottom: 32px;
-}
 
-.donations-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.donations-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 16px;
-  color: var(--color-gray-800);
-}
-
-.donations-list svg {
-  color: var(--color-purple);
-  flex-shrink: 0;
-}
-
-.donations-form {
-  background: var(--color-gray-50);
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-}
-
-.donations-form h3 {
-  font-size: 24px;
-  margin-bottom: 24px;
-  color: var(--color-gray-900);
 }
 
 .donation-amounts {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-column: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 24px;
 }
@@ -563,49 +543,17 @@ body {
   transition: all 0.3s ease;
 }
 
-.amount-btn:hover,
-.amount-btn.active {
+.amount-btn:hover {
   border-color: var(--color-purple);
   background: var(--color-purple);
   color: var(--color-white);
 }
 
-.custom-amount {
-  margin-bottom: 24px;
-}
-
-.custom-amount label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: var(--color-gray-900);
-}
-
-.custom-amount input {
-  width: 100%;
-  padding: 16px;
-  border: 2px solid var(--color-gray-200);
-  border-radius: 12px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-.custom-amount input:focus {
-  outline: none;
-  border-color: var(--color-purple);
-}
-
-.btn-full {
-  width: 100%;
-  background: linear-gradient(135deg, var(--color-purple), var(--color-pink));
-  color: var(--color-white);
-}
-
-.donations-note {
-  margin-top: 16px;
-  font-size: 14px;
-  color: var(--color-gray-800);
-  text-align: center;
+@media (max-width: 980px) {
+  .donations-container {
+    width: 100%;
+    padding: 0 20px;
+  }
 }
 
 /* FAQ Section */
@@ -614,12 +562,14 @@ body {
   background: var(--color-gray-50);
 }
 
-.faq-list, .transparencia-list {
+.faq-list,
+.transparencia-list {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.faq-item, .transparencia-item {
+.faq-item,
+.transparencia-item {
   background: var(--color-white);
   border-radius: 12px;
   margin-bottom: 16px;
@@ -627,7 +577,8 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.faq-question, .transparencia-question {
+.faq-question,
+.transparencia-question {
   width: 100%;
   padding: 24px;
   background: none;
@@ -643,7 +594,8 @@ body {
   transition: color 0.3s ease;
 }
 
-.faq-question:hover, .transparencia-question:hover {
+.faq-question:hover,
+.transparencia-question:hover {
   color: var(--color-purple);
 }
 
@@ -653,11 +605,13 @@ body {
   transition: transform 0.3s ease;
 }
 
-.faq-item.active .faq-icon, .transparencia-item.active .faq-icon {
+.faq-item.active .faq-icon,
+.transparencia-item.active .faq-icon {
   transform: rotate(180deg);
 }
 
-.faq-answer, .transparencia-answer {
+.faq-answer,
+.transparencia-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
@@ -665,8 +619,10 @@ body {
 
 .transparencia-answer ul {
   margin: 0;
-  padding-left: 50px; /* adiciona recuo padrão opcional */
-  text-align: left; /* garante alinhamento de texto à esquerda */
+  padding-left: 50px;
+  /* adiciona recuo padrão opcional */
+  text-align: left;
+  /* garante alinhamento de texto à esquerda */
 }
 
 .transparencia-answer li {
@@ -675,19 +631,22 @@ body {
 
 .transparencia-answer ul li a {
   color: var(--color-purple);
-  display: block; /* ocupa toda a largura disponível */
+  display: block;
+  /* ocupa toda a largura disponível */
   text-align: left;
   text-decoration: none;
 }
 
-.faq-answer-content, .transparencia-answer-content {
+.faq-answer-content,
+.transparencia-answer-content {
   padding: 0 24px 24px;
   font-size: 16px;
   line-height: 1.6;
   color: var(--color-gray-800);
 }
 
-.faq-item.active .faq-answer, .transparencia-item.active .transparencia-answer {
+.faq-item.active .faq-answer,
+.transparencia-item.active .transparencia-answer {
   max-height: 500px;
 }
 

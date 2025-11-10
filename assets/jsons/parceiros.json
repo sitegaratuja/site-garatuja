@@ -1,26 +1,18 @@
 [
     {
         "name": "Parceiro 1",
-        "logo": "generic-company-logo.png"
+        "logo": "parceiro1.png"
     },
     {
         "name": "Parceiro 2",
-        "logo": "generic-company-logo.png"
+        "logo": "parceiro2.png"
     },
     {
         "name": "Parceiro 3",
-        "logo": "generic-company-logo.png"
+        "logo": "parceiro3.png"
     },
     {
         "name": "Parceiro 4",
-        "logo": "company-logo---------name-.jpg"
-    },
-    {
-        "name": "Parceiro 5",
-        "logo": "generic-company-logo.png"
-    },
-    {
-        "name": "Parceiro 6",
-        "logo": "generic-company-logo.png"
+        "logo": "parceiro4.png"
     }
 ]

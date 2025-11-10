@@ -128,48 +128,48 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Data
 const projectsData = [
     {
-        title: "Dança na Comunidade",
+        title: "Dança Contemporânea",
         description:
-            "Aulas semanais de dança para crianças e jovens em comunidades carentes, promovendo inclusão social através da arte.",
+            "Aula de dança contemporânea com foco na expressão autêntica e na criação coreográfica dos alunos.",
         date: "Em andamento",
-        image: "/assets/imagens/midia/children-learning-dance-in-community-center.jpg",
+        image: "/assets/imagens/midia/dancaContemporanea.avif",
     },
     {
-        title: "Festival Anual Garatuja",
+        title: "Balé Clássico",
         description:
-            "Grande apresentação anual onde nossos alunos mostram todo o aprendizado do ano para a comunidade e familiares.",
+            "Aula de balé clássico com foco na expressão autêntica e na criação coreográfica dos alunos.",
         date: "Dezembro 2024",
-        image: "/assets/imagens/midia/dance-festival-performance-on-stage.jpg",
+        image: "/assets/imagens/midia/baleClassico.avif",
     },
     {
-        title: "Formação de Instrutores",
+        title: "Monitoria de Estudos",
         description:
-            "Programa de capacitação para jovens da comunidade se tornarem instrutores de dança, gerando oportunidades de trabalho.",
+            "Monitoria de estudos com foco na formação profissional e progressão pessoal dos alunos.",
         date: "Início em 2025",
-        image: "/assets/imagens/midia/dance-instructor-teaching-students.jpg",
+        image: "/assets/imagens/midia/monitoriaEstudos.avif",
     },
 ]
 
 const testimonialsData = [
     {
         quote:
-            "A Garatuja mudou minha vida. Através da dança, descobri meu talento e hoje sou instrutora, ajudando outras crianças como eu fui ajudada.",
-        name: "Maria Silva",
-        role: "Ex-aluna e Instrutora",
+            "Amo esse projeto, tenho orgulho de dizer que já fiz parte, e sinto muita falta.",
+        name: "Sarah Leslie",
+        role: "Ex-aluna",
         avatar: "/assets/imagens/midia/young-woman-smiling-portrait.png",
     },
     {
         quote:
-            "Meu filho era muito tímido. Depois que começou nas aulas da Garatuja, ele se transformou. Hoje é confiante e fez muitos amigos.",
-        name: "João Santos",
-        role: "Pai de aluno",
+            "Merece muito apoio!! Foco em educação e artes. Pessoas sérias ajudando quem mais precisa.",
+        name: "Clarissa Evelin",
+        role: "Mãe de uma ex-aluna",
         avatar: "/assets/imagens/midia/smiling-middle-aged-man.png",
     },
     {
         quote:
-            "Como voluntária, vejo diariamente o impacto positivo da dança na vida dessas crianças. É inspirador fazer parte dessa transformação.",
-        name: "Ana Costa",
-        role: "Voluntária",
+            "Uma ótima iniciativa para ajudar nossas meninas a se ocuparem com atividades construtivas!!!",
+        name: "Jeane Souza",
+        role: "Mãe de uma ex-aluna",
         avatar: "/assets/imagens/midia/woman-volunteer-smiling-portrait.jpg",
     },
 ]

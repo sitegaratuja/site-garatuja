@@ -45,10 +45,6 @@ Focado para apresentar a Companhia de Dança Garatuja
 * Repertório
 * Galeria
 
-### formacao.html
-
-Mostrará a formação das meninas
-
 ### projetos.html
 
 Terão os outros projetos que o Garatuja desenvolveu.

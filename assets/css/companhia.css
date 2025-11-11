@@ -1,4 +1,5 @@
-/* Companhia Hero Section */
+@import 'cores.css';
+
 .companhia-hero {
   position: relative;
   height: 60vh;

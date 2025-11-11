@@ -1,5 +1,4 @@
-// Essa função insere dentro de uma tag (ex: <header>, <footer>, etc.)
-// o conteúdo de um arquivo HTML localizado em /assets/htmls/
+// Essa função escreve trechos de HTML em tags no HTML "original"
 export async function incluirHtml(tag, html) {
     try {
         const elemento = document.querySelector(tag);
@@ -26,7 +25,11 @@ export async function carregarDados(arquivo) {
         }
         return resposta.json();
     });
-} export function carregarTransparencia() {
+}
+
+// Essa função carrega o modal de transparencia
+export function carregarTransparencia() {
+
     const transparenciaList = document.getElementById("transparenciaList");
 
     carregarDados("transparencia.json").then((resposta) => {
@@ -44,11 +47,11 @@ export async function carregarDados(arquivo) {
                         <p>${item.descricao}</p>
                         <ul>
                         ${item.listaDeRelatorios
-            .map(
-                (relatorio) =>
-                    `<li><a href="${relatorio.link}" target="_blank">${relatorio.nome}</a></li>`
-            )
-            .join("")}
+                        .map(
+                            (relatorio) =>
+                                `<li><a href="${relatorio.link}" target="_blank">${relatorio.nome}</a></li>`
+                        )
+                        .join("")}
                         </ul>
                     </div>
                     </div>

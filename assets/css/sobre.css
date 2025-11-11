@@ -1,6 +1,6 @@
-/* Estilos específicos para a página Sobre */
+@import 'cores.css';
 
-/* Hero About */
+
 .hero-about {
   padding: 160px 0 80px;
   background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f97316 100%);

@@ -1,0 +1,1 @@
+import { carregarDados } from "./_uso_geral.js";

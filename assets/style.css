@@ -1,6 +1,10 @@
-@import url('/assets/css/sobre-styles.css');
-@import url('/assets/css/companhia-styles.css');
-@import url('/assets/css/styles.css');
-@import url('/assets/css/formacao.css');
-@import url('/assets/css/menu.css');
-@import '/assets/css/gerais.css';
+@import '/assets/css/_uso_geral.css';
+@import '/assets/css/companhia.css';
+@import '/assets/css/contato.css';
+@import '/assets/css/doacoes.css';
+@import '/assets/css/index.css';
+@import '/assets/css/menu.css';
+@import '/assets/css/na_midia.css';
+@import '/assets/css/projetos.css';
+@import '/assets/css/rodape.css';
+@import '/assets/css/sobre.css';

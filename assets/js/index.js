@@ -1,0 +1,244 @@
+import { carregarDados } from "./_uso_geral.js";
+
+export async function carregarHero() {
+    try {
+        const response = await fetch("assets/jsons/index_hero.json");
+        const slides = await response.json();
+
+        const hero = document.querySelector(".hero");
+        const heroTitle = document.querySelector(".hero-title");
+        const heroSubtitle = document.querySelector(".hero-subtitle");
+        const heroButtons = document.querySelector(".hero-buttons");
+        const heroImageContainer = document.querySelector(".hero-image");
+
+        const prevBtn = document.querySelector(".hero-prev");
+        const nextBtn = document.querySelector(".hero-next");
+
+        if (!heroImageContainer) {
+            console.warn("⚠️ Elemento .hero-image não encontrado.");
+            return;
+        }
+
+        let index = 0;
+        let isAnimating = false;
+
+        function renderSlide(newIndex, direction = 1) {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            // Cria nova imagem
+            const newImage = document.createElement("div");
+            newImage.classList.add("hero-image");
+            newImage.style.backgroundImage = `url('/assets/imagens/midia/${slides[newIndex].image}')`;
+
+            // Define direção de entrada
+            newImage.classList.add(direction === 1 ? "slide-in-right" : "slide-in-left");
+            hero.appendChild(newImage);
+
+            // Força reflow pra aplicar transição
+            void newImage.offsetWidth;
+
+            // Move imagem atual
+            const currentImage = hero.querySelector(".hero-image.active");
+            if (currentImage) {
+                currentImage.classList.remove("active");
+                currentImage.classList.add(direction === 1 ? "slide-in-left" : "slide-in-right");
+            }
+
+            // Anima entrada da nova imagem
+            newImage.classList.remove("slide-in-right", "slide-in-left");
+            newImage.classList.add("active");
+
+            // Atualiza textos
+            heroTitle.textContent = slides[newIndex].title;
+            heroSubtitle.textContent = slides[newIndex].subtitle;
+            heroButtons.innerHTML = `<a href="${slides[newIndex].button.link}" class="btn btn-secondary">${slides[newIndex].button.text}</a>`;
+
+            // Remove a imagem anterior após a animação
+            setTimeout(() => {
+                if (currentImage) currentImage.remove();
+                isAnimating = false;
+            }, 1000);
+        }
+
+        function nextSlide() {
+            const next = (index + 1) % slides.length;
+            renderSlide(next, 1);
+            index = next;
+        }
+
+        function prevSlide() {
+            const prev = (index - 1 + slides.length) % slides.length;
+            renderSlide(prev, -1);
+            index = prev;
+        }
+
+        prevBtn?.addEventListener("click", prevSlide);
+        nextBtn?.addEventListener("click", nextSlide);
+
+        // Inicializa o primeiro slide
+        heroImageContainer.style.backgroundImage = `url('/assets/imagens/midia/${slides[0].image}')`;
+        heroImageContainer.classList.add("active");
+        heroTitle.textContent = slides[0].title;
+        heroSubtitle.textContent = slides[0].subtitle;
+        heroButtons.innerHTML = `<a href="${slides[0].button.link}" class="btn btn-secondary">${slides[0].button.text}</a>`;
+
+        // Autoplay a cada 8s
+        setInterval(nextSlide, 8000);
+    } catch (error) {
+        console.error("Erro ao inicializar o hero carousel:", error);
+    }
+}
+
+export function carregarTripe() {
+
+    const projectsGrid = document.getElementById("projectsGrid")
+    carregarDados("tripe.json").then((resposta) => {
+        projectsGrid.innerHTML = `
+            ${resposta.map((project) => `
+                <div class="project-card">
+                    <img src="${project.image}" alt="${project.title}" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-description">${project.description}</p>
+                        <span class="project-date">${project.date}</span>
+                    </div>
+                </div>
+            `).join("")}
+        `;
+    });
+}
+
+export async function carregarDepoimentos() {
+    const track = document.getElementById("testimonialsTrack");
+    const dotsContainer = document.getElementById("testimonialDots");
+    const btnPrev = document.getElementById("prevTestimonial");
+    const btnNext = document.getElementById("nextTestimonial");
+    let currentTestimonial = 0;
+
+    // --- 1. Carrega dados do JSON base ---
+    const dadosDepoimentos = await carregarDados("depoimentos.json");
+    if (!dadosDepoimentos || !Array.isArray(dadosDepoimentos)) {
+        console.error("Erro: dados de depoimentos inválidos.");
+        return;
+    }
+
+    // --- 2. Monta os cards ---
+    track.innerHTML = dadosDepoimentos.map((dado) => `
+        <div class="testimonial-card">
+            <p class="testimonial-quote">"${dado.quote}"</p>
+            <div class="testimonial-author">
+                <img src="${dado.avatar}" alt="${dado.name}" class="testimonial-avatar">
+                <div>
+                    <div class="testimonial-name">${dado.name}</div>
+                    <div class="testimonial-role">${dado.role}</div>
+                </div>
+            </div>
+        </div>
+    `).join("");
+
+    // --- 3. Monta os dots ---
+    dotsContainer.innerHTML = dadosDepoimentos.map((_, index) => `
+        <div class="dot" data-index="${index}"></div>
+    `).join("");
+
+    const dots = document.querySelectorAll(".dot");
+
+    // --- 4. Atualiza o carrossel ---
+    function updateTestimonialCarousel(indexParaIr = 0) {
+        currentTestimonial = indexParaIr;
+        if (!track) return;
+
+        track.style.transition = "transform 0.5s ease";
+        track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentTestimonial);
+        });
+    }
+
+    // --- 5. Eventos dos dots ---
+    dots.forEach((dot) => {
+        dot.addEventListener("click", (e) => {
+            const index = parseInt(e.target.dataset.index);
+            updateTestimonialCarousel(index);
+        });
+    });
+
+    // --- 6. Eventos dos botões ---
+    btnPrev?.addEventListener("click", () => {
+        currentTestimonial = (currentTestimonial - 1 + dadosDepoimentos.length) % dadosDepoimentos.length;
+        updateTestimonialCarousel(currentTestimonial);
+    });
+
+    btnNext?.addEventListener("click", () => {
+        currentTestimonial = (currentTestimonial + 1) % dadosDepoimentos.length;
+        updateTestimonialCarousel(currentTestimonial);
+    });
+
+    // --- 7. Avanço automático ---
+    setInterval(() => {
+        currentTestimonial = (currentTestimonial + 1) % dadosDepoimentos.length;
+        updateTestimonialCarousel(currentTestimonial);
+    }, 5000);
+
+    // --- 8. Inicia o carrossel ---
+    updateTestimonialCarousel(0);
+}
+
+export function carregarFAQ() {
+    const faqList = document.getElementById("faqList");
+
+    carregarDados("faq.json").then((resposta) => {
+        // Monta o HTML
+        faqList.innerHTML = resposta.map((item, index) => `
+            <div class="faq-item" data-index="${index}">
+                <button class="faq-question">
+                    ${item.question}
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">${item.answer}</div>
+                </div>
+            </div>
+        `).join("");
+
+        // Só aqui os elementos existem no DOM
+        document.querySelectorAll(".faq-question").forEach((question) => {
+            question.addEventListener("click", (e) => {
+                const faqItem = e.target.closest(".faq-item");
+                const isActive = faqItem.classList.contains("active");
+
+                // Fecha todos os outros
+                document.querySelectorAll(".faq-item").forEach((item) => {
+                    item.classList.remove("active");
+                });
+
+                // Abre o clicado (se ainda não estava aberto)
+                if (!isActive) {
+                    faqItem.classList.add("active");
+                }
+            });
+        });
+    });
+}
+
+export function carregarParceiros() {
+    const partnersGrid = document.getElementById("partnersGrid")
+
+    let dadosParceiros = carregarDados('parceiros.json').then((resposta) => {
+        return resposta;
+    });
+
+    dadosParceiros.then((resposta) => {
+        partnersGrid.innerHTML = `
+            ${resposta.map((parceiro) => `
+                <div class="partner-logo">
+                    <img src="/assets/imagens/midia/${parceiro.logo}" alt="${parceiro.name}">
+                </div>
+            `).join("")}
+        `;
+    });
+}

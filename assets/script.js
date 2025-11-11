@@ -8,13 +8,41 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     carregarTransparencia()
 
-    // Newsletter Form
-    document.getElementById("newsletterForm").addEventListener("submit", (e) => {
-        e.preventDefault()
-        const email = e.target.querySelector('input[type="email"]').value
-        alert(`Obrigado por se inscrever, ${email}! Você receberá nossas novidades em breve.`)
-        e.target.reset()
-    })
+    const links = document.querySelectorAll(".nav-menu > li > a");
+    const currentPath = window.location.pathname.split("/").pop().split("#")[0].split("?")[0] || "index.html";
+
+    // 🔹 Marca a página ativa
+    links.forEach(link => {
+        const href = link.getAttribute("href");
+        const linkBase = href.split("/").pop().split("#")[0].split("?")[0];
+        if (linkBase === currentPath) {
+            link.classList.add("active");
+        }
+    });
+
+    // 🔹 Lógica de submenu colapsável (apenas no modo coluna)
+    const menuItems = document.querySelectorAll(".nav-menu > li");
+
+    menuItems.forEach(item => {
+        const submenu = item.querySelector(".submenu");
+        const link = item.querySelector("a");
+
+        if (submenu) {
+            link.addEventListener("click", (e) => {
+                const isColumn = window.getComputedStyle(document.querySelector(".nav-menu")).flexDirection === "column";
+                if (!isColumn) return; // <— agora o return está só dentro deste contexto
+
+                e.preventDefault();
+
+                // Fecha outros submenus abertos
+                document.querySelectorAll(".submenu.show").forEach(open => {
+                    if (open !== submenu) open.classList.remove("show");
+                });
+
+                submenu.classList.toggle("show");
+            });
+        }
+    });
 
     if (document.getElementById("hero")) carregarHero()
 
@@ -451,3 +479,86 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el)
     })
 })
+
+///// Timeline
+if (document.getElementById("timeline")) {
+
+    const scrollContainer = document.querySelector('.timeline-scroll');
+    const prevBtn = document.querySelector('.timeline-btn.prev');
+    const nextBtn = document.querySelector('.timeline-btn.next');
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let autoScroll;
+
+    // Corrige o tamanho da linha da timeline
+    const timelineLine = document.querySelector('.timeline-line');
+    const timelineTrack = document.querySelector('.timeline-track');
+
+    function updateTimelineLine() {
+        const trackWidth = timelineTrack.scrollWidth;
+        timelineLine.style.width = `${trackWidth}px`;
+    }
+
+    updateTimelineLine();
+    window.addEventListener('resize', updateTimelineLine);
+
+    // Arraste
+    scrollContainer.addEventListener('mousedown', e => {
+        isDown = true;
+        scrollContainer.classList.add('grabbing');
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+        stopAutoScroll();
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+        scrollContainer.classList.remove('grabbing');
+    });
+
+    scrollContainer.addEventListener('mouseup', () => {
+        isDown = false;
+        scrollContainer.classList.remove('grabbing');
+        startAutoScroll();
+    });
+
+    scrollContainer.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+
+    // Botões
+    prevBtn.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -scrollContainer.clientWidth / 3, behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: scrollContainer.clientWidth / 3, behavior: 'smooth' });
+    });
+
+    // Loop automático
+    function startAutoScroll() {
+        autoScroll = setInterval(() => {
+            scrollContainer.scrollBy({ left: 1, behavior: 'smooth' });
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 20) {
+                scrollContainer.scrollLeft = 0;
+            }
+            1
+        }, 100); // ajuste de velocidade
+    }
+
+    function stopAutoScroll() {
+        clearInterval(autoScroll);
+    }
+
+    // Pausa quando o usuário interage
+    scrollContainer.addEventListener('mouseenter', stopAutoScroll);
+    scrollContainer.addEventListener('mouseleave', startAutoScroll);
+
+    // Inicia autoplay ao carregar
+    startAutoScroll();
+}

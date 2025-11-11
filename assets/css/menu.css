@@ -70,8 +70,12 @@
   transition: color 0.3s ease;
 }
 
-.nav-menu>li:hover>a {
-  color: #8b5cf6;
+.nav-link {
+  text-decoration: none;
+  color: var(--color-gray-900);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
 .nav-menu>li>a::after {
@@ -84,44 +88,6 @@
   height: 2px;
   background-color: #8b5cf6;
   transition: transform 0.3s ease;
-}
-
-.nav-menu>li:hover>a::after {
-  transform: translateX(-50%) scaleX(1);
-}
-
-.nav-link {
-  text-decoration: none;
-  color: var(--color-gray-900);
-  font-weight: 500;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-purple);
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.menu-social-icons {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-.menu-social-icons a:hover {
-  background: var(--color-white);
-  color: var(--color-purple);
 }
 
 /* ======= SUBMENU ======= */
@@ -149,15 +115,6 @@
   color: #222;
   text-decoration: none;
   transition: background 0.2s ease;
-}
-
-.submenu a:hover {
-  background: #f4f4f4;
-}
-
-/* mostrar submenu no hover */
-.nav-menu>li:hover .submenu {
-  display: block;
 }
 
 /* guia ativa fixa */
@@ -242,11 +199,6 @@
     border-left: 3px solid #ec4899;
   }
 
-  /* Desativa o hover desktop */
-  .nav-menu>li:hover .submenu {
-    display: none;
-  }
-
   .hero-title {
     font-size: 40px;
   }
@@ -289,6 +241,54 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+}
+
+@media (min-width: 1175px) {
+
+  /* Desativa o hover desktop */
+  .nav-menu>li:hover .submenu {
+    display: none;
+  }
+
+  /* mostrar submenu no hover */
+  .nav-menu>li:hover .submenu {
+    display: block;
+  }
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.submenu a:hover {
+  background: #f4f4f4;
+}
+
+.menu-social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Ele coloca a barrinha abaixo do link, exceto no do menu social icons */
+.nav-menu > li:hover:not(.menu-social-icons) > a::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-purple);
+  transition: width 0.3s ease;
+}
+
+.menu-social-icons a:hover {
+  background: var(--color-white);
+  color: var(--color-purple);
 }
 
 /* Adicionando estilos para a página Sobre */

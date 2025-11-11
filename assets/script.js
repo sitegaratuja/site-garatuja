@@ -20,29 +20,34 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    // 🔹 Lógica de submenu colapsável (apenas no modo coluna)
-    const menuItems = document.querySelectorAll(".nav-menu > li");
+    // Comportamento do menu mobile
+    if (window.innerWidth < 1175) {
+        document.querySelectorAll(".nav-menu > li > a").forEach((link) => {
+            let clickTimer = null;
 
-    menuItems.forEach(item => {
-        const submenu = item.querySelector(".submenu");
-        const link = item.querySelector("a");
-
-        if (submenu) {
             link.addEventListener("click", (e) => {
-                const isColumn = window.getComputedStyle(document.querySelector(".nav-menu")).flexDirection === "column";
-                if (!isColumn) return; // <— agora o return está só dentro deste contexto
+                const dropdown = link.nextElementSibling;
 
-                e.preventDefault();
+                // Verifica se existe submenu
+                if (dropdown && dropdown.classList.contains("submenu")) {
+                    e.preventDefault(); // Evita navegação imediata
 
-                // Fecha outros submenus abertos
-                document.querySelectorAll(".submenu.show").forEach(open => {
-                    if (open !== submenu) open.classList.remove("show");
-                });
-
-                submenu.classList.toggle("show");
+                    if (clickTimer) {
+                        // Duplo clique → abre o link do pai
+                        clearTimeout(clickTimer);
+                        clickTimer = null;
+                        window.location.href = link.href;
+                    } else {
+                        // Clique simples → abre/fecha submenu
+                        clickTimer = setTimeout(() => {
+                            dropdown.classList.toggle("show");
+                            clickTimer = null;
+                        }, 250);
+                    }
+                }
             });
-        }
-    });
+        });
+    }
 
     if (document.getElementById("hero")) carregarHero()
 

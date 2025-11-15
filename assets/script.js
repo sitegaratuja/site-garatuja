@@ -1,5 +1,6 @@
 import { incluirHtml, carregarTransparencia } from "./js/_uso_geral.js";
 import { carregarHero, carregarTripe, carregarDepoimentos, carregarFAQ, carregarParceiros } from "./js/index.js";
+import { carregarTimeline, initTimelineInteractions, fecharModal, abrirModalFromTemplate } from "./js/sobre.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -16,6 +17,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (document.getElementById("projectsGrid")) carregarTripe() // carrega o tripé do index.html
     if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
     if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html
+
+    //sobre.html
+    if (document.getElementById("timeline"))
+    carregarTimeline().then(() => {
+        initTimelineInteractions();
+    });
 
     // ------------- Função que marca o link ativo no menu
     const links = document.querySelectorAll(".nav-menu > li > a");
@@ -248,86 +255,3 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el)
     })
 })
-
-// ------------- Timeline
-if (document.getElementById("timeline")) {
-
-    const scrollContainer = document.querySelector('.timeline-scroll');
-    const prevBtn = document.querySelector('.timeline-btn.prev');
-    const nextBtn = document.querySelector('.timeline-btn.next');
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-    let autoScroll;
-
-    // Corrige o tamanho da linha da timeline
-    const timelineLine = document.querySelector('.timeline-line');
-    const timelineTrack = document.querySelector('.timeline-track');
-
-    function updateTimelineLine() {
-        const trackWidth = timelineTrack.scrollWidth;
-        timelineLine.style.width = `${trackWidth}px`;
-    }
-
-    updateTimelineLine();
-    window.addEventListener('resize', updateTimelineLine);
-
-    // Arraste
-    scrollContainer.addEventListener('mousedown', e => {
-        isDown = true;
-        scrollContainer.classList.add('grabbing');
-        startX = e.pageX - scrollContainer.offsetLeft;
-        scrollLeft = scrollContainer.scrollLeft;
-        stopAutoScroll();
-    });
-
-    scrollContainer.addEventListener('mouseleave', () => {
-        isDown = false;
-        scrollContainer.classList.remove('grabbing');
-    });
-
-    scrollContainer.addEventListener('mouseup', () => {
-        isDown = false;
-        scrollContainer.classList.remove('grabbing');
-        startAutoScroll();
-    });
-
-    scrollContainer.addEventListener('mousemove', e => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - scrollContainer.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        scrollContainer.scrollLeft = scrollLeft - walk;
-    });
-
-    // Botões
-    prevBtn.addEventListener('click', () => {
-        scrollContainer.scrollBy({ left: -scrollContainer.clientWidth / 3, behavior: 'smooth' });
-    });
-    nextBtn.addEventListener('click', () => {
-        scrollContainer.scrollBy({ left: scrollContainer.clientWidth / 3, behavior: 'smooth' });
-    });
-
-    // Loop automático
-    function startAutoScroll() {
-        autoScroll = setInterval(() => {
-            scrollContainer.scrollBy({ left: 1, behavior: 'smooth' });
-            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 20) {
-                scrollContainer.scrollLeft = 0;
-            }
-            1
-        }, 100); // ajuste de velocidade
-    }
-
-    function stopAutoScroll() {
-        clearInterval(autoScroll);
-    }
-
-    // Pausa quando o usuário interage
-    scrollContainer.addEventListener('mouseenter', stopAutoScroll);
-    scrollContainer.addEventListener('mouseleave', startAutoScroll);
-
-    // Inicia autoplay ao carregar
-    startAutoScroll();
-}

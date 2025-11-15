@@ -1,0 +1,338 @@
+[
+    {
+        "id": 1,
+        "ano": 2005,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Um primeiro Rascunho",
+        "breveDescricao": "Breve descrição do porque são importantes dados fictícios",
+        "texto": "Se voce parar para pensar, muitas vezes temos apenas as ideias, porem o conteúdo fixo as vezes falta. Dito isso, sempre é bom ter algum modelo de texto como o Lorem Ipsum, por exemplo. Ele é um pouco grande e dá para você ter uma ideia de como ficaria o conteúdo. Ahn, não sabe o que é o lorem? É esse trecho aqui:     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit voluptatum hic quas consequatur libero facilis dolore inventore. Numquam officia tempore sit minima maiores blanditiis. Similique illum quae soluta ad qui?",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/jovens_ensaiando.png",
+            "/assets/imagens/midia/performance-photo-6.jpg",
+            "/assets/imagens/midia/performance-photo-3.jpg",
+            "/assets/imagens/midia/performance-photo-2.jpg",
+            "/assets/imagens/midia/performance-photo-1.jpg"
+        ]
+    },
+    {
+        "id": 2,
+        "ano": 2006,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Testando",
+        "breveDescricao": "Projeto implementado em São Sebastião – DF em parceria com a ACEHU. De agosto a dezembro, 25 meninas participaram das atividades de dança e monitoria.",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 3,
+        "ano": 2007,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "O começo do projeto",
+        "breveDescricao": "Atividades continuaram com 25 meninas participantes das atividades ao longo de todo o ano.",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 4,
+        "ano": 2008,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "O primeiro espetáculo",
+        "breveDescricao": "O espetáculo “O Circo do Garatuja” estreou em São Sebastião.",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 5,
+        "ano": 2009,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "O segundo espetáculo",
+        "breveDescricao": "O projeto vira “Ponto de Cultura” do DF Estreia Espetáculo Brinquedos & Brincadeiras” no Teatro da Escola Parque 307/308 Sul.",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 6,
+        "ano": 2010,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Um primeiro Rascunho",
+        "breveDescricao": "Participação na 'VIII Olimpíada Solidária de Estudo' promovida pela ONG Coopera",
+        "texto": "Garatuja foi o único projeto brasileiro a participar da 'VIII Olimpíada Solidária de Estudo' promovida pela ONG Coopera, o que trouxe projeção ao projeto pela cobertura por TV e jornais. Nesse ano, as alunas se apresentaram em 8 eventos diferentes, além da estreia do espetáculo 'O Mundo Encantado das Fadas'",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 7,
+        "ano": 2011,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Uma visita internacional",
+        "breveDescricao": "Breve descrição",
+        "texto": "Garatuja foi reapresentado na 2ª edição dos pontos de cultura do DF e recebeu visita de delegação chinesa com o Ministério da Cultura. O espetáculo '2º Sarau Estórias e Contos Infantis' estreou no Espaço Renato Russo.",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 8,
+        "ano": 2012,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Um primeiro Rascunho",
+        "breveDescricao": "O espetáculo 'Bonecas' encerrou o ano de atividades no Teatro da Escola Parque.",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 9,
+        "ano": 2013,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Abertos para a comunidade",
+        "breveDescricao": "O projeto promoveu sua primeira aula aberta para a comunidade.",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 10,
+        "ano": 2014,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Novas parcerias",
+        "breveDescricao": "Breve descrição",
+        "texto": "Garatuja iniciou a parceria com o Departamento de atividades de extensão da UNB. O espetáculo Garatujas estreou no Teatro Funarte.",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 11,
+        "ano": 2015,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Garatujas no Teatro Funarte",
+        "breveDescricao": "O espetáculo Garatujas estreia no Teatro Funarte.",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 12,
+        "ano": 2016,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "10 anos de Garatuja",
+        "breveDescricao": "Breve descrição",
+        "texto": "O Garatuja consegue atender 60 alunas nas aulas de dança e monitoria, incluindo as bailarinas do corpo de baile (alunas mais experientes). O espetáculo 'Gota no oceano' estreia no Teatro Funarte contando a trajetória de 10 anos do projeto.",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 13,
+        "ano": 2017,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Independência",
+        "breveDescricao": "Breve descrição",
+        "texto": "O projeto torna-se independente e atende em nova sede. Amplia-se a rede de apoiadores Estreia Espetáculo Recomeço no teatro Funarte.",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 14,
+        "ano": 2018,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Novas integrantes",
+        "breveDescricao": "Breve descrição",
+        "texto": "O projeto recebe diversas professoras que ministram workshops e oficinas Estreia espetáculo Vida de Circo em parceria com colégio Mackenzie no Teatro Funarte",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 15,
+        "ano": 2019,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Crescimento",
+        "breveDescricao": "Breve descrição",
+        "texto": "O projeto participa de Congresso de Ballet em São Paulo e fortalece a parceria com Spazio dança. Colégio Mackenzie Estreia espetáculo Picadeiro",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 16,
+        "ano": 2020,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Pandemia",
+        "breveDescricao": "Breve descrição",
+        "texto": "Com a pandemia, o projeto visita as famílias assistidas e entrega cestas básicas de alimentos e higiene. As alunas começam a ter aulas de pilates, e suas aulas são interrompidas devido as medidas sanitárias",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 17,
+        "ano": 2021,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Matriz Garatuja",
+        "breveDescricao": "Breve descrição",
+        "texto": "Aquisição e reforma da sede do Garatuja. Aulas online para grupos reduzidos de alunas.",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 18,
+        "ano": 2022,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Formalização",
+        "breveDescricao": "Formalização do Instituto Garatuja de Dança e Cidadania",
+        "texto": "Formalização do Instituto Garatuja de Dança e Cidadania. Reforma da Sede própria. Além disso, o Garatuja participa do Programa de Aceleração Impacto Social, promovido pelo Instituto Ekloos, em parceria com o Instituto Neoenergia - duração 9 meses. Tivemos também a formação leitora de monitoras com a professora Sonia Maria Soares",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 19,
+        "ano": 2023,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Influência",
+        "breveDescricao": "Breve descrição",
+        "texto": "O Instituto Garatuja recebe, pela Secretaria de Cultura e Economia Criativa do Distrito Federal, o prêmio FAC Cultura Mulher, por ser entidade que atua no enfrentamento à violência contra mulheres por meio da cultura em regiões periféricas do DF. Alunas do Garatuja entram em campo com as jogadoras de futebol da seleção brasileira para abertura da partida Brasil X Chile. Início das aulas de informática. Início do Projeto Involve, em parceria com a Iberdrola- Projeto de voluntariado internacional. Em parceria com o Movimento Internacional de Dança (MID), desenvolve o Projeto Conexão África na sede do Garatuja .",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 20,
+        "ano": 2024,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Projeto Saberes",
+        "breveDescricao": "Breve descrição",
+        "texto": "Criação do Projeto Saberes - Arte Cultura e Protagonismo feminino em São Sebastião. Garatuja passa a atender 88 meninas. Mostra e sarau: 'Ora Bolas, estamos em São Sebastião!!'. WS de conscientização ambiental em parceria com a Endêmica - UnB",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    },
+    {
+        "id": 21,
+        "ano": 2025,
+        "capa": "assets/imagens/midia/jovens_ensaiando.png",
+        "titulo": "Um primeiro Rascunho",
+        "breveDescricao": "Breve descrição",
+        "texto": "",
+        "imagens": [
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg",
+            "/assets/imagens/midia/first-dance-class-community.jpg"
+        ]
+    }
+]

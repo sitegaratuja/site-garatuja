@@ -9,19 +9,22 @@ footer {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1fr 1.5fr; /* 3 colunas */
     gap: 48px;
     margin-bottom: 48px;
 }
 
 .footer-logo {
-    font-size: 28px;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--color-purple), var(--color-pink));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.footer-logo img {
+    width: auto;
+    height: 40px;
 }
 
 .footer-about p {
@@ -73,4 +76,19 @@ footer {
 
 .footer-links a:hover {
     opacity: 1;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* colunas iguais em telas médias */
+        gap: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* empilha as colunas em telas pequenas */
+        gap: 24px;
+    }
 }

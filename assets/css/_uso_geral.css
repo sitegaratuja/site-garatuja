@@ -17,6 +17,26 @@ body {
     background: var(--color-white);
 }
 
+.section-label {
+    display: inline-block;
+    color: var(--color-purple);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    height: fit-content;
+}
+
 .transparencia-modal-overlay {
     display: none;
     position: fixed;

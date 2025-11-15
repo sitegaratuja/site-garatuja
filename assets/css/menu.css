@@ -72,6 +72,10 @@
   transition: color 0.3s ease;
 }
 
+.submenu a:hover {
+  background: #f4f4f4;
+}
+
 .nav-link {
   text-decoration: none;
   color: var(--color-gray-900);
@@ -260,16 +264,6 @@
 
 .nav-link:hover::after {
   width: 100%;
-}
-
-.submenu a:hover {
-  background: #f4f4f4;
-}
-
-.menu-social-icons {
-  display: flex;
-  gap: 16px;
-  margin-top: 16px;
 }
 
 /* Ele coloca a barrinha abaixo do link, exceto no do menu social icons */

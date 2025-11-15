@@ -343,7 +343,3 @@ document.addEventListener('DOMContentLoaded', () => {
         try { initTimelineInteractions(); } catch (e) { console.error("Erro na inicialização:", e); }
     }
 });
-
-// ------------- Função que fecha o modal
-const btn_fechar_modal = document.querySelector('.tl-modal .tl-close');
-btn_fechar_modal.addEventListener('click', () => fecharModal());

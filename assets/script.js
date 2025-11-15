@@ -20,9 +20,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     //sobre.html
     if (document.getElementById("timeline"))
-    carregarTimeline().then(() => {
-        initTimelineInteractions();
-    });
+        carregarTimeline().then(() => {
+            initTimelineInteractions();
+
+            // ------------- Função que fecha o modal
+            const btn_fechar_modal = document.querySelector('.tl-modal .tl-close');
+            btn_fechar_modal.addEventListener('click', () => fecharModal());
+        });
 
     // ------------- Função que marca o link ativo no menu
     const links = document.querySelectorAll(".nav-menu > li > a");

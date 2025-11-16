@@ -1,6 +1,6 @@
 @import 'cores.css';
 
-/* ------------- Sobre -  Hero Section ------------- */
+/* ============= Sobre -  Hero Section ============= */
 
 .hero-about {
   height: 90vh;
@@ -44,7 +44,7 @@
   }
 }
 
-/* ------------- Video Section ------------- */
+/* ============= Video Section ============= */
 
 .video-section {
   padding: 80px 0;
@@ -72,7 +72,7 @@
   border-radius: 20px;
 }
 
-/* ------------- Origin Section ------------- */
+/* ============= Origin Section ============= */
 
 .origin-section {
   padding: 80px;
@@ -169,7 +169,7 @@
   }
 }
 
-/*  ------------- MVV Section ------------- */
+/*  ============= MVV Section ============= */
 
 .mvv-section {
   padding: 80px 0;
@@ -256,7 +256,7 @@
   }
 }
 
-/*  ------------- Timeline Section ------------- */
+/*  ============= Timeline Section ============= */
 
 .timeline-horizontal {
   padding: 80px 0;
@@ -369,7 +369,7 @@
   cursor: -webkit-grabbing;
 }
 
-/* ------------- MODAL (Timeline) ------------- */
+/* ============= MODAL (Timeline) ============= */
 
 .tl-modal {
   position: fixed;
@@ -528,7 +528,7 @@
   min-height: 100px;
 }
 
-/* ------------- Team Section ------------- */
+/* ============= Team Section ============= */
 
 .team-columns {
   display: flex;
@@ -578,7 +578,7 @@
   line-height: 27px;
 }
 
-/* ------------- Sessão dos Espaços ------------- */
+/* ============= Sessão dos Espaços ============= */
 
 .space-section {
   padding: 80px 0;
@@ -624,7 +624,7 @@
   display: block;
 }
 
-/* ------------- Responsive Media Queries ------------- */
+/* ============= Responsividade ============= */
 
 @media (max-width: 1024px) {
   .timeline-year {

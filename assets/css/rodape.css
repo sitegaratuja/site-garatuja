@@ -2,7 +2,7 @@
 
 /* Footer */
 footer {
-    background: var(--color-gray-900);
+    background: var(--color-gray-800);
     color: var(--color-white);
     padding: 80px 0 24px;
 }
@@ -10,9 +10,15 @@ footer {
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1.5fr;
-    /* 3 colunas */
     gap: 48px;
     margin-bottom: 48px;
+}
+
+/* ============= Footer About (1ª coluna) ============= */
+
+.footer-about p {
+    margin-bottom: 24px;
+    opacity: 0.8;
 }
 
 .footer-logo {
@@ -26,11 +32,6 @@ footer {
 .footer-logo img {
     width: auto;
     height: 40px;
-}
-
-.footer-about p {
-    margin-bottom: 24px;
-    opacity: 0.8;
 }
 
 .social-links {
@@ -54,6 +55,8 @@ footer {
     background: var(--color-purple);
     transform: translateY(-2px);
 }
+
+/* ============= Footer Links (2ª coluna) ============= */
 
 .footer-links h4 {
     margin-bottom: 16px;
@@ -79,8 +82,10 @@ footer {
     opacity: 1;
 }
 
-/* Responsiveness */
+/* ============= Responsividade ============= */
+
 @media (max-width: 1024px) {
+    
     .footer-grid {
         grid-template-columns: 1fr 1fr 1fr;
         /* colunas iguais em telas médias */
@@ -89,45 +94,16 @@ footer {
 }
 
 @media (max-width: 768px) {
+
     .footer-grid {
         grid-template-columns: 1fr;
         /* empilha as colunas em telas pequenas */
         gap: 24px;
     }
-}
 
-
-/* ---------------------------------------------------------------------------- revisar */
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 48px;
-    margin-bottom: 48px;
-}
-
-.footer-section h3,
-.footer-section h4 {
-    margin-bottom: 16px;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-section li {
-    margin-bottom: 12px;
-}
-
-.footer-section a {
-    color: #ffffff;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.footer-section a:hover {
-    opacity: 1;
+    .footer-about, .footer-links, .footer-logo, .social-links {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
 }

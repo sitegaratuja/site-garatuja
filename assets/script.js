@@ -11,23 +11,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     await incluirHtml("footer", "rodape.html");
     carregarTransparencia() //carrega o modal de transparencia
 
-    // Index.html
-    if (document.getElementById("testimonialsTrack")) carregarDepoimentos() // carrega os depoimentos do index.html
-    if (document.getElementById("hero")) carregarHero() // carrega o hero do index.html
-    if (document.getElementById("projectsGrid")) carregarTripe() // carrega o tripé do index.html
-    if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
-    if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html
-
-    //sobre.html
-    if (document.getElementById("timeline"))
-        carregarTimeline().then(() => {
-            initTimelineInteractions();
-
-            // ------------- Função que fecha o modal
-            const btn_fechar_modal = document.querySelector('.tl-modal .tl-close');
-            btn_fechar_modal.addEventListener('click', () => fecharModal());
-        });
-
     // ------------- Função que marca o link ativo no menu
     const links = document.querySelectorAll(".nav-menu > li > a");
     const currentPath = window.location.pathname.split("/").pop().split("#")[0].split("?")[0] || "index.html";
@@ -40,13 +23,33 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
+    // Index.html
+    if (document.getElementById("depoimentosDiv")) carregarDepoimentos() // carrega os depoimentos do index.html
+    if (document.getElementById("hero")) carregarHero() // carrega o hero do index.html
+    if (document.getElementById("projectsGrid")) carregarTripe() // carrega o tripé do index.html
+    if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
+    if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html
+
+    //sobre.html
+    if (document.getElementById("timeline")) {
+        carregarTimeline().then(() => {
+            initTimelineInteractions();
+
+            // ------------- Função que fecha o modal
+            const btn_fechar_modal = document.querySelector('.tl-modal .tl-close');
+            btn_fechar_modal.addEventListener('click', () => fecharModal());
+        });
+    }
+
     // ------------- Função que configura o menu mobile (quando a largura é menor que 1175px)
     if (window.innerWidth < 1175) {
 
         document.querySelectorAll(".nav-menu > li > a").forEach((link) => {
+
             let clickTimer = null;
 
             link.addEventListener("click", (e) => {
+
                 const dropdown = link.nextElementSibling;
 
                 // Verifica se existe submenu
@@ -70,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
 
         // Mobile Menu Toggle
-        const menuToggle = document.getElementById("menuToggle")
+        const menuToggle = document.getElementById("navToggle")
         const navMenu = document.getElementById("navMenu")
 
         menuToggle.addEventListener("click", () => {

@@ -8,16 +8,11 @@ export async function carregarHero() {
         const hero = document.querySelector(".hero");
         const heroTitle = document.querySelector(".hero-title");
         const heroSubtitle = document.querySelector(".hero-subtitle");
-        const heroButtons = document.querySelector(".hero-buttons");
+        const heroButtons = document.querySelector(".hero-button");
         const heroImageContainer = document.querySelector(".hero-image");
 
         const prevBtn = document.querySelector(".hero-prev");
         const nextBtn = document.querySelector(".hero-next");
-
-        if (!heroImageContainer) {
-            console.warn("⚠️ Elemento .hero-image não encontrado.");
-            return;
-        }
 
         let index = 0;
         let isAnimating = false;
@@ -52,7 +47,7 @@ export async function carregarHero() {
             // Atualiza textos
             heroTitle.textContent = slides[newIndex].title;
             heroSubtitle.textContent = slides[newIndex].subtitle;
-            heroButtons.innerHTML = `<a href="${slides[newIndex].button.link}" class="btn btn-secondary">${slides[newIndex].button.text}</a>`;
+            heroButtons.innerHTML = `<a href="${slides[newIndex].button.link}" class="btn hero-btn">${slides[newIndex].button.text}</a>`;
 
             // Remove a imagem anterior após a animação
             setTimeout(() => {
@@ -81,10 +76,10 @@ export async function carregarHero() {
         heroImageContainer.classList.add("active");
         heroTitle.textContent = slides[0].title;
         heroSubtitle.textContent = slides[0].subtitle;
-        heroButtons.innerHTML = `<a href="${slides[0].button.link}" class="btn btn-secondary">${slides[0].button.text}</a>`;
+        heroButtons.innerHTML = `<a href="${slides[0].button.link}" class="btn hero-btn">${slides[0].button.text}</a>`;
 
         // Autoplay a cada 8s
-        setInterval(nextSlide, 8000);
+        setInterval(nextSlide, 5000);
     } catch (error) {
         console.error("Erro ao inicializar o hero carousel:", error);
     }
@@ -110,80 +105,88 @@ export function carregarTripe() {
 }
 
 export async function carregarDepoimentos() {
-    const track = document.getElementById("testimonialsTrack");
-    const dotsContainer = document.getElementById("testimonialDots");
-    const btnPrev = document.getElementById("prevTestimonial");
-    const btnNext = document.getElementById("nextTestimonial");
-    let currentTestimonial = 0;
+    const container = document.getElementById("depoimentos");
+    const depoimentosDiv = document.getElementById("depoimentosDiv");
+    const dotsContainer = document.getElementById("depoimentosDots");
+    const btnPrev = document.getElementById("prevDepoimento");
+    const btnNext = document.getElementById("nextDepoimento");
+    let depoimentosAtual = 0;
 
     // --- 1. Carrega dados do JSON base ---
-    const dadosDepoimentos = await carregarDados("depoimentos.json");
+    const dadosDepoimentos = await carregarDados("index_depoimentos.json");
     if (!dadosDepoimentos || !Array.isArray(dadosDepoimentos)) {
         console.error("Erro: dados de depoimentos inválidos.");
         return;
     }
 
-    // --- 2. Monta os cards ---
-    track.innerHTML = dadosDepoimentos.map((dado) => `
-        <div class="testimonial-card">
-            <p class="testimonial-quote">"${dado.quote}"</p>
-            <div class="testimonial-author">
-                <img src="${dado.avatar}" alt="${dado.name}" class="testimonial-avatar">
-                <div>
-                    <div class="testimonial-name">${dado.name}</div>
-                    <div class="testimonial-role">${dado.role}</div>
-                </div>
-            </div>
-        </div>
-    `).join("");
-
-    // --- 3. Monta os dots ---
+    // --- 2. Monta os dots ---
     dotsContainer.innerHTML = dadosDepoimentos.map((_, index) => `
-        <div class="dot" data-index="${index}"></div>
+        <div class="depoimento-dot" data-index="${index}"></div>
     `).join("");
 
-    const dots = document.querySelectorAll(".dot");
+    const dots = document.querySelectorAll(".depoimento-dot");
 
     // --- 4. Atualiza o carrossel ---
-    function updateTestimonialCarousel(indexParaIr = 0) {
-        currentTestimonial = indexParaIr;
-        if (!track) return;
+    function atualizarCarrossel(indexParaIr = 0) {
+    depoimentosAtual = indexParaIr;
 
-        track.style.transition = "transform 0.5s ease";
-        track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+    const card = document.querySelector(".depoimento-card");
+    const quote = document.getElementById("depoimentoQuote");
+    const name = document.getElementById("depoimentoName");
+    const role = document.getElementById("depoimentoRole");
 
+    // Remove animações antigas
+    card.classList.remove("slide-in");
+    card.classList.add("slide-out");
+
+    // Espera a saída terminar antes de trocar o conteúdo
+    setTimeout(() => {
+        quote.textContent = dadosDepoimentos[indexParaIr].quote;
+        name.textContent = dadosDepoimentos[indexParaIr].name;
+        role.textContent = dadosDepoimentos[indexParaIr].role;
+
+        container.style.backgroundImage = `url(${dadosDepoimentos[indexParaIr].imagemFundo})`;
+
+        // Inicia animação de entrada
+        card.classList.remove("slide-out");
+        card.classList.add("slide-in");
+
+        // Atualiza dots se existirem
         dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentTestimonial);
+            dot.classList.toggle("active", index === depoimentosAtual);
         });
-    }
+
+    }, 350); // mesmo tempo da animação de saída
+}
+
 
     // --- 5. Eventos dos dots ---
     dots.forEach((dot) => {
         dot.addEventListener("click", (e) => {
             const index = parseInt(e.target.dataset.index);
-            updateTestimonialCarousel(index);
+            atualizarCarrossel(index);
         });
     });
 
     // --- 6. Eventos dos botões ---
     btnPrev?.addEventListener("click", () => {
-        currentTestimonial = (currentTestimonial - 1 + dadosDepoimentos.length) % dadosDepoimentos.length;
-        updateTestimonialCarousel(currentTestimonial);
+        depoimentosAtual = (depoimentosAtual - 1 + dadosDepoimentos.length) % dadosDepoimentos.length;
+        atualizarCarrossel(depoimentosAtual);
     });
 
     btnNext?.addEventListener("click", () => {
-        currentTestimonial = (currentTestimonial + 1) % dadosDepoimentos.length;
-        updateTestimonialCarousel(currentTestimonial);
+        depoimentosAtual = (depoimentosAtual + 1) % dadosDepoimentos.length;
+        atualizarCarrossel(depoimentosAtual);
     });
 
     // --- 7. Avanço automático ---
     setInterval(() => {
-        currentTestimonial = (currentTestimonial + 1) % dadosDepoimentos.length;
-        updateTestimonialCarousel(currentTestimonial);
+        depoimentosAtual = (depoimentosAtual + 1) % dadosDepoimentos.length;
+        atualizarCarrossel(depoimentosAtual);
     }, 5000);
 
     // --- 8. Inicia o carrossel ---
-    updateTestimonialCarousel(0);
+    atualizarCarrossel(0);
 }
 
 export function carregarFAQ() {

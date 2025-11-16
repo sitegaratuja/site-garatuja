@@ -9,36 +9,36 @@
     <link rel="shortcut icon" href="/assets/imagens/marca/Marca_Garatuja_RGB_Grafismo1_Fundo-Escuro.png"
         type="image/x-icon">
     <!-- Bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
 </head>
 
 <body>
 
-    <!-- Menu de Navegação -->
+    <!-- Menu de Navegação, carregado via JavaScript por meio dessa tag -->
     <header></header>
 
-    <!-- Modal de transparencia -->
+    <!-- Modal de transparência, carregado via JavaScript por meio dessa div -->
     <div class="transparencia-modal-overlay" id="transparenciaModalOverlay">
         <div class="transparencia-modal">
             <h2>Portal de transparência</h2>
             <div class="container">
-                <div class="transparencia-list" id="transparenciaList">
-                    <!-- FAQ items will be loaded by JavaScript -->
-                </div>
+                <!-- Perguntas e respostas, carregado via JavaScript por meio dessa div -->
+                <div class="transparencia-list" id="transparenciaList"></div>
             </div>
             <button class="transparencia-close-btn" id="transparenciaCloseModal">Fechar</button>
         </div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Sessão do Hero -->
     <section class="hero" id="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-image"></div> <!-- imagem do fundo muda dinamicamente -->
+        <div class="hero-image"></div>
 
+        <!-- Conteúdo do Hero, carregado via JavaScript por meio dessa div -->
         <div class="hero-content">
             <h1 class="hero-title"></h1>
             <p class="hero-subtitle"></p>
-            <div class="hero-buttons"></div>
+            <div class="hero-button"></div>
         </div>
 
         <!-- botões laterais -->
@@ -49,6 +49,7 @@
             <span>Role para descobrir</span>
             <div class="scroll-indicator"></div>
         </div>
+
     </section>
 
     <!-- Sobre Section -->
@@ -76,51 +77,54 @@
                             <span class="stat-number">20+</span>
                             <span class="stat-label">Apresentações/Ano</span>
                         </div>
-                        <a href="sobre.html" class="nav-link btn-donate-nav">Conhecer
-                            mais</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projetos Section -->
+    <!-- Sessão do tripé -->
     <section class="projects" id="projetos">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Nossas atividades permanentes</span>
                 <h2 class="section-title">Conheça nosso tripé</h2>
             </div>
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be loaded by JavaScript -->
-            </div>
+            <!-- Tripé, carregado via JavaScript por meio dessa div-->
+            <div class="projects-grid" id="projectsGrid"></div>
         </div>
     </section>
 
-    <!-- Depoimentos Section -->
-    <section class="testimonials" id="depoimentos">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Depoimentos</span>
-                <h2 class="section-title">Histórias que nos inspiram</h2>
-            </div>
-            <div class="testimonials-carousel">
-                <button class="carousel-btn carousel-prev" id="prevTestimonial" aria-label="Anterior">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6" />
-                    </svg>
-                </button>
-                <div class="testimonials-track" id="testimonialsTrack">
-                    <!-- Testimonials will be loaded by JavaScript -->
-                </div>
-                <button class="carousel-btn carousel-next" id="nextTestimonial" aria-label="Próximo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6" />
-                    </svg>
-                </button>
-            </div>
-            <div class="carousel-dots" id="testimonialDots"></div>
+    <!-- Sessão dos depoimentos -->
+    <section class="depoimentos" id="depoimentos">
+
+        <div class="section-header">
+            <span class="section-label">Depoimentos</span>
         </div>
+
+        <div class="depoimentos-carousel">
+
+            <button class="carousel-btn carousel-prev" id="prevDepoimento" aria-label="Anterior">
+                &#10094;
+            </button>
+
+            <!-- Depoimentos, carregado via JavaScript por meio dessa div-->
+            <div class="depoimentos-div" id="depoimentosDiv">
+                <div class="depoimento-card">
+                    <p class="depoimento-quote" id="depoimentoQuote"></p>
+                    <div class="depoimento-author">
+                        <div class="depoimento-name" id="depoimentoName"></div>
+                        <div class="depoimento-role" id="depoimentoRole"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn carousel-next" id="nextDepoimento" aria-label="Próximo">
+                &#10095;
+            </button>
+        </div>
+
+        <div class="depoimentos-dots" id="depoimentosDots"></div>
     </section>
 
     <!-- FAQ Section -->

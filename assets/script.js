@@ -1,14 +1,16 @@
 import { incluirHtml, carregarTransparencia } from "./js/_uso_geral.js";
 import { carregarHero, carregarTripe, carregarDepoimentos, carregarFAQ, carregarParceiros } from "./js/index.js";
-import { carregarTimeline, initTimelineInteractions, fecharModal, abrirModalFromTemplate } from "./js/sobre.js";
+import { carregarTimeline, initTimelineInteractions, fecharModal } from "./js/sobre.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     // ------------- Funções de carregamento de dados
 
-    // gerais, presentes em todas as páginas
-    await incluirHtml("header", "menu.html");
-    await incluirHtml("footer", "rodape.html");
+    // gerais, presentes em todas as páginas. Se não tem header, então é o ingles
+    if (document.querySelector("header")) {
+        await incluirHtml("header", "menu.html");
+        await incluirHtml("footer", "rodape.html");
+    }
     carregarTransparencia() //carrega o modal de transparencia
 
     // ------------- Função que marca o link ativo no menu

@@ -10,7 +10,7 @@
 │   ├── htmls/ - HTMLs recorrentes (rodapé, cabeçalho, etc.)
 │   ├── imagens/ - Imagens
 │   ├── js/ - arquivos de javascript
-|   ├── jsons/ - arquivos JSON que contem os dados do site
+|   ├── jsons/ - arquivos JSON que contém os dados do site
 |   ├── style.css - CSS principal
 |   └── script.js - JavaScript principal
 └── README.md - o documento que você está lendo

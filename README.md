@@ -7,7 +7,7 @@
 ```
 ├── assets/
 │   ├── css/ - arquivos de CSS
-│   ├── htmls/ - HTMLs recorrentes (rodapé, cabeçalho, etc.)
+│   ├── htmls/ - HTMLs recorrentes (rodapé e cabeçalho (inglês e português))
 │   ├── imagens/ - Imagens
 │   ├── js/ - arquivos de javascript
 |   ├── jsons/ - arquivos JSON que contém os dados do site

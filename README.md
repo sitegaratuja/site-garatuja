@@ -9,7 +9,7 @@
 │   ├── css/ - arquivos de CSS
 │   ├── htmls/ - HTMLs recorrentes (rodapé e cabeçalho (inglês e português))
 │   ├── imagens/ - Imagens
-│   ├── js/ - arquivos de javascript
+│   ├── js/ - arquivos de javascript, responsáveis pela animação
 |   ├── jsons/ - arquivos JSON que contém os dados do site
 |   ├── style.css - CSS principal
 |   └── script.js - JavaScript principal

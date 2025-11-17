@@ -15,81 +15,32 @@
 <body>
 
     <!-- Menu de Navegação -->
-    <nav id="navbar">
-
-        <a href="index.html">
-            <div class="nav-logo">
-                <img src="/assets/imagens/marca/Marca_Garatuja_RGB_Colorida_Fundo-Branco .png" alt="ícon do menu">
-            </div>
-        </a>
-
-        <!-- Botão de Menu -->
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-            <i class="bi bi-list"></i>
-        </button>
-
-        <ul class="nav-menu" id="navMenu">
-
-            <!-- Link "Quem Somos" -->
-            <li><a href="en_index.html#about">Who we are</a></li>
-
-            <!-- Link "Projetos" -->
-            <li><a href="en_index.html#projetos">What we do</a></li>
-
-            <!-- Link "Companhia de Dança" -->
-            <li><a href="en_index.html#faq">Q&A</a>
-            </li>
-
-            <!-- Link "Doe" -->
-            <li><a href="doacoes.html">Doe</a></li>
-
-            <!-- Link "Contato" -->
-            <li><a href="contato.html">Contact</a></li>
-
-            <!-- Link "Redes Sociais" e bandeira -->
-            <li class="menu-social-icons">
-                <a href="https://www.facebook.com/InstitutoGaratujaBrasilia" target="_blank"><i
-                        class="bi bi-facebook"></i></a>
-                &nbsp;
-                <a href="https://www.instagram.com/projetogaratuja/" target="_blank"><i class="bi bi-instagram"></i></a>
-                &nbsp;
-                <a href="https://www.youtube.com/@projetogaratuja1448" target="_blank"><i class="bi bi-youtube"></i></a>
-                &nbsp;
-                <a href="https://www.tiktok.com/@projetogaratuja" target="_blank"><i class="bi bi-tiktok"></i></a>
-            </li>
-
-            <li>
-                <a href="index.html">🇺🇸</a>
-            </li>
-        </ul>
-    </nav>
+    <header></header>
 
     <!-- Sobre Section -->
     <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span class="section-label">Who we are</span>
-                    <h2 class="section-title">Garatuja transforms lives through the art of movement.</h2>
-                    <p class="about-text">The Garatuja Institute is a non-governmental, non-profit organization
-                        that since 2006 has promoted the development of girls and women between the ages of 7 and 25 who
-                        are
-                        in situations of social vulnerability, through an interdimensional education with
-                        a focus on art, dance and citizenship.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Students Served</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">19</span>
-                            <span class="stat-label">Years of History</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Presentations/Year</span>
-                        </div>
+        <div class="about-grid">
+            <div class="about-content">
+                <span class="section-label">Who we are</span>
+                <h2 class="section-title">Garatuja transforms lives through the art of movement.</h2>
+                <p class="about-text">The Garatuja Institute is a non-governmental, non-profit organization
+                    that since 2006 has promoted the development of girls and women between the ages of 7 and 25 who
+                    are
+                    in situations of social vulnerability, through an interdimensional education with
+                    a focus on art, dance and citizenship.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Students Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">19</span>
+                        <span class="stat-label">Years of History</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Presentations/Year</span>
                     </div>
                 </div>
             </div>
@@ -100,11 +51,32 @@
     <section class="projects" id="projetos">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Our permanent activities</span>
-                <h2 class="section-title">Check out our (tripé) activities</h2>
+                <span class="section-label">
+                    Check about us
+                </span>
+                <h2 class="section-title">Vision, Mission & Our Values</h2>
             </div>
-            <!-- Tripé, carregado via JavaScript por meio dessa div-->
-            <div class="projects-grid" id="projectsGrid"></div>
+            <div class="en-mvv">
+                <h3 class="en-mvv-title">Mission</h3>
+                <p class="en-mvv-text">To democratize access to dance and promote citizenship, aiming at the human
+                    development of girls and women,
+                    through interdimensional education using art as a movement for social transformation.</p>
+            </div>
+
+            <div class="en-mvv">
+                <h3 class="en-mvv-title">Vision</h3>
+                <p class="en-mvv-text">To serve 500 girls in the community of São Sebastião-DF and become a national
+                    reference for
+                    social impact initiatives through dance.</p>
+            </div>
+
+            <div class="en-mvv">
+                <h3 class="en-mvv-title">Values</h3>
+                <ul class="en-mvv-text">
+                    Art and citizenship, Well-being and happiness, Ethics and transparency, Responsibility and
+                    professionalism, Generosity and unity
+            </div>
+
         </div>
     </section>
 
@@ -134,58 +106,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <div class="footer-logo">
-                        <img src="/assets/imagens/marca/Marca_Garatuja_RGB_Grafismo1_Fundo-Escuro.png" alt="">
-                        <img src="/assets/imagens/marca/Marca_Garatuja_RGB_Colorida_Fundo-Branco .png" alt="">
-                    </div>
-                    <p>Transforming lives through dance since 2006.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/InstitutoGaratujaBrasilia" target="_blank"><i
-                                class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/projetogaratuja/" target="_blank"><i
-                                class="bi bi-instagram"></i></a>
-                        <a href="https://www.youtube.com/@projetogaratuja1448" target="_blank"><i
-                                class="bi bi-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@projetogaratuja" target="_blank"><i
-                                class="bi bi-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Links</h4>
-                    <ul>
-
-                        <!-- Link "Quem Somos" -->
-                        <li><a href="en_index.html#about">Who we are</a></li>
-
-                        <!-- Link "Projetos" -->
-                        <li><a href="en_index.html#projetos">What we do</a></li>
-
-                        <!-- Link "Companhia de Dança" -->
-                        <li><a href="en_index.html#faq">Q&A</a>
-                        </li>
-
-                        <!-- Link "Doe" -->
-                        <li><a href="doacoes.html">Doe</a></li>
-
-                        <!-- Link "Contato" -->
-                        <li><a href="contato.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>garatujaprojeto@gmail.com</li>
-                        <li>(61) 9.9605-9640</li>
-                        <li>São Sebastião, Brasília - DF, Brasil</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer></footer>
 
     <script type="module" src="assets/script.js"></script>
 </body>

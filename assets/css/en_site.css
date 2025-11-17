@@ -1,0 +1,26 @@
+@import 'cores.css';
+
+.en-mvv {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 60px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.en-mvv-title {
+    font-size: 52px;
+}
+
+.en-mvv-text {
+    font-size: 18px;
+    width: 60%;
+    text-align: justify;
+}

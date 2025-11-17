@@ -194,7 +194,12 @@
 /* ============= Sessão do quem somos ============= */
 
 .about {
-  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 120px;
+  width: 100%;
   background-image: url('/assets/imagens/midia/about_image.webp');
   background-size: cover;
   background-position: center;

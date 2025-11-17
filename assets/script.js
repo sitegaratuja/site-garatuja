@@ -7,120 +7,127 @@ document.addEventListener("DOMContentLoaded", async () => {
     // ------------- Funções de carregamento de dados
 
     // gerais, presentes em todas as páginas. Se não tem header, então é o ingles
-    if (document.querySelector("header")) {
+    if (window.location.pathname !== "/en_index.html") {
+        
         await incluirHtml("header", "menu.html");
         await incluirHtml("footer", "rodape.html");
-    }
-    carregarTransparencia() //carrega o modal de transparencia
+        carregarTransparencia() //carrega o modal de transparencia
 
-    // ------------- Função que marca o link ativo no menu
-    const links = document.querySelectorAll(".nav-menu > li > a");
-    const currentPath = window.location.pathname.split("/").pop().split("#")[0].split("?")[0] || "index.html";
+        // ------------- Função que marca o link ativo no menu, se o .html não é o teste.html
 
-    links.forEach(link => {
-        const href = link.getAttribute("href");
-        const linkBase = href.split("/").pop().split("#")[0].split("?")[0];
-        if (linkBase === currentPath) {
-            link.classList.add("active");
-        }
-    });
+        const links = document.querySelectorAll(".nav-menu > li > a");
+        const currentPath = window.location.pathname.split("/").pop().split("#")[0].split("?")[0] || "index.html";
 
-    // Index.html
-    if (document.getElementById("depoimentosDiv")) carregarDepoimentos() // carrega os depoimentos do index.html
-    if (document.getElementById("hero")) carregarHero() // carrega o hero do index.html
-    if (document.getElementById("projectsGrid")) carregarTripe() // carrega o tripé do index.html
-    if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
-    if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html
-
-    //sobre.html
-    if (document.getElementById("timeline")) {
-        carregarTimeline().then(() => {
-            initTimelineInteractions();
-
-            // ------------- Função que fecha o modal
-            const btn_fechar_modal = document.querySelector('.tl-modal .tl-close');
-            btn_fechar_modal.addEventListener('click', () => fecharModal());
+        links.forEach(link => {
+            const href = link.getAttribute("href");
+            const linkBase = href.split("/").pop().split("#")[0].split("?")[0];
+            if (linkBase === currentPath) {
+                link.classList.add("active");
+            }
         });
-    }
 
-    // ------------- Função que configura o menu mobile (quando a largura é menor que 1175px)
-    if (window.innerWidth < 1175) {
 
-        document.querySelectorAll(".nav-menu > li > a").forEach((link) => {
+        // Index.html
+        if (document.getElementById("depoimentosDiv")) carregarDepoimentos() // carrega os depoimentos do index.html
+        if (document.getElementById("hero")) carregarHero() // carrega o hero do index.html
+        if (document.getElementById("projectsGrid")) carregarTripe() // carrega o tripé do index.html
+        if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
+        if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html
 
-            let clickTimer = null;
+        //sobre.html
+        if (document.getElementById("timeline")) {
+            carregarTimeline().then(() => {
+                initTimelineInteractions();
 
-            link.addEventListener("click", (e) => {
-
-                const dropdown = link.nextElementSibling;
-
-                // Verifica se existe submenu
-                if (dropdown && dropdown.classList.contains("submenu")) {
-                    e.preventDefault(); // Evita navegação imediata
-
-                    if (clickTimer) {
-                        // Duplo clique → abre o link do pai
-                        clearTimeout(clickTimer);
-                        clickTimer = null;
-                        window.location.href = link.href;
-                    } else {
-                        // Clique simples → abre/fecha submenu
-                        clickTimer = setTimeout(() => {
-                            dropdown.classList.toggle("show");
-                            clickTimer = null;
-                        }, 250);
-                    }
-                }
+                // ------------- Função que fecha o modal
+                const btn_fechar_modal = document.querySelector('.tl-modal .tl-close');
+                btn_fechar_modal.addEventListener('click', () => fecharModal());
             });
+        }
+
+        // ------------- Função que configura o menu mobile (quando a largura é menor que 1175px)
+        if (window.innerWidth < 1175) {
+
+            document.querySelectorAll(".nav-menu > li > a").forEach((link) => {
+
+                let clickTimer = null;
+
+                link.addEventListener("click", (e) => {
+
+                    const dropdown = link.nextElementSibling;
+
+                    // Verifica se existe submenu
+                    if (dropdown && dropdown.classList.contains("submenu")) {
+                        e.preventDefault(); // Evita navegação imediata
+
+                        if (clickTimer) {
+                            // Duplo clique → abre o link do pai
+                            clearTimeout(clickTimer);
+                            clickTimer = null;
+                            window.location.href = link.href;
+                        } else {
+                            // Clique simples → abre/fecha submenu
+                            clickTimer = setTimeout(() => {
+                                dropdown.classList.toggle("show");
+                                clickTimer = null;
+                            }, 250);
+                        }
+                    }
+                });
+            });
+
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById("navToggle")
+            const navMenu = document.getElementById("navMenu")
+
+            menuToggle.addEventListener("click", () => {
+                navMenu.classList.toggle("active")
+            })
+
+            // Close menu when clicking on a link
+            document.querySelectorAll(".nav-link").forEach((link) => {
+                link.addEventListener("click", () => {
+                    navMenu.classList.remove("active")
+                })
+            })
+        }
+
+        // Navbar scroll effect
+        window.addEventListener("scroll", () => {
+            const navbar = document.getElementById("navbar")
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled")
+            } else {
+                navbar.classList.remove("scrolled")
+            }
+        })
+
+        // ------------- Funções do modal transparencia
+        const openModal = document.getElementById('transparenciaOpenModal');
+        const closeModal = document.getElementById('transparenciaCloseModal');
+        const overlay = document.getElementById('transparenciaModalOverlay');
+        const body = document.body;
+
+        openModal.addEventListener('click', (e) => {
+            e.preventDefault();
+            overlay.style.display = 'flex';
+            body.classList.add('no-scroll'); // trava o body
         });
 
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById("navToggle")
-        const navMenu = document.getElementById("navMenu")
+        const close = () => {
+            overlay.style.display = 'none';
+            body.classList.remove('no-scroll'); // destrava o body
+        };
 
-        menuToggle.addEventListener("click", () => {
-            navMenu.classList.toggle("active")
-        })
-
-        // Close menu when clicking on a link
-        document.querySelectorAll(".nav-link").forEach((link) => {
-            link.addEventListener("click", () => {
-                navMenu.classList.remove("active")
-            })
-        })
+        closeModal.addEventListener('click', close);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) close();
+        });
     }
-
-    // Navbar scroll effect
-    window.addEventListener("scroll", () => {
-        const navbar = document.getElementById("navbar")
-        if (window.scrollY > 50) {
-            navbar.classList.add("scrolled")
-        } else {
-            navbar.classList.remove("scrolled")
-        }
-    })
-
-    // ------------- Funções do modal transparencia
-    const openModal = document.getElementById('transparenciaOpenModal');
-    const closeModal = document.getElementById('transparenciaCloseModal');
-    const overlay = document.getElementById('transparenciaModalOverlay');
-    const body = document.body;
-
-    openModal.addEventListener('click', (e) => {
-        e.preventDefault();
-        overlay.style.display = 'flex';
-        body.classList.add('no-scroll'); // trava o body
-    });
-
-    const close = () => {
-        overlay.style.display = 'none';
-        body.classList.remove('no-scroll'); // destrava o body
-    };
-
-    closeModal.addEventListener('click', close);
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) close();
-    });
+    else {
+        await incluirHtml("header", "en_menu.html");
+        await incluirHtml("footer", "en_rodape.html");
+    }
 });
 
 // ------------- Companhia de dança

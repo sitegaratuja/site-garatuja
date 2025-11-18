@@ -23,9 +23,14 @@ body {
     margin: 0 auto;
 }
 
+.container-transparent {
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
+}
+
 .section {
     padding: 80px 0;
-    background: var(--color-white);
+    background-color: var(--color-white);
 }
 
 .section-title {
@@ -36,7 +41,11 @@ body {
     margin-bottom: 24px;
     margin-top: 24px;
     height: fit-content;
-    color: var(--color-gray-800);
+    background: linear-gradient(to right, var(--color-purple), var(--color-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .section-label {

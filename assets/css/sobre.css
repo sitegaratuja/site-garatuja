@@ -3,7 +3,7 @@
 /* ============= Sobre -  Hero Section ============= */
 
 .hero-about {
-  height: 90vh;
+  height: 95vh;
   background-image: url('/assets/imagens/midia/quem_somos.jpg');
   background-size: cover;
   background-position: center;
@@ -79,6 +79,9 @@
   background-image: url("/assets/imagens/midia/sobre_significado.png");
   background-size: cover;
   background-position: center;
+  min-height: 95vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
 }
 
 .origin-content {
@@ -260,7 +263,11 @@
 
 .timeline-horizontal {
   padding: 80px 0;
-  background: #fff;
+  background-image: url("/assets/imagens/midia/pes.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  background-blend-mode: multiply;
   overflow: hidden;
   width: 100%;
 }

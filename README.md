@@ -13,7 +13,7 @@
 |   ├── jsons/ - arquivos JSON que contém os dados do site
 |   ├── style.css - CSS principal
 |   └── script.js - JavaScript principal
-└── README.md - o documento que você está lendo
+└── README.md - o documento que você está lendo essas informações
 ├── index.html (e outros .html) - são os sites
 ```
 

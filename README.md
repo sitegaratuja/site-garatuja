@@ -6,7 +6,7 @@
 
 ```
 ├── assets/
-│   ├── css/ - arquivos de CSS
+│   ├── css/ - arquivos de CSS, responsáveis pela estilização
 │   ├── htmls/ - HTMLs recorrentes (rodapé e cabeçalho (inglês e português))
 │   ├── imagens/ - Imagens
 │   ├── js/ - arquivos de javascript, responsáveis pela animação

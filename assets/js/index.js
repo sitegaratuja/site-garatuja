@@ -88,7 +88,7 @@ export async function carregarHero() {
 export function carregarTripe() {
 
     const projectsGrid = document.getElementById("projectsGrid")
-    carregarDados("tripe.json").then((resposta) => {
+    carregarDados("index_tripe.json").then((resposta) => {
         projectsGrid.innerHTML = `
             ${resposta.map((project) => `
                 <div class="project-card">
@@ -192,7 +192,7 @@ export async function carregarDepoimentos() {
 export function carregarFAQ() {
     const faqList = document.getElementById("faqList");
 
-    carregarDados("faq.json").then((resposta) => {
+    carregarDados("index_faq.json").then((resposta) => {
         // Monta o HTML
         faqList.innerHTML = resposta.map((item, index) => `
             <div class="faq-item" data-index="${index}">
@@ -231,7 +231,7 @@ export function carregarFAQ() {
 export function carregarParceiros() {
     const partnersGrid = document.getElementById("partnersGrid")
 
-    let dadosParceiros = carregarDados('parceiros.json').then((resposta) => {
+    let dadosParceiros = carregarDados('index_parceiros.json').then((resposta) => {
         return resposta;
     });
 
@@ -239,7 +239,7 @@ export function carregarParceiros() {
         partnersGrid.innerHTML = `
             ${resposta.map((parceiro) => `
                 <div class="partner-logo">
-                    <img src="/assets/imagens/midia/${parceiro.logo}" alt="${parceiro.name}">
+                    <img src="/assets/imagens/parceiros/${parceiro.logo}" alt="${parceiro.name}">
                 </div>
             `).join("")}
         `;

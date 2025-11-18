@@ -1,43 +1,33 @@
 @import 'cores.css';
 
-:root {
-  --color-purple: #8b5cf6;
-  --color-pink: #ec4899;
-  --color-red: #ef4444;
-  --color-orange: #f97316;
-  --color-yellow: #fbbf24;
-  --color-white: #ffffff;
-}
-
 .contato-section {
-    font-family: Arial,sans-serif;
-    padding: 40px 20px;
+  font-family: Arial, sans-serif;
   background-color: #f9f9f9;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 2.5em;
-    color: var(--color-purple);
-    margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.5em;
+  color: var(--color-purple);
+  margin-bottom: 30px;
 }
 
-/*Layout das Colunas */
+/* Layout das colunas */
 
 .container-contato {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .coluna-formulario {
-    flex: 2;
+  flex: 2;
 }
 
 .coluna-info {
-    flex: 1;
+  flex: 1;
 }
 
 /* Formulário */
@@ -70,7 +60,7 @@ textarea {
   width: 100%;
   padding: 12px;
   background-color: #f4f4f4;
-border: 1px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -104,4 +94,16 @@ border: 1px solid #ddd;
   color: #555;
   line-height: 1.6;
   margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .linha-formulario,
+  .container-contato {
+    flex-direction: column;
+  }
+
+  .container-contato {
+    gap: 80px;
+  }
 }

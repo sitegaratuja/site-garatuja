@@ -146,7 +146,7 @@
 @media (max-width: 910px) {
 
   .origin-section {
-    padding: 80px 0;
+    padding: 0;
     background-image: none;
     background-color: var(--color-gray-100);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -154,6 +154,12 @@
 
   .origin-content {
     grid-template-columns: 1fr;
+    gap: 0px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    align-items: center;
   }
 
   .origin-image {
@@ -585,6 +591,20 @@
   line-height: 27px;
 }
 
+@media (max-width: 768px) {
+  .team-columns {
+    flex-direction: column;
+  }
+
+  .team-area-title {
+    text-align: center;
+  }
+
+  .team-member {
+    text-align: justify;
+  }
+}
+
 /* ============= Sessão dos Espaços ============= */
 
 .space-section {
@@ -681,10 +701,6 @@
     font-size: 18px;
   }
 
-  .origin-content {
-    grid-template-columns: 1fr;
-  }
-
   .origin-image {
     position: static;
   }
@@ -697,29 +713,10 @@
     padding-left: 32px;
   }
 
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .space-features {
-    grid-template-columns: 1fr;
-  }
-
+  .team-grid,
+  .space-features,
   .space-gallery {
     grid-template-columns: 1fr;
-  }
-
-  .cta-section h2 {
-    font-size: 32px;
-  }
-
-  .cta-section p {
-    font-size: 18px;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 32px;
   }
 
   /* --- ajustes de timeline --- */

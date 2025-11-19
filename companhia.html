@@ -31,9 +31,8 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="companhia-hero" id="hero-inicio">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
+    <section class="companhia-hero" id="companhia-inicio">
+        <div class="hero-content">
             <h1 class="hero-title">Companhia de Dança Garatuja</h1>
             <p class="hero-subtitle">Arte, movimento e transformação social através da dança</p>
         </div>
@@ -46,66 +45,18 @@
             <p class="section-subtitle">Conheça nosso repertório e agenda de apresentações</p>
 
             <!-- Agenda de Espetáculos -->
-            <div class="agenda-container">
-                <h3 class="subsection-title">Agenda 2025</h3>
-                <div class="eventos-grid">
-                    <div class="evento-card">
-                        <div class="evento-date">
-                            <span class="date-day">15</span>
-                            <span class="date-month">MAR</span>
-                        </div>
-                        <div class="evento-info">
-                            <h4>Corpos em Movimento</h4>
-                            <p class="evento-local">Teatro Municipal - São Paulo</p>
-                            <p class="evento-horario">19h30</p>
-                            <button class="btn-evento">Mais informações</button>
-                        </div>
-                    </div>
+            <div class="eventos-grid" id="companhiaEspetaculos"></div>
+        </div>
+    </section>
 
-                    <div class="evento-card">
-                        <div class="evento-date">
-                            <span class="date-day">22</span>
-                            <span class="date-month">ABR</span>
-                        </div>
-                        <div class="evento-info">
-                            <h4>Raízes e Asas</h4>
-                            <p class="evento-local">Centro Cultural - Rio de Janeiro</p>
-                            <p class="evento-horario">20h00</p>
-                            <button class="btn-evento">Mais informações</button>
-                        </div>
-                    </div>
-
-                    <div class="evento-card">
-                        <div class="evento-date">
-                            <span class="date-day">10</span>
-                            <span class="date-month">JUN</span>
-                        </div>
-                        <div class="evento-info">
-                            <h4>Festival de Dança Contemporânea</h4>
-                            <p class="evento-local">Praça das Artes - São Paulo</p>
-                            <p class="evento-horario">18h00</p>
-                            <button class="btn-evento">Mais informações</button>
-                        </div>
-                    </div>
-
-                    <div class="evento-card">
-                        <div class="evento-date">
-                            <span class="date-day">28</span>
-                            <span class="date-month">AGO</span>
-                        </div>
-                        <div class="evento-info">
-                            <h4>Encontros - Espetáculo Anual</h4>
-                            <p class="evento-local">Teatro Garatuja - Sede</p>
-                            <p class="evento-horario">19h00</p>
-                            <button class="btn-evento">Mais informações</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Repertório Section -->
+    <section class="espetaculos-section" id="repertorio">
+        <div class="container">
+            <h2 class="section-title">Repertório</h2>
+            <p class="section-subtitle">Conheça nosso repertório</p>
 
             <!-- Repertório -->
             <div class="repertorio-container" id="repertorio">
-                <h3 class="subsection-title">Repertório</h3>
                 <div class="repertorio-grid">
                     <div class="repertorio-card">
                         <img src="/assets/imagens/midia/contemporary-dance-performance.jpg" alt="Corpos em Movimento">
@@ -141,10 +92,16 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Release Section -->
+    <section class="espetaculos-section" id="release">
+        <div class="container">
+            <h2 class="section-title">Release</h2>
 
             <!-- Release da Companhia -->
             <div class="release-container" id="release">
-                <h3 class="subsection-title">Release da Companhia</h3>
                 <div class="release-content">
                     <p>A <strong>Companhia de Dança Garatuja</strong> foi fundada em 2018 como desdobramento natural do
                         trabalho social desenvolvido pela ONG. Formada por jovens bailarinas que cresceram nos projetos
@@ -163,36 +120,56 @@
                     <div class="release-stats">
                         <div class="stat-item">
                             <span class="stat-number">50+</span>
-                            <span class="stat-label">Apresentações</span>
+                            <span class="companhia-stat-label">Apresentações</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">12</span>
-                            <span class="stat-label">Bailarinas</span>
+                            <span class="companhia-stat-label">Bailarinas</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">3</span>
-                            <span class="stat-label">Espetáculos</span>
+                            <span class="companhia-stat-label">Espetáculos</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">15k+</span>
-                            <span class="stat-label">Espectadores</span>
+                            <span class="companhia-stat-label">Espectadores</span>
                         </div>
                     </div>
                 </div>
             </div>
+    </section>
+
+    <!-- Galeria Section -->
+    <section class="espetaculos-section" id="companhia-galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria de fotos</h2>
+            <p class="section-subtitle">Conheça nossas apresentações, realizadas pelo Garatuja</p>
 
             <!-- Galeria de Fotos -->
-            <div class="galeria-espetaculos" id="galeria">
-                <h3 class="subsection-title">Galeria de Espetáculos</h3>
-                <div class="galeria-grid">
-                    <img src="/assets/imagens/midia/performance-photo-1.jpg" alt="Apresentação 1" class="galeria-img">
-                    <img src="/assets/imagens/midia/performance-photo-2.jpg" alt="Apresentação 2" class="galeria-img">
-                    <img src="/assets/imagens/midia/performance-photo-3.jpg" alt="Apresentação 3" class="galeria-img">
-                    <img src="/assets/imagens/midia/performance-photo-4.jpg" alt="Apresentação 4" class="galeria-img">
-                    <img src="/assets/imagens/midia/performance-photo-5.jpg" alt="Apresentação 5" class="galeria-img">
-                    <img src="/assets/imagens/midia/performance-photo-6.jpg" alt="Apresentação 6" class="galeria-img">
+            <div class="galeria-espetaculos">
+                <div class="galeria-grid" id="companhiaGaleria">
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div id="companhiaGaleriaModal" class="midia-modal">
+                <div class="midia-modal-backdrop"></div>
+
+                <div class="midia-modal-box">
+                    <button class="midia-close">&times;</button>
+
+                    <h2 class="midia-titulo"></h2>
+                    <p class="midia-descricao"></p>
+
+                    <div class="midia-imagem-grande">
+                        <img id="midiaMainImage" src="" alt="">
+                        <div class="midia-imagem-legenda"></div>
+                    </div>
+
+                    <div class="midia-thumbs"></div>
+                </div>
+            </div>
+
         </div>
     </section>
 

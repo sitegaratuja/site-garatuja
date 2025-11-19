@@ -1,5 +1,5 @@
 import { incluirHtml, carregarTransparencia } from "./js/_uso_geral.js";
-import { carregarCompanhia } from "./js/companhia.js";
+import { abrirGaleriaModal, carregarCompanhia } from "./js/companhia.js";
 import { carregarHero, carregarTripe, carregarDepoimentos, carregarFAQ, carregarParceiros } from "./js/index.js";
 import { carregarTimeline, initTimelineInteractions, fecharModal } from "./js/sobre.js";
 
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 2.3. Companhia.html
     if (document.getElementById("espetaculos")) {
-        carregarCompanhia();
+        await carregarCompanhia();
     }
 
     // ------------- 3. Funções do modal transparencia

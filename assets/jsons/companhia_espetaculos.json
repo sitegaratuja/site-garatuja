@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "dia": 15,
+        "mes": "março",
+        "nome": "Ondas de nós",
+        "local": "Teatro Municipal - São Paulo",
+        "linkMaps": "https://goo.gl/maps/1FhEoF0o9m6W5xH4Z",
+        "horario": "19h30",
+        "descricao": "Em breve: sistema de reserva de ingressos online."
+    },
+    {
+        "id": 1,
+        "dia": 22,
+        "mes": "abril",
+        "nome": "Raízes e Asas",
+        "local": "Centro Cultural - Rio de Janeiro",
+        "linkMaps": "https://goo.gl/maps/1FhEoF0o9m6W5xH4Z",
+        "horario": "20h00",
+        "descricao": "Em breve: sistema de reserva de ingressos online."
+    },
+    {
+        "id": 2,
+        "dia": 10,
+        "mes": "junho",
+        "nome": "Festival de Dança Contemporânea",
+        "local": "Praça das Artes - São Paulo",
+        "linkMaps": "https://goo.gl/maps/1FhEoF0o9m6W5xH4Z",
+        "horario": "18h00",
+        "descricao": "Em breve: sistema de reserva de ingressos online."
+    },
+    {
+        "id": 3,
+        "dia": 28,
+        "mes": "agosto",
+        "nome": "Encontros - Espetáculo Anual",
+        "local": "Teatro Garatuja - Sede",
+        "linkMaps": "https://goo.gl/maps/1FhEoF0o9m6W5xH4Z",
+        "horario": "19h00",
+        "descricao": "Em breve: sistema de reserva de ingressos online."
+    }
+]

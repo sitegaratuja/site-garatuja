@@ -1,138 +1,158 @@
 import { carregarDados } from "./_uso_geral.js";
 
-export function carregarCompanhia() {
-    // Botões de repertório
-    const btnRepertorio = document.querySelectorAll(".btn-repertorio")
+let dadosGaleria = [];
+carregarDados("companhia_galeria.json")
+    .then((resposta) => {
+        dadosGaleria = resposta;
+    });
 
-    btnRepertorio.forEach((btn) => {
-        btn.addEventListener("click", function () {
-            const card = this.closest(".repertorio-card")
-            const titulo = card.querySelector("h4").textContent
-            alert(
-                `Ficha técnica de "${titulo}" será exibida em breve.\n\nEm desenvolvimento: modal com informações completas sobre direção, elenco, equipe técnica, duração, classificação e sinopse.`,
-            )
-        })
-    })
+export async function carregarCompanhia() {
 
-    // Botões de eventos
-    const btnEvento = document.querySelectorAll(".btn-evento")
+    await carregarEspetaculos();
+    await carregarGaleria();
 
-    btnEvento.forEach((btn) => {
-        btn.addEventListener("click", function () {
-            const card = this.closest(".evento-card")
-            const titulo = card.querySelector("h4").textContent
-            const local = card.querySelector(".evento-local").textContent
-            const horario = card.querySelector(".evento-horario").textContent
+    document.querySelectorAll(".galeria-card").forEach((card) => {
+        card.addEventListener("click", () => {
+            document.getElementById("companhiaGaleriaModal").classList.add("active");
+            abrirGaleriaModal(Number(card.dataset.id));
+        });
+    });
+}
 
-            alert(
-                `Informações do evento:\n\n${titulo}\n${local}\n${horario}\n\nEm breve: sistema de reserva de ingressos online.`,
-            )
-        })
-    })
+export async function carregarEspetaculos() {
 
-    // Botões de inscrição
-    const btnInscricao = document.querySelectorAll(".btn-inscricao")
+    const companhiaEspetaculos = document.getElementById("companhiaEspetaculos")
 
-    btnInscricao.forEach((btn) => {
-        btn.addEventListener("click", function () {
-            const card = this.closest(".horario-card")
-            const nivel = card.querySelector("h5").textContent
-            const horario = card.querySelectorAll("p")[0].textContent + " - " + card.querySelectorAll("p")[1].textContent
+    let dados = carregarDados('companhia_espetaculos.json').then((resposta) => {
+        companhiaEspetaculos.innerHTML = `
+            ${resposta.map((espetaculo) => `
+                <div class="evento-card">
+                    <div class="evento-date">
+                        <span class="date-day">${espetaculo.dia}</span>
+                        <span class="date-month">${espetaculo.mes}</span>
+                    </div>
+                    <div class="evento-info">
+                        <h4>${espetaculo.nome}</h4>
+                        <p class="evento-local">${espetaculo.local}</p>
+                        <p class="evento-horario">${espetaculo.horario}</p>
+                        <button class="btn-evento">Mais informações</button>
+                    </div>
+                </div>
+            `).join("")}
+        `;
+    });
+}
 
-            const nome = prompt(`Inscrição para ${nivel}\n${horario}\n\nPor favor, digite seu nome completo:`)
+export async function carregarGaleria() {
+    const companhiaGaleria = document.getElementById("companhiaGaleria");
 
-            if (nome) {
-                const email = prompt("Digite seu e-mail:")
-                if (email) {
-                    const telefone = prompt("Digite seu telefone:")
-                    if (telefone) {
-                        alert(
-                            `Obrigado, ${nome}!\n\nSua pré-inscrição foi registrada.\n\nEm breve entraremos em contato através do e-mail ${email} ou telefone ${telefone} para finalizar sua matrícula.\n\nAguarde nosso contato!`,
-                        )
-                    }
-                }
-            }
-        })
-    })
+    companhiaGaleria.innerHTML = dadosGaleria.map((imagem) => `
+        <div class="galeria-card" data-id="${imagem.id}">
+            <img src="${imagem.fotos[0].src}" alt="${imagem.nome}, apresentada no dia ${imagem.dia} de ${imagem.mes} de ${imagem.ano}">
+            <p class="galeria-descricao">${imagem.nome}</p>
+        </div>
+    `).join("");
+}
 
-    // Galeria de fotos - lightbox simples
-    const galeriaImgs = document.querySelectorAll(".galeria-img")
 
-    galeriaImgs.forEach((img) => {
-        img.addEventListener("click", function () {
-            const overlay = document.createElement("div")
-            overlay.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.9);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 10000;
-                cursor: pointer;
-            `
+let carouselInterval = null;
+let currentIndex = 0;
 
-            const imgClone = this.cloneNode()
-            imgClone.style.cssText = `
-                max-width: 90%;
-                max-height: 90%;
-                object-fit: contain;
-                border-radius: 8px;
-            `
+export function abrirGaleriaModal(id) {
+    const modal = document.getElementById("companhiaGaleriaModal");
+    const titulo = modal.querySelector(".midia-titulo");
+    const descricao = modal.querySelector(".midia-descricao");
+    const thumbsBox = modal.querySelector(".midia-thumbs");
 
-            overlay.appendChild(imgClone)
-            document.body.appendChild(overlay)
+    const evento = dadosGaleria.find(item => item.id === id);
+    if (!evento) return;
 
-            overlay.addEventListener("click", () => {
-                document.body.removeChild(overlay)
-            })
-        })
-    })
+    // Preencher texto
+    titulo.textContent = evento.nome;
+    descricao.textContent = evento.descricao;
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-            const href = this.getAttribute("href")
-            if (href !== "#" && href !== "#doar") {
-                e.preventDefault()
-                const target = document.querySelector(href)
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                    })
-                }
-            }
-        })
-    })
+    // Limpar thumbs antigas
+    thumbsBox.innerHTML = "";
 
-    // Animação de entrada
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-    }
+    const fotos = evento.fotos;
+    currentIndex = 0;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "0"
-                entry.target.style.transform = "translateY(20px)"
+    // Criar thumbs
+    fotos.forEach((foto, index) => {
+        const div = document.createElement("div");
+        div.classList.add("midia-thumb-item");
+        div.dataset.index = index;
 
-                setTimeout(() => {
-                    entry.target.style.transition = "opacity 0.6s ease, transform 0.6s ease"
-                    entry.target.style.opacity = "1"
-                    entry.target.style.transform = "translateY(0)"
-                }, 100)
+        div.innerHTML = `
+            <img src="${foto.src}" alt="">
+            <div class="midia-thumb-legenda">${foto.descricao}</div>
+        `;
 
-                observer.unobserve(entry.target)
-            }
-        })
-    }, observerOptions)
+        // clique na thumb
+        div.addEventListener("click", () => {
+            currentIndex = index;
+            atualizarImagemGrande(evento);
+            reiniciarCarrossel(evento);
+        });
 
-    document.querySelectorAll(".evento-card, .repertorio-card, .horario-card, .nivel-card").forEach((el) => {
-        observer.observe(el)
-    })
+        thumbsBox.appendChild(div);
+    });
+
+    // Mostrar primeira imagem
+    atualizarImagemGrande(evento);
+
+    // Iniciar carrossel
+    iniciarCarrossel(evento);
+
+    // Abrir modal e impede a scroll do html, exceto o modal
+    document.querySelector("body").classList.add("no-scroll");
+    modal.classList.add("active");
+
+}
+
+// Atualiza imagem grande + thumb ativa
+function atualizarImagemGrande(evento) {
+    const modal = document.getElementById("companhiaGaleriaModal");
+    const grandeImg = modal.querySelector("#midiaMainImage");
+    const grandeLegenda = modal.querySelector(".midia-imagem-legenda");
+    const thumbs = modal.querySelectorAll(".midia-thumb-item");
+
+    const foto = evento.fotos[currentIndex];
+
+    grandeImg.src = foto.src;
+    grandeLegenda.textContent = foto.descricao;
+
+    thumbs.forEach(t => t.classList.remove("active"));
+    thumbs[currentIndex].classList.add("active");
+}
+
+// Carrossel automático
+function iniciarCarrossel(evento) {
+    clearInterval(carouselInterval);
+
+    carouselInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % evento.fotos.length;
+        atualizarImagemGrande(evento);
+    }, 5000);
+}
+
+function reiniciarCarrossel(evento) {
+    clearInterval(carouselInterval);
+    iniciarCarrossel(evento);
+}
+
+// Fechar modal
+if (document.getElementById("companhiaGaleriaModal")) {
+    document.querySelector(".midia-close").addEventListener("click", () => {
+        document.getElementById("companhiaGaleriaModal").classList.remove("active");
+        clearInterval(carouselInterval);
+        document.querySelector("body").classList.remove("no-scroll");
+    });
+
+    // Fechar clicando fora
+    document.querySelector(".midia-modal-backdrop").addEventListener("click", () => {
+        document.getElementById("companhiaGaleriaModal").classList.remove("active");
+        clearInterval(carouselInterval);
+        document.querySelector("body").classList.remove("no-scroll");
+    });
 }

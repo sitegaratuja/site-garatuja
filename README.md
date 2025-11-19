@@ -52,6 +52,13 @@ Terão os outros projetos que o Garatuja desenvolveu.
 * Agenda
 * Galeria
 
+### en_index.html
+
+Terá algumas informações me inglês.
+
+* História simples
+* Missão, visão e valores
+
 ---
 
 Feito com muito amor e música por danirsena e lopesJaque

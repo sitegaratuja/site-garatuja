@@ -12,7 +12,7 @@
 │   ├── js/ - arquivos de javascript, responsáveis pela animação
 |   ├── jsons/ - arquivos JSON que contém os dados do site
 |   ├── style.css - CSS principal, que une todos os da pasta CSS
-|   └── script.js - JavaScript principal
+|   └── script.js - JavaScript principal, que une todos da pasta js
 └── README.md - o documento que você está lendo essas informações
 ├── index.html (e outros .html) - são os sites
 ```

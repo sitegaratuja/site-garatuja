@@ -87,7 +87,7 @@ export async function carregarHero() {
 
 export function carregarTripe() {
 
-    const projectsGrid = document.getElementById("projectsGrid")
+    const projectsGrid = document.getElementById("tripeGrid")
     carregarDados("index_tripe.json").then((resposta) => {
         projectsGrid.innerHTML = `
             ${resposta.map((project) => `

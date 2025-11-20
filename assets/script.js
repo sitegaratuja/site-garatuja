@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 2.1. Index.html
     if (document.getElementById("hero")) carregarHero() // carrega o hero do index.html
-    if (document.getElementById("projectsGrid")) carregarTripe() // carrega o tripé do index.html
+    if (document.getElementById("tripeGrid")) carregarTripe() // carrega o tripé do index.html
     if (document.getElementById("depoimentosDiv")) carregarDepoimentos() // carrega os depoimentos do index.html
     if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
     if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html

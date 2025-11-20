@@ -8,7 +8,7 @@
 ├── assets/
 │   ├── css/ - arquivos de CSS, responsáveis pela estilização
 │   ├── htmls/ - HTMLs recorrentes (rodapé e cabeçalho (inglês e português))
-│   ├── imagens/ - Imagens
+│   ├── imagens/ - Imagens, separadas por outras pastas
 │   ├── js/ - arquivos de javascript, responsáveis pela animação
 |   ├── jsons/ - arquivos JSON que contém os dados do site
 |   ├── style.css - CSS principal, que une todos os da pasta CSS

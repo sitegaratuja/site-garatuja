@@ -474,7 +474,6 @@
 
 .faq {
   padding: 120px 0;
-  background: var(--color-gray-50);
 }
 
 .faq-list,
@@ -566,7 +565,6 @@
 
 .partners {
   padding: 120px 0;
-  background: var(--color-white);
 }
 
 .partners-grid {

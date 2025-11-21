@@ -1,5 +1,5 @@
 <div style="display: flex; align-items: center; justify-content: center; margin-left: 20px; width: 100%;">
-  <img src="assets/imagens/marca/Marca_Garatuja_RGB_Colorida_Fundo-Branco .png" style="width: auto; height: 100px;">
+  <img src="assets/imagens/marca/garatuja_escrito.png" style="width: auto; height: 100px;">
 </div>
 
 ## Árvore de arquivos

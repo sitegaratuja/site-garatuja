@@ -1,18 +1,10 @@
 [
     {
-        "name": "Parceiro 1",
-        "logo": "parceiro1.png"
-    },
-    {
         "name": "Parceiro 2",
         "logo": "parceiro2.png"
     },
     {
         "name": "Parceiro 3",
         "logo": "parceiro3.png"
-    },
-    {
-        "name": "Parceiro 4",
-        "logo": "parceiro4.png"
     }
 ]

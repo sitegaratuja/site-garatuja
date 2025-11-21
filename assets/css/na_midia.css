@@ -1,1 +1,14 @@
 @import 'cores.css';
+
+.na-midia {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5em;
+  color: var(--color-purple);
+  margin-bottom: 30px;
+}

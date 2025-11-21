@@ -1,6 +1,6 @@
 import { incluirHtml, carregarTransparencia } from "./js/_uso_geral.js";
 import { carregarCompanhia } from "./js/companhia.js";
-import { carregarHero, carregarTripe, carregarDepoimentos, carregarFAQ, carregarParceiros } from "./js/index.js";
+import { carregarHero, carregarDepoimentos, carregarFAQ, carregarParceiros } from "./js/index.js";
 import { carregarTimeline, initTimelineInteractions, fecharModal } from "./js/sobre.js";
 import { carregarProjetos } from "./js/projetos.js";
 
@@ -8,8 +8,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // ------------- 1. Funções que separam os dados BR dos EN
 
-    // 1.1. Se o .html não é o en_index.html
-    if (window.location.pathname !== "/en_index.html") {
+    // 1.1. Se o .html é o en_index.html
+    if (window.location.pathname == "/en_index.html") {
+        await incluirHtml("header", "en_menu.html");
+        await incluirHtml("footer", "en_rodape.html");
+    }
+    else if (window.location.pathname == "/es_index.html") {
+        await incluirHtml("header", "es_menu.html");
+        await incluirHtml("footer", "es_rodape.html");
+    }
+    else {
 
         await incluirHtml("header", "menu.html");
         await incluirHtml("footer", "rodape.html");
@@ -27,17 +35,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         });
     }
-    // 1.2. Se o .html é o en_index.html
-    else {
-        await incluirHtml("header", "en_menu.html");
-        await incluirHtml("footer", "en_rodape.html");
-    }
 
     // ------------- 2. Funções de carregamento de dados
 
     // 2.1. Index.html
     if (document.getElementById("hero")) carregarHero() // carrega o hero do index.html
-    if (document.getElementById("tripeGrid")) carregarTripe() // carrega o tripé do index.html
     if (document.getElementById("depoimentosDiv")) carregarDepoimentos() // carrega os depoimentos do index.html
     if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
     if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html

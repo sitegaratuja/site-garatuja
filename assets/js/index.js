@@ -85,25 +85,6 @@ export async function carregarHero() {
     }
 }
 
-export function carregarTripe() {
-
-    const projectsGrid = document.getElementById("tripeGrid")
-    carregarDados("index_tripe.json").then((resposta) => {
-        projectsGrid.innerHTML = `
-            ${resposta.map((project) => `
-                <div class="project-card">
-                    <img src="${project.image}" alt="${project.title}" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">${project.title}</h3>
-                        <p class="project-description">${project.description}</p>
-                        <span class="project-date">${project.date}</span>
-                    </div>
-                </div>
-            `).join("")}
-        `;
-    });
-}
-
 export async function carregarDepoimentos() {
     const container = document.getElementById("depoimentos");
     const depoimentosDiv = document.getElementById("depoimentosDiv");

@@ -1,10 +1,26 @@
 [
     {
-        "name": "Parceiro 2",
-        "logo": "parceiro2.png"
+        "name": "Clínica Wiva",
+        "logo": "clinica_wiva.jpg"
     },
     {
-        "name": "Parceiro 3",
-        "logo": "parceiro3.png"
+        "name": "Dra. Angela",
+        "logo": "dra_angela.jpeg"
+    },
+    {
+        "name": "Falar e Ouvir",
+        "logo": "falar_e_ouvir.png"
+    },
+    {
+        "name": "Mackenzie",
+        "logo": "mackenzie.png"
+    },
+    {
+        "name": "Moya",
+        "logo": "moya.png"
+    },
+    {
+        "name": "Paula Portela",
+        "logo": "paula_portela.png"
     }
 ]

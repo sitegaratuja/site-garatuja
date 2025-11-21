@@ -560,6 +560,11 @@
   transform: translateY(20px);
 }
 
+.team-left .team-area {
+  width: max-content;
+  text-align: right;
+}
+
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -591,17 +596,17 @@
   line-height: 27px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1075px) {
   .team-columns {
     flex-direction: column;
   }
 
-  .team-area-title {
-    text-align: center;
+  .team-left .team-area {
+    width: 100%;
   }
 
-  .team-member {
-    text-align: justify;
+  .team-area-title, .team-member {
+    text-align: center;
   }
 }
 

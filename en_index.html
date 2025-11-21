@@ -14,11 +14,22 @@
 
 <body>
 
-    <!-- Menu de Navegação -->
+    <!-- Menu -->
     <header></header>
 
-    <!-- Sobre Section -->
-    <section class="about" id="about">
+    <div class="transparencia-modal-overlay" id="transparenciaModalOverlay">
+        <div class="transparencia-modal">
+            <h2>Portal de transparência</h2>
+            <div class="container">
+                <!-- Perguntas e respostas, carregado via JavaScript por meio dessa div -->
+                <div class="transparencia-list" id="transparenciaList"></div>
+            </div>
+            <button class="transparencia-close-btn" id="transparenciaCloseModal">Fechar</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about container-transparent" id="about">
         <div class="about-grid">
             <div class="about-content">
                 <span class="section-label">Who we are</span>
@@ -47,7 +58,7 @@
         </div>
     </section>
 
-    <!-- Sessão do tripé -->
+    <!-- MVV -->
     <section class="projects">
         <div class="container">
             <div class="section-header">
@@ -80,15 +91,149 @@
         </div>
     </section>
 
-    <!-- Sessão do tripé -->
-    <section class="projects" id="projects-grid">
+    <!-- tripod Section -->
+    <section class="projects" id="tripod">
         <div class="container">
             <div class="section-header">
-                <span class="section-label">Nossas atividades permanentes</span>
-                <h2 class="section-title">Conheça nosso tripé</h2>
+                <span class="section-label">Our ongoing activities</span>
+                <h2 class="section-title">Discover our tripod</h2>
             </div>
-            <!-- Tripé, carregado via JavaScript por meio dessa div-->
-            <div class="projects-grid" id="tripeGrid"></div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/assets/imagens/midia/dancaContemporanea.avif" alt="Contemporary Dance"
+                        class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Contemporary Dance</h3>
+                        <p class="project-description">Contemporary dance class focusing on authentic expression and
+                            choreographic creation by the students.</p>
+                        <span class="project-date">In progress</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/assets/imagens/midia/baleClassico.avif" alt="Classical Ballet" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Classical Ballet</h3>
+                        <p class="project-description">Classical ballet class focusing on authentic expression and
+                            choreographic creation by the students.</p>
+                        <span class="project-date">December 2024</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/assets/imagens/midia/monitoriaEstudos.avif" alt="Artes Integradas" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Integrated Multiliteracy</h3>
+                        <p class="project-description">Study mentoring focused on the professional development and
+                            personal growth of students.</p>
+                        <span class="project-date">In progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governance -->
+    <section class="section" id="governance">
+        <div class="container">
+            <h2 class="section-title">Governance</h2>
+
+            <!-- Coluna esquerda -->
+            <div class="team-columns">
+                <div class="team-column team-left">
+                    <div class="team-area">
+                        <h3 class="team-area-title">Executive Board</h3>
+                        <h3 class="team-member">Daniela Pereira do Couto – General Director
+                        </h3>
+                        <h3 class="team-member">Nityama Macrini Moreira – Director of Institutional Relations
+                        </h3>
+                        <h3 class="team-member">Maria Alice Pereira Santana Albuquerque – Director
+                            Administrative-Financial
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Coluna direita -->
+                <div class="team-column team-right">
+                    <div class="team-area">
+                        <h3 class="team-area-title">Fiscal Council</h3>
+                        <h3 class="team-member">Dorka Klara Marie Paule Hepp Silva – Effective
+                        </h3>
+                        <h3 class="team-member">Hiromi Cristina Snatos Doi – Effective
+                        </h3>
+                        <h3 class="team-member">Ana Emília Morais de Bem - Substitute
+                        </h3>
+                        <h3 class="team-member">Marise Santos Maranhão Takano – Substitute
+                        </h3>
+                        <h3 class="team-member">Amanda Silva Santana – Substitute
+                        </h3>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section contato-section" id="contato">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="team-column">
+                <div class="container-contato">
+                    <div class="coluna-formulario">
+                        <form action="#" method="POST">
+                            <div class="linha-formulario">
+                                <div class="campo-metade">
+                                    <label for="nome">Name</label>
+                                    <input type="text" id="nome" name="nome">
+                                </div>
+                                <div class="campo-metade">
+                                    <label for="empresa">Name of company/NGO (optional)</label>
+                                    <input type="text" id="empresa" name="empresa">
+                                </div>
+                            </div>
+                            <div class="linha-formulario">
+                                <div class="campo-metade">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                                <div class="campo-metade">
+                                    <label for="telefone">Telephone</label>
+                                    <input type="tel" id="telefone" name="telefone">
+                                </div>
+                            </div>
+                            <div class="campo-inteiro">
+                                <label for="assunto">Subject</label>
+                                <input type="text" id="assunto" name="assunto">
+                            </div>
+                            <div class="campo-inteiro">
+                                <label for="mensagem">Your message here</label>
+                                <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+                            </div>
+                            <div class="campo-botao">
+                                <button type="submit" class="btn-enviar">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="coluna-info">
+                        <div class="bloco-info">
+                            <h2 class="section-subtitle">Come visit us</h2>
+                            <p><strong>Address:</strong> São José - Quadra 19, 56 - São Sebastião, Brasília - DF,
+                                71693-020</p>
+                            <p><strong>Telephone:</strong> +55 61 9605-9640</p>
+                            <p><strong>Email:</strong> garatujaprojeto@gmail.com</p>
+                        </div>
+
+                        <div class="mapa-container">
+                            <div class="mapa-container">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6624.780021947602!2d-47.7741455064209!3d-15.910293399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a21c27cfb4135%3A0xa59be8b3b2f307c4!2sInstituto%20Garatuja%20de%20Dan%C3%A7a%20e%20Cidadania!5e1!3m2!1spt-BR!2sbr!4v1763605374114!5m2!1spt-BR!2sbr"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

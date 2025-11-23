@@ -4,13 +4,6 @@
   background-color: #f9f9f9;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.5em;
-  color: var(--color-purple);
-  margin-bottom: 30px;
-}
-
 /* Layout das colunas */
 
 .container-contato {

@@ -200,21 +200,26 @@
   align-items: center;
   padding: 120px 120px;
   width: 100%;
-  background-image: url('/assets/imagens/local/Muro\ Garatuja+endereço.JPG');
+  background-image: url('/assets/imagens/local/teste.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-.about h2 {
-  color: var(--color-gray-50);
-}
-
 .about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 80px;
   align-items: center;
+  justify-content: right;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: white;
+  width: 50%;
 }
 
 .about-text {
@@ -472,6 +477,66 @@
 
 /* ============= Sessão de perguntas e respostas (modal de transparencia incluso) ============= */
 
+/* ====== GRUPO (TIPO) COMO CARD PRINCIPAL ====== */
+
+.faq-group {
+  background: var(--color-white);
+  border-radius: 12px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Botão do título do tipo — igual ao faq-question */
+
+.faq-type {
+  width: 100%;
+  padding: 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.faq-type:hover {
+  color: var(--color-purple);
+}
+
+/* Ícone gira igual aos outros */
+
+.faq-group.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Conteúdo dos Q&A dentro do tipo */
+
+.faq-type-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* Quando o tipo abre */
+
+.faq-group.active .faq-type-content {
+  max-height: 2000px;
+  /* suficiente para listas grandes */
+  padding-bottom: 12px;
+}
+
+/* Ajuste visual para os cards dentro do grupo */
+
+.faq-group .faq-item {
+  margin: 12px;
+}
+
 .faq {
   padding: 120px 0;
 }
@@ -569,7 +634,7 @@
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 48px;
   align-items: center;
 }
@@ -625,10 +690,6 @@
     font-size: 32px;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
   .about-stats {
     display: flex;
     flex-direction: row;
@@ -677,5 +738,17 @@
   .hero-nav,
   .carousel-btn {
     display: none;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .about {
+    background-image: url('/assets/imagens/local/Muro\ Garatuja+endereço.jpg');
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

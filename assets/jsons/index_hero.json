@@ -1,5 +1,14 @@
 [
     {
+        "image": "jovens_ensaiando.png",
+        "title": "Bem vindo ao Garatuja!",
+        "subtitle": "A arte da dança em movimento, transformando vidas",
+        "button": {
+            "text": "Saiba Mais",
+            "link": "index.html"
+        }
+    },
+    {
         "image": "sobre.webp",
         "title": "Sobre o Garatuja",
         "subtitle": "Uma historia de transformação pela danca",

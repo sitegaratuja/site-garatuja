@@ -30,10 +30,15 @@
     </div>
 
     <!-- Hero Sobre -->
-    <section class="hero-about" id="sobre-inicio">
+    <section class="hero-about container-transparent" id="sobre-inicio">
         <div class="container">
-            <h1 class="fade-in">Sobre o Garatuja</h1>
+            <h1 class="fade-in hero-title">Sobre o Garatuja</h1>
             <p class="hero-subtitle fade-in">Uma história de transformação através da dança</p>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Role para descobrir</span>
+            <div class="scroll-indicator"></div>
         </div>
     </section>
 
@@ -92,25 +97,20 @@
     <!-- Missão, Visão e Valores -->
     <section class="section mvv-section" id="mvv">
         <div class="container">
-            <h2 class="section-title">O Que Fazemos</h2>
-            <div class="mvv-grid">
+            <h2 class="section-title">Missão, Visão, Valores e ODSs</h2>
+            <div class="mvv-container">
                 <div class="mvv-card">
-                    <div class="mvv-icon">🎯</div>
                     <h3>Missão</h3>
-                    <p>Democratizar o acesso à dança e promover a cidadania visando ao desenvolvimento humano de meninas
-                        e mulheres, por meio de uma educação interdimensional através da arte como movimento de
-                        transformação social.
+                    <p>Democratizar o acesso à dança e promover a cidadania visando ao desenvolvimento humano de meninas e mulheres, por meio de uma educação interdimensional através da arte como movimento de transformação social. 
                     </p>
                 </div>
                 <div class="mvv-card">
-                    <div class="mvv-icon">🌟</div>
                     <h3>Visão</h3>
                     <p>Atender 500 meninas na comunidade de São Sebastião-DF e tornar-se referência nacional de
                         iniciativas de impacto social por meio da dança.
                     </p>
                 </div>
                 <div class="mvv-card">
-                    <div class="mvv-icon">💜</div>
                     <h3>Valores</h3>
                     <ul class="values-list">
                         <li>Arte e cidadania</li>
@@ -120,19 +120,18 @@
                         <li>Generosidade e união</li>
                     </ul>
                 </div>
-                <div class="mvv-card">
-                    <div class="mvv-icon">🌍</div>
-                    <h3>Pilares ODS</h3>
-                    <p>As ODS são metas da ONU que orientam ações de sustentabilidade, igualdade e impacto social no
-                        mundo.
-                    </p>
-                    <ul class="values-list sdg-list">
-                        <li><img src="assets/imagens/sdg/SDG-3.svg" alt="ODS 3"></li>
-                        <li><img src="assets/imagens/sdg/SDG-4.svg" alt="ODS 4"></li>
-                        <li><img src="assets/imagens/sdg/SDG-5.svg" alt="ODS 5"></li>
-                        <li><img src="assets/imagens/sdg/SDG-10.svg" alt="ODS 10"></li>
-                    </ul>
-                </div>
+            </div>
+            <div class="mvv-card">
+                <h3>Pilares ODS</h3>
+                <p>As ODS são metas da ONU que orientam ações de sustentabilidade, igualdade e impacto social no
+                    mundo.
+                </p>
+                <ul class="sdg-list">
+                    <img src="assets/imagens/sdg/SDG-3.svg" alt="ODS 3">
+                    <img src="assets/imagens/sdg/SDG-4.svg" alt="ODS 4">
+                    <img src="assets/imagens/sdg/SDG-5.svg" alt="ODS 5">
+                    <img src="assets/imagens/sdg/SDG-10.svg" alt="ODS 10">
+                </ul>
             </div>
         </div>
     </section>
@@ -179,47 +178,6 @@
         </div>
     </div>
 
-    <!-- Governança -->
-    <section class="section" id="equipe">
-        <div class="container">
-            <h2 class="section-title">Governança</h2>
-
-            <!-- Coluna esquerda -->
-            <div class="team-columns">
-                <div class="team-column team-left">
-                    <div class="team-area">
-                        <h3 class="team-area-title">Diretoria Executiva</h3>
-                        <h3 class="team-member">Daniela Pereira do Couto – Diretora Geral
-                        </h3>
-                        <h3 class="team-member">Nityama Macrini Moreira – Diretora de Relações Institucionais
-                        </h3>
-                        <h3 class="team-member">Maria Alice Pereira Santana Albuquerque – Diretora
-                            Administrativo-Financeira
-                        </h3>
-                    </div>
-                </div>
-
-                <!-- Coluna direita -->
-                <div class="team-column team-right">
-                    <div class="team-area">
-                        <h3 class="team-area-title">Conselho Fiscal</h3>
-                        <h3 class="team-member">Dorka Klara Marie Paule Hepp Silva – Efetivo
-                        </h3>
-                        <h3 class="team-member">Hiromi Cristina Snatos Doi – Efetivo
-                        </h3>
-                        <h3 class="team-member">Ana Emília Morais de Bem - Suplente
-                        </h3>
-                        <h3 class="team-member">Marise Santos Maranhão Takano – Suplente
-                        </h3>
-                        <h3 class="team-member">Amanda Silva Santana – Suplente
-                        </h3>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <!-- Espaço Físico -->
     <section class="section space-section" id="espaco">
         <div class="container">
@@ -264,7 +222,7 @@
                         <p class="image-caption">Banheiros PCD</p>
                     </div>
                     <div class="space-image">
-                        <img src="/assets/imagens/local/patio.jpg" alt="Cozinha">
+                        <img src="/assets/imagens/local/cozinha.jpg" alt="Cozinha">
                         <p class="image-caption">Cozinha</p>
                     </div>
                     <div class="space-image">
@@ -272,6 +230,47 @@
                         <p class="image-caption">Sala Multiuso e Musicalização</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Governança -->
+    <section class="section" id="equipe">
+        <div class="container">
+            <h2 class="section-title">Governança</h2>
+
+            <!-- Coluna esquerda -->
+            <div class="team-columns">
+                <div class="team-column team-left">
+                    <div class="team-area">
+                        <h3 class="team-area-title">Diretoria Executiva</h3>
+                        <h3 class="team-member">Daniela Pereira do Couto – Diretora Geral
+                        </h3>
+                        <h3 class="team-member">Nityama Macrini Moreira – Diretora de Relações Institucionais
+                        </h3>
+                        <h3 class="team-member">Maria Alice Pereira Santana Albuquerque – Diretora
+                            Administrativo-Financeira
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- Coluna direita -->
+                <div class="team-column team-right">
+                    <div class="team-area">
+                        <h3 class="team-area-title">Conselho Fiscal</h3>
+                        <h3 class="team-member">Dorka Klara Marie Paule Hepp Silva – Efetivo
+                        </h3>
+                        <h3 class="team-member">Hiromi Cristina Snatos Doi – Efetivo
+                        </h3>
+                        <h3 class="team-member">Ana Emília Morais de Bem - Suplente
+                        </h3>
+                        <h3 class="team-member">Marise Santos Maranhão Takano – Suplente
+                        </h3>
+                        <h3 class="team-member">Amanda Silva Santana – Suplente
+                        </h3>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

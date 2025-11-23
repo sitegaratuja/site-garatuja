@@ -170,45 +170,6 @@ export async function carregarDepoimentos() {
     atualizarCarrossel(0);
 }
 
-export function carregarFAQ() {
-    const faqList = document.getElementById("faqList");
-
-    carregarDados("index_faq.json").then((resposta) => {
-        // Monta o HTML
-        faqList.innerHTML = resposta.map((item, index) => `
-            <div class="faq-item" data-index="${index}">
-                <button class="faq-question">
-                    ${item.question}
-                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 9l-7 7-7-7"/>
-                    </svg>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">${item.answer}</div>
-                </div>
-            </div>
-        `).join("");
-
-        // Só aqui os elementos existem no DOM
-        document.querySelectorAll(".faq-question").forEach((question) => {
-            question.addEventListener("click", (e) => {
-                const faqItem = e.target.closest(".faq-item");
-                const isActive = faqItem.classList.contains("active");
-
-                // Fecha todos os outros
-                document.querySelectorAll(".faq-item").forEach((item) => {
-                    item.classList.remove("active");
-                });
-
-                // Abre o clicado (se ainda não estava aberto)
-                if (!isActive) {
-                    faqItem.classList.add("active");
-                }
-            });
-        });
-    });
-}
-
 export function carregarParceiros() {
     const partnersGrid = document.getElementById("partnersGrid")
 
@@ -224,5 +185,85 @@ export function carregarParceiros() {
                 </div>
             `).join("")}
         `;
+    });
+}
+
+export function carregarFAQ() {
+    const faqList = document.getElementById("faqList");
+
+    carregarDados("index_faq.json").then((resposta) => {
+
+        // 1. Agrupar por tipo
+        const grupos = resposta.reduce((acc, item) => {
+            if (!acc[item.tipo]) acc[item.tipo] = [];
+            acc[item.tipo].push(item);
+            return acc;
+        }, {});
+
+        // 2. Montar HTML dos blocos de TIPO
+        faqList.innerHTML = Object.keys(grupos).map((tipo, tipoIndex) => `
+            <div class="faq-group" data-grupo="${tipoIndex}">
+
+                <!-- TÍTULO DO TIPO (CARD QUE ABRE/FECHA) -->
+                <button class="faq-type">
+                    ${tipo}
+                    <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+
+                <!-- CONTEÚDO DO TIPO (lista de perguntas) -->
+                <div class="faq-type-content">
+
+                    ${grupos[tipo].map((item, index) => `
+                        <div class="faq-item" data-index="${tipoIndex}-${index}">
+                            <button class="faq-question">
+                                ${item.question}
+                                <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">${item.answer}</div>
+                            </div>
+                        </div>
+                    `).join("")}
+
+                </div>
+            </div>
+        `).join("");
+
+
+        // ⭐ EVENTO: ABRIR/FECHAR TIPOS
+        document.querySelectorAll(".faq-type").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const grupo = e.target.closest(".faq-group");
+                const ativo = grupo.classList.contains("active");
+
+                // Fecha todos os grupos
+                document.querySelectorAll(".faq-group").forEach(g => g.classList.remove("active"));
+
+                // Reabre este se não estava ativo
+                if (!ativo) grupo.classList.add("active");
+            });
+        });
+
+
+        // ⭐ EVENTO: ABRIR/FECHAR PERGUNTAS
+        document.querySelectorAll(".faq-question").forEach((question) => {
+            question.addEventListener("click", (e) => {
+                const faqItem = e.target.closest(".faq-item");
+                const grupo = faqItem.closest(".faq-group");
+                const ativo = faqItem.classList.contains("active");
+
+                // Fecha itens do mesmo grupo
+                grupo.querySelectorAll(".faq-item").forEach(item => item.classList.remove("active"));
+
+                // Abre o clicado
+                if (!ativo) faqItem.classList.add("active");
+            });
+        });
+
     });
 }

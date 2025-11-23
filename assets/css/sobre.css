@@ -2,16 +2,7 @@
 
 /* ============= Sobre -  Hero Section ============= */
 
-.hero-about {
-  height: 95vh;
-  background-image: url('/assets/imagens/midia/quem_somos.jpg');
-  background-size: cover;
-  background-position: center;
-  padding: 160px 0 80px;
-  text-align: center;
-  color: var(--color-white);
-}
-
+/*
 .hero-about h1 {
   font-size: 56px;
   font-weight: 800;
@@ -26,7 +17,7 @@
 .hero-about .hero-subtitle {
   font-size: 20px;
   opacity: 0.95;
-}
+}*/
 
 .fade-in {
   animation: fadeIn 1s ease-in;
@@ -185,13 +176,15 @@
   background: var(--color-white);
 }
 
-.mvv-grid {
-  display: grid;
+.mvv-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 32px;
   margin-top: 48px;
-
-  /* Desktop e tablet → 2 colunas */
-  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 48px;
+  height: 350px;
 }
 
 .mvv-card {
@@ -200,6 +193,10 @@
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .mvv-card:hover {
@@ -207,15 +204,11 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-.mvv-icon {
-  font-size: 48px;
-  margin-bottom: 24px;
-}
-
 .mvv-card h3 {
   font-size: 28px;
   font-weight: 700;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 .mvv-card p {
@@ -223,6 +216,7 @@
   line-height: 1.8;
   color: var(--color-gray-800);
   padding-bottom: 24px;
+  text-align: center;
 }
 
 .values-list {
@@ -239,29 +233,36 @@
 }
 
 .sdg-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.sdg-list li {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+  margin-bottom: 48px;
 }
 
-.sdg-list li img {
+.sdg-list img {
   width: 100%;
   max-width: 140px;
   height: auto;
 }
 
-@media (max-width: 640px) {
-  .mvv-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 1050px) {
+  .mvv-container {
+    flex-direction: column;
+    height: max-content;
+  }
+}
+
+@media (max-width: 665px) {
+  .sdg-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-items: center;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 }
 
@@ -605,7 +606,8 @@
     width: 100%;
   }
 
-  .team-area-title, .team-member {
+  .team-area-title,
+  .team-member {
     text-align: center;
   }
 }

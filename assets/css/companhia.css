@@ -1,38 +1,5 @@
 @import 'cores.css';
 
-/* ============= Companhia - Hero Section ============= */
-
-.companhia-hero {
-  position: relative;
-  height: 95vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("/assets/imagens/midia/onda_de_nos.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-.companhia-hero .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-
-.companhia-hero .hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.companhia-hero .hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
 /* ============= Espetáculos Section ============ */
 
 .espetaculos-section {
@@ -56,7 +23,7 @@
 
 .eventos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -264,7 +231,7 @@
 
 .galeria-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-top: 2rem;
 }
@@ -333,6 +300,7 @@
   z-index: 10;
   height: 95vh;
   overflow-y: auto;
+  text-align: center;
 }
 
 .midia-close {

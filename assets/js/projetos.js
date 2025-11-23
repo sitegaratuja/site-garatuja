@@ -25,7 +25,7 @@ export async function carregarProjetos() {
                 <div class="projetos-card">
                     <img src="/assets/imagens/projetos/${project.tumb}" alt="${project.titulo}">
                     <div class="repertorio-content">
-                        <h4>${project.titulo} &nbsp; ${project.redes.map((rede) => `<a href="${rede.link}" target="_blank"> ${icons[rede.icon]}</a> `).join('')}</h4>
+                        <h4>${project.titulo} <br>${project.redes.map((rede) => `<a href="${rede.link}" target="_blank"> ${icons[rede.icon]}</a> `).join('')}</h4>
                         <p class="repertorio-duracao">${project.periodo}</p>
                         <p class="repertorio-desc">${project.descricao}</p>
                         <button class="btn-repertorio" data-id="${project.id}">Ver ficha técnica</button>

@@ -18,6 +18,51 @@ body {
     background: var(--color-white);
 }
 
+/* Hero de todas as telas, exceto da principal*/
+.hero-about,
+.hero-projetos,
+.companhia-hero, .na-midia-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 160px 0 80px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--color-white);
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-about {
+    background-image: url('/assets/imagens/midia/quem_somos.jpg');
+}
+
+.hero-projetos {
+    background-image: url("/assets/imagens/midia/projetos.jpg");
+}
+
+.companhia-hero {
+    background-image: url("/assets/imagens/midia/companhiaDanca.jpg");
+}
+
+.na-midia-hero {
+    background-image: url("/assets/imagens/midia/depoimento2.avif");
+}
+
 .container {
     padding: 0 24px;
     max-width: 1200px;
@@ -42,16 +87,22 @@ body {
     margin-bottom: 24px;
     margin-top: 24px;
     height: fit-content;
-    background: linear-gradient(to right, var(--color-purple), var(--color-pink));
+    background: var(--degradeRosa);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.section-subtitle {
+    text-align: center;
+    font-size: 20px;
+    opacity: 0.95;
+}
+
 .section-label {
     display: inline-block;
-    color: var(--color-purple);
+    color: var(--color-pink);
     font-weight: 600;
     font-size: 14px;
     text-transform: uppercase;

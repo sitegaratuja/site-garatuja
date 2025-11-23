@@ -2,6 +2,7 @@
   --color-dark: #391B4F;
   --color-purple: #61177F;
   --color-pink: #B22DB2;
+  --color-shock-pink: #f87171;
   --color-red: #ef4444;
   --color-orange: #f97316;
   --color-yellow: #fbbf24;
@@ -13,5 +14,5 @@
   --color-gray-900: #111827;
   --color-black: #000000;
 
-  --degradeRosa: linear-gradient(135deg, var(--color-pink), var(--color-orange));
+  --degradeRosa: linear-gradient(135deg, var(--color-purple), var(--color-pink));
 }

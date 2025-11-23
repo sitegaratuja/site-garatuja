@@ -1,77 +1,96 @@
 [
     {
+        "tipo": "Sobre as inscrições",
         "question": "Quem pode ser inscrever no Garatuja?",
         "answer": "O Garatuja atende meninas e jovens mulheres de 7 a 19 anos, moradoras de São Sebastião-DF e regiões próximas, oferecendo formação artística e leitora gratuita nas áreas de balé clássico, dança contemporânea e artes integradas. <br><br> Para participar, é necessário que a aluna esteja matriculada e frequentando regularmente a rede pública de ensino. Caso seja estudante da rede particular, a participação só é permitida quando a menina for 100% bolsista, garantindo que o acesso permaneça prioritário para quem mais necessita."
     },
     {
+        "tipo": "Sobre as inscrições",
         "question": "O que preciso fazer para entrar no Garatuja?",
         "answer": "O ingresso acontece para meninas entre 7 e 15 anos, por meio de: <br><br> • inscrição online ou presencial, quando há vagas abertas; <br> • lista de espera, caso as turmas estejam completas; <br> • entrevista com responsável e aluna, para conhecer a rotina, o interesse e a disponibilidade. <br><br> As datas de abertura de novas turmas são divulgadas em nossas redes sociais."
     },
     {
+        "tipo": "Sobre as inscrições",
         "question": "O Garatuja é totalmente gratuito?",
         "answer": "Sim. Todas as atividades são 100% gratuitas, incluindo aulas, oficinas, lanche, formações e apresentações – sempre que há patrocínio disponível. Na ausência de patrocínio, as alunas que têm condições contribuem com R$ 45,00 mensais, como forma de colaboração solidária para a manutenção das atividades."
     },
     {
+        "tipo": "Sobre as inscrições",
         "question": "Posso participar apenas de uma atividade, como somente Balé?",
         "answer": "Não. No Garatuja, a participação acontece dentro de uma formação integral, que contempla três eixos: balé clássico, dança contemporânea e artes Integradas. <br><br> Acreditamos que a formação artística e humana se torna mais rica quando envolve diferentes linguagens — corpo, palavra, música, leitura, arte e criação — que se complementam e ampliam as possibilidades expressivas das meninas."
     },
     {
+        "tipo": "Sobre a formação",
         "question": "Como funciona a política de faltas?",
         "answer": "A participação no Garatuja exige compromisso, regularidade e pontualidade, para que a formação faça sentido e para que o lugar da menina seja realmente aproveitado. Meninas que acumulam três faltas não justificadas no mesmo mês perdem a vaga, que é imediatamente destinada a outra participante da lista de espera. <br><br> Como o número de vagas é limitado e muitas meninas aguardam oportunidade, a frequência é fundamental para o desenvolvimento artístico, pedagógico e emocional de cada aluna. <br><br> Faltas podem ser justificadas por motivos de saúde ou compromissos escolares, mediante atestado médico ou declaração escolar, desde que comunicadas com antecedência."
     },
     {
+        "tipo": "Sobre a formação",
         "question": "Até quando posso permanecer no Garatuja?",
         "answer": "O ingresso ocorre entre 7 e 15 anos, no entanto a adolescente pode permanecer no Garatuja pelo tempo que desejar, desde que isso seja compatível com seus compromissos pessoais, acadêmicos e profissionais — e desde que mantenha uma convivência respeitosa com colegas, professoras e toda a equipe. <br><br> Muitas trajetórias confirmam essa continuidade: alunas que se tornaram  monitoras, professoras, conselheiras fiscais e até diretoras. <br><br> Assim, o Garatuja pode ser um espaço seguro de crescimento, pertencimento e amadurecimento pessoal e profissional para todas que desejarem seguir construindo sua história conosco."
     },
     {
+        "tipo": "Sobre as inscrições",
         "question": "Por que o Garatuja atende somente meninas?",
         "answer": "O Garatuja foi criado para promover o desenvolvimento pessoal e artístico de meninas e jovens mulheres em territórios periféricos, oferecendo espaços seguros de acolhimento, criação, formação artística e desenvolvimento de autonomia. A opção por atender exclusivamente meninas se baseia em: <br><br> • enfrentamento das desigualdades de gênero; <br> • garantia de ambiente seguro e afetivo; <br> • estímulo ao protagonismo feminino; <br> • proteção e fortalecimento de trajetórias frequentemente marcadas pela vulnerabilidade social."
     },
     {
+        "tipo": "Sobre o Garatuja",
         "question": "O que significa “Garatuja”?",
         "answer": "“Garatuja” é um termo que se refere aos primeiros traços que uma criança faz, desenhos livres, experimentais, cheios de imaginação. Para nós simboliza: <br><br> • o direito de experimentar; <br> • a liberdade de criar; <br> • a beleza do inacabado; <br> • o processo como espaço de descoberta. <br><br> O nome Garatuja representa nossa crença na potência criativa das meninas e jovens, e na arte como caminho formativo e desenvolvimento integral."
     },
     {
+        "tipo": "Sobre a formação",
         "question": "Quais são os eixos formativos do Instituto?",
         "answer": "O Garatuja trabalha com três eixos integrados: <br><br> • Balé Clássico – técnica, disciplina e sensibilidade; <br> • Dança Contemporânea – criação, corpo e território. <br> • Artes Integradas – leitura, arte, música, mídias e criação. <br><br> Cada eixo contribui para o desenvolvimento integral das participantes."
     },
     {
+        "tipo": "Sobre as inscrições",
         "question": "As alunas precisam ter experiência anterior?",
         "answer": "Não. O Garatuja acolhe meninas com ou sem experiência, em níveis iniciantes e intermediários. <br><br> O desenvolvimento de cada aluna é acompanhado de forma cuidados e individualizada, respeitando seu ritmo e potencial."
     },
     {
+        "tipo": "Sobre a formação",
         "question": "As famílias participam das atividades?",
         "answer": "Sim! O Instituto promove encontros, eventos e sessões de devolutivas, além de apresentações abertas. <br><br> O vínculo com as famílias é parte essencial do cuidado e do acompanhamento pedagógico, garantindo que esteja sempre informadas sobre o desenvolvimento e as conquistas das meninas."
     },
     {
+        "tipo": "Sobre a formação",
         "question": "Existe uniforme ou material obrigatório?",
         "answer": "Sim. Para as aulas de balé e dança contemporânea, indicamos roupas adequadas para a prática. Sempre que possível, o Garatuja disponibiliza parte do material ou conta com parceiros para doações, garantindo que todas as meninas possam participar plenamente das atividades."
     },
     {
+        "tipo": "Sobre o Garatuja",
         "question": "O Garatuja realiza apresentações públicas?",
         "answer": "Sim. Ao longo do ano, acontecem mostras, saraus, espetáculos e compartilhamentos de processos, tanto internos quanto externos, valorizando a trajetória artística e leitora das meninas."
     },
     {
+        "tipo": "Sobre como contribuir",
         "question": "Como posso apoiar o Garatuja?",
         "answer": "Você pode apoiar de várias formas: <br><br> • voluntariado; <br> • doações; <br> • parcerias institucionais; • colaboração em rede e divulgação. <br><br> O Instituto mantém iniciativas de participação comunitária e colaboração, fortalecendo juntos o impacto das atividades e projetos."
     },
     {
+        "tipo": "Sobre o Garatuja",
         "question": "Quem são os profissionais do Instituto?",
         "answer": "A equipe é formada por: <br><br> • professoras de dança; <br> • educadoras; <br> • mediadoras culturais; <br> • profissionais de artes integradas; <br> • equipe psicossocial; <br> • coordenação pedagógica; • nutricionista; <br> • direção institucional; <br> • além de voluntários, parceiros culturais e da área da saúde."
     },
     {
+        "tipo": "Sobre a formação",
         "question": "As atividades incluem visitas culturais?",
         "answer": "Sim. As participantes frequentam bibliotecas, museus, espetáculos, feiras literárias e espaços artísticos, ampliando repertórios e acesso à cultura."
     },
     {
+        "tipo": "Sobre a formação",
         "question": "Qual é a metodologia do Garatuja?",
         "answer": "Nossa metodologia se fundamenta em: <br><br> • arte como direito; <br> • corpo como território de saber; <br> • leitura multimodal; <br> • autoria e protagonismo feminino; <br> • valorização das culturas periféricas; <br> • aprendizagem sensível, crítica e cidadã; <br> • criação e autoria como práticas de liberdade. <br><br> Essa abordagem busca integrar experiências de artísticas, pedagógicas e sociais, promovendo o desenvolvimento integral das meninas e jovens e fortalecendo sua expressão, autonomia e identidade."
     },
     {
+        "tipo": "Sobre como contribuir",
         "question": "Sou ex-aluna ou universitária. Posso ser monitora?",
         "answer": "Sim! Mesmo que você já não esteja mais na faixa etária de ingresso (7 a 15 anos), pode participar como monitora, desde que tenha afinidade com as artes, disponibilidade e compromisso com o trabalho formativo do Instituto. <br><br> Ex-alunas e universitárias são muito bem-vindas porque: <br><br> • conhecem o território e a realidade das meninas; <br> • fortalecem a continuidade das trajetórias formativas; <br> • ajudam a manter viva a memória e a identidade do Garatuja; <br> • tornam-se referências positivas para as mais novas. <br><br> Para participar, manifeste seu interesse e agende uma entrevista com o Instituto."
     },
     {
+        "tipo": "Sobre como contribuir",
         "question": "O Garatuja oferece certificação para as monitoras?",
         "answer": "Sim. As monitoras recebem certificado, com registro da carga horária e das atividades realizadas."
     }

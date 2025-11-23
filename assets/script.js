@@ -3,6 +3,7 @@ import { carregarCompanhia } from "./js/companhia.js";
 import { carregarHero, carregarDepoimentos, carregarFAQ, carregarParceiros } from "./js/index.js";
 import { carregarTimeline, initTimelineInteractions, fecharModal } from "./js/sobre.js";
 import { carregarProjetos } from "./js/projetos.js";
+import { abrirModalDoacoes } from "./js/doacoes.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -63,6 +64,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 2.4. Projetos.html
     if (document.getElementById("projetos")) {
         await carregarProjetos();
+    }
+
+    // 2.5. Doacoes.html
+    if (document.getElementById("doacoes")) {
+        abrirModalDoacoes();
     }
 
     // ------------- 3. Funções do modal transparencia

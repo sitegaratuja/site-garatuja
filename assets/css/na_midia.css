@@ -74,8 +74,59 @@
   margin: 0;
 }
 
-.video-item img.capa-card {
+/* Container que segura todos os links */
+.container-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* O Card (que é o link <a>) */
+.link-card {
+  display: block;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 320px;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Thumbnail */
+.thumbnail-link {
   width: 100%;
-  height: 315px;
+  height: 250px;
+  aspect-ratio: 16 / 9;
+  background-color: #eee;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.thumbnail-link img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* A Caixinha do Texto */
+.info-link {
+  padding: 15px;
+  text-align: center;
+  border-top: 1px solid #f0f0f0;
+}
+
+.info-link p {
+  color: #333;
+  font-weight:normal;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }

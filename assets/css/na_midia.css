@@ -102,11 +102,12 @@
 /* Thumbnail */
 .thumbnail-link {
   width: 100%;
-  height: 250px;
+  height: 220px;
   aspect-ratio: 16 / 9;
   background-color: #eee;
   overflow: hidden;
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 
 .thumbnail-link img {

@@ -58,8 +58,20 @@ nav {
 
 /* ============= SUBMENU ============= */
 
-.nav-menu>li:hover .submenu {
+.bi-arrow-down,
+.nav-menu>li:hover .bi-arrow-right {
+  display: none;
+}
+
+.nav-menu>li:hover .submenu,
+.nav-menu>li:hover .bi-arrow-down {
   display: block;
+}
+
+/* serve para não exibir o espaço no link antes de aparecer o submenu */
+.nav-menu>li:hover .link-com-submenu {
+  display: flex;
+  align-items: center;
 }
 
 .submenu {
@@ -104,7 +116,8 @@ nav {
     transition: transform 0.3s ease;
   }
 
-  .nav-menu>li:hover:not(.menu-social-icons)>a::after, .nav-menu>li>a.active::after {
+  .nav-menu>li:hover:not(.menu-social-icons)>a::after,
+  .nav-menu>li>a.active::after {
     transform: translateX(-50%) scaleX(1);
   }
 }

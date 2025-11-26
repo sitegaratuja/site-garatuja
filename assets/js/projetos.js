@@ -1,4 +1,4 @@
-import { carregarDados } from "./_uso_geral.js";
+import { carregarDados, abrirGaleriaModal } from "./_uso_geral.js";
 
 let dadosProjetos = [];
 
@@ -23,10 +23,9 @@ export async function carregarProjetos() {
         projectsGrid.innerHTML = `
             ${resposta.map((project) => `
                 <div class="projetos-card">
-                    <img src="/assets/imagens/projetos/${project.tumb}" alt="${project.titulo}">
+                    <img src="/assets/imagens/projetos/${project.linkBase}/${project.tumb}" alt="${project.titulo}">
                     <div class="repertorio-content">
                         <h4>${project.titulo} <br>${project.redes.map((rede) => `<a href="${rede.link}" target="_blank"> ${icons[rede.icon]}</a> `).join('')}</h4>
-                        <p class="repertorio-duracao">${project.periodo}</p>
                         <p class="repertorio-desc">${project.descricao}</p>
                         <button class="btn-repertorio" data-id="${project.id}">Ver ficha técnica</button>
                     </div>
@@ -34,13 +33,33 @@ export async function carregarProjetos() {
             `).join("")}
         `;
 
-        // Evento de clique para abrir o modal de transparencia
+        let carouselInterval = null;
+        let currentIndex = 0;
+
+        // Abrir modal
         const projectCards = document.querySelectorAll(".btn-repertorio");
         projectCards.forEach((card) => {
             card.addEventListener("click", () => {
-                //abrirGaleriaModal(card.dataset.id);
-                window.alert(card.dataset.id);
+                console.log("Indo para o abrirGaleriaModal com o id " + card.dataset.id);
+                abrirGaleriaModal("projetos", dadosProjetos, Number(card.dataset.id));
             });
         });
+
+        // Fechar modal
+        if (document.getElementById("projetosModal")) {
+
+            document.querySelector(".projetos-close").addEventListener("click", () => {
+                document.getElementById("projetosModal").classList.remove("active");
+                clearInterval(carouselInterval);
+                document.querySelector("body").classList.remove("no-scroll");
+            });
+
+            // Fechar clicando fora
+            document.querySelector(".projetos-modal-backdrop").addEventListener("click", () => {
+                document.getElementById("projetosModal").classList.remove("active");
+                clearInterval(carouselInterval);
+                document.querySelector("body").classList.remove("no-scroll");
+            });
+        }
     });
 }

@@ -63,7 +63,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 2.4. Projetos.html
     if (document.getElementById("projetos")) {
+
         await carregarProjetos();
+
+        document.querySelectorAll(".projetos-card").forEach((card) => {
+            card.addEventListener("click", () => {
+                document.getElementById("projetosModal").classList.add("active");
+            });
+            console.log(card.dataset.id);
+        });
     }
 
     // 2.5. Doacoes.html

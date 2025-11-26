@@ -21,7 +21,8 @@ body {
 /* Hero de todas as telas, exceto da principal*/
 .hero-about,
 .hero-projetos,
-.companhia-hero, .na-midia-hero {
+.companhia-hero,
+.na-midia-hero {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,4 +197,7 @@ body {
 
 body.no-scroll {
     overflow-y: hidden;
+}
+
+@media (max-width: 768px) {
 }

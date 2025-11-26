@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Exemplo Modal - Projetos</title>
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --bg: #0f1720;
+            --card: #0e1114;
+            --muted: #aab3bf;
+            --accent: #6da3ff;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #071023 0%, #081426 100%);
+            color: #e6eef8;
+            padding: 24px;
+        }
+
+        /* texto geral (exceto .fala) */
+        .texto {
+            text-indent: 2em;
+            line-height: 1.6;
+            color: var(--muted);
+            margin: 0 0 12px 0;
+        }
+
+        /* estilo .fala (você gostou do estilo 1) */
+        .fala {
+            margin: 12px 0;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            font-weight: 500;
+            text-indent: 0;
+            color: #eaf5ff;
+        }
+
+        .fala b {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+
+        /* ações (pequenas descrições de gesto) */
+        .acoes {
+            margin: 10px 0;
+            font-style: italic;
+            color: #c6d0da;
+            opacity: 0.9;
+            font-size: 0.95em;
+            padding-left: 1rem;
+            border-left: 2px dashed rgba(255, 255, 255, 0.03);
+        }
+
+        /* grid de projetos (exibir mini-cards) */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .projetos-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            gap: 12px;
+            align-items: stretch;
+            padding: 12px;
+        }
+
+        .projetos-card img {
+            width: 110px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex: 0 0 110px;
+            background: #071227;
+        }
+
+        .repertorio-content h4 {
+            margin: 0 0 6px 0;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .repertorio-desc {
+            margin: 0 0 8px 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .btn-repertorio {
+            border: none;
+            background: var(--accent);
+            color: #001427;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* modal (estilizado custom) */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(2, 6, 23, 0.75);
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-card {
+            width: 100%;
+            max-width: 1000px;
+            background: linear-gradient(180deg, #071427, #0c1722);
+            border-radius: 12px;
+            overflow: hidden;
+            color: #e3f2ff;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 18px;
+            padding: 18px;
+        }
+
+        @media (max-width:900px) {
+            .modal-card {
+                grid-template-columns: 1fr;
+                max-width: 720px;
+            }
+
+            .projetos-card img {
+                width: 100px;
+                height: 70px;
+            }
+        }
+
+        /* galeria à esquerda do modal */
+        .galeria {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .main-img {
+            width: 100%;
+            height: 420px;
+            border-radius: 8px;
+            background: #08131b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .main-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbs {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+            overflow: auto;
+        }
+
+        .thumbs img {
+            width: 72px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: 0.9;
+            border: 2px solid transparent;
+        }
+
+        .thumbs img.active {
+            border-color: var(--accent);
+            opacity: 1;
+        }
+
+        /* painel info (direita) */
+        .info {
+            padding: 6px 2px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .info .meta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .info .socials a {
+            margin-right: 8px;
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        .links a.btn-site {
+            display: inline-block;
+            margin-top: 8px;
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid rgba(109, 163, 255, 0.18);
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .close-x {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            color: var(--muted);
+            padding: 6px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* descrição longa scroll */
+        .descricao-longa {
+            max-height: 160px;
+            overflow: auto;
+            padding-right: 8px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>Galeria de Projetos - Exemplo</h3>
+    <p class="texto">Neste exemplo os cards listam cada projeto. Clique no botão "Ver ficha técnica" para abrir o modal
+        com várias imagens, descrição longa, links e redes sociais.</p>
+
+    <div class="grid" id="projetos">
+        <!-- preenchido por JS -->
+    </div>
+
+    <!-- Modal (invisível até abrir) -->
+    <div id="modalOverlay" class="modal-overlay" style="display:none;">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="close-x" id="fecharModal">Fechar ✕</button>
+            <div class="galeria">
+                <div class="main-img" id="mainImgWrap">
+                    <!-- imagem principal -->
+                </div>
+                <div class="thumbs" id="thumbs"></div>
+            </div>
+
+            <aside class="info">
+                <div class="meta">
+                    <div>
+                        <h2 id="modalTitle">Título do projeto</h2>
+                        <p id="modalSubtitle" style="margin:0;color:var(--muted)">Subtítulo / breve</p>
+                    </div>
+                    <div class="socials" id="modalSocials" aria-hidden="false">
+                        <!-- ícones -->
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Descrição</h4>
+                    <p id="modalDesc" class="texto" style="text-indent:0"></p>
+                </div>
+
+                <div>
+                    <h5>Texto longo</h5>
+                    <div class="descricao-longa" id="modalLong">
+                        <!-- texto longo com <p>, <p class="fala"> e <p class="acoes"> -->
+                    </div>
+                </div>
+
+                <div class="links">
+                    <a id="modalSite" class="btn-site" href="#" target="_blank" rel="noopener"
+                        style="display:none">Visitar site</a>
+                </div>
+
+                <div style="margin-top:auto;color:var(--muted);font-size:12px">Clique nas miniaturas para alternar.
+                    Clique na imagem principal para abrir em nova aba.</div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        /*
+          Exemplo de dados. Em produção, carregue de um JSON real (ex: projetos.json).
+          Cada projeto tem:
+           - id, titulo, descricao, longText (HTML), linkBase (pasta), tumb (thumb opcional), site, redes: [{icon,link}]
+        */
+        const EXAMPLE_DATA = [
+            {
+                id: "p1",
+                titulo: "Projeto Alpha",
+                descricao: "Uma demo de projeto com galeria e texto longo.",
+                longText: `
+                    <p class="texto">Tudo começa numa tarde chuvosa. O vento parecia conversar com as janelas.</p>
+                    <p class="fala"><b>Lucille:</b> Cuidado, Adam. Isso não parece seguro.</p>
+                    <p class="acoes">Ele coça a cabeça.</p>
+                    <p class="texto">E a história continua...</p>
+                `,
+                linkBase: "projeto-alpha",
+                tumb: "/assets/imagens/projetos/saberes_sao_sebas/saberes_de_sao_sebas.jpeg", // se não existir, usamos busca por numerados
+                site: "https://example.com",
+                redes: [
+                    { icon: "github", link: "https://github.com/" },
+                    { icon: "instagram", link: "https://instagram.com/" }
+                ]
+            },
+            {
+                id: "p2",
+                titulo: "Projeto Beta",
+                descricao: "Outro projeto com imagens numeradas (1.jpg,2.jpg...).",
+                longText: `
+            <p class="texto">Introdução do beta, com falas e ações.</p>
+            <p class="fala"><b>Adam:</b> Eu sei o que preciso fazer.</p>
+            <p class="acoes">Ele arqueia a sobrancelha.</p>
+        `,
+                linkBase: "projeto-beta",
+                // tumb omitido para demonstrar busca numerada
+                site: "",
+                redes: []
+            }
+        ];
+
+        /* icones simplificados (pode trocar por SVG) */
+        const ICONS = {
+            github: "<i class='bi bi-github'></i>",
+            instagram: "<i class='bi bi-instagram'></i>",
+            facebook: "<i class='bi bi-facebook'></i>",
+            youtube: "<i class='bi bi-youtube'></i>",
+            linkedin: "<i class='bi bi-linkedin'></i>"
+        };
+
+        /* --- helper: tenta carregar imagem criando objeto Image() --- 
+           Retorna Promise<boolean> que resolve true se carregar, false se erro.
+        */
+        function testaImagem(url, timeout = 4000) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                let done = false;
+                const timer = setTimeout(() => { if (!done) { done = true; img.src = ''; resolve(false); } }, timeout);
+                img.onload = () => { if (!done) { done = true; clearTimeout(timer); resolve(true); } };
+                img.onerror = () => { if (!done) { done = true; clearTimeout(timer); resolve(false); } };
+                img.src = url;
+            });
+        }
+
+        /* tenta localizar imagens numeradas na pasta: 1.jpg, 2.jpg, ... até maxTry.
+           Retorna array com urls válidas (até maxFound). */
+        async function buscaImagensNumeradas(basePath, maxTry = 8, maxFound = 6) {
+            const found = [];
+            const extCandidates = ["jpg", "png", "webp", "jpeg"];
+            for (let i = 1; i <= maxTry && found.length < maxFound; i++) {
+                // tenta variações: "1.jpg", "01.jpg"
+                const variants = [
+                    `${i}.jpg`, `${i}.png`, `${i}.webp`, `${i}.jpeg`,
+                    `${String(i).padStart(2, '0')}.jpg`, `image${i}.jpg`
+                ];
+                let ok = false;
+                for (const v of variants) {
+                    const url = `${basePath}/${v}`;
+                    // notar: se os assets estiverem sob /assets/... ajustar basePath para /assets/...
+                    // Usa testaImagem para verificar
+                    // eslint-disable-next-line no-await-in-loop
+                    const existe = await testaImagem(url);
+                    if (existe) {
+                        found.push(url);
+                        ok = true;
+                        break;
+                    }
+                }
+                // se não encontrou, continua para próximo i
+            }
+            return found;
+        }
+
+        /* Função que retorna a primeira imagem disponível:
+           - se project.tumb estiver definido, tenta usá-lo
+           - senão tenta buscar numerados (1..N)
+           - retorna array (pode ser vazio)
+        */
+        async function obterImagensDoProjeto(project) {
+            const base = ``;
+            const imagens = [];
+            if (project.tumb) {
+                const url = `${base}/${project.tumb}`;
+                if (await testaImagem(url)) imagens.push(url);
+            }
+            // busca numerados se ainda não tem imagens
+            if (imagens.length === 0) {
+                const numeradas = await buscaImagensNumeradas(base, 12, 6);
+                if (numeradas.length) imagens.push(...numeradas);
+            }
+            // fallback: imagem placeholder
+            if (imagens.length === 0) imagens.push('https://via.placeholder.com/800x500?text=sem+imagem');
+            return imagens;
+        }
+
+        /* --- render da grid de projetos e evento de abrir modal --- */
+        const projectsGrid = document.getElementById('projetos');
+
+        async function renderProjetos(dados) {
+            projectsGrid.innerHTML = dados.map(p => `
+                <div class="projetos-card">
+                    <img src="${p.tumb ? p.tumb : '1.jpg'}" alt="${p.titulo}" onerror="this.src='https://via.placeholder.com/200x140?text=sem+thumb'">
+                    <div class="repertorio-content">
+                        <h4>${p.titulo}</h4>
+                        <p class="repertorio-desc">${p.descricao}</p>
+                        <button class="btn-repertorio" data-id="${p.id}">Ver ficha técnica</button>
+                    </div>
+                </div>
+            `).join('');
+            // vincular eventos: para cada botão, inserir listener que abre modal e carrega imagens reais
+            document.querySelectorAll('.btn-repertorio').forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    const id = btn.dataset.id;
+                    const projeto = EXAMPLE_DATA.find(x => x.id === id);
+                    if (!projeto) return;
+                    abrirModalComProjeto(projeto);
+                });
+            });
+        }
+
+        /* --- modal logic --- */
+        const overlay = document.getElementById('modalOverlay');
+        const fecharModalBtn = document.getElementById('fecharModal');
+        const mainImgWrap = document.getElementById('mainImgWrap');
+        const thumbsNode = document.getElementById('thumbs');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalLong = document.getElementById('modalLong');
+        const modalSocials = document.getElementById('modalSocials');
+        const modalSite = document.getElementById('modalSite');
+
+        async function abrirModalComProjeto(projeto) {
+            modalTitle.textContent = projeto.titulo;
+            modalSubtitle.textContent = projeto.descricao || '';
+            modalDesc.textContent = projeto.descricao || '';
+            modalLong.innerHTML = projeto.longText || '';
+            // redes
+            modalSocials.innerHTML = projeto.redes.map(r => `<a href="${r.link}" target="_blank" rel="noopener">${ICONS[r.icon] || '🔗'}</a>`).join('');
+            // site
+            if (projeto.site) { modalSite.href = projeto.site; modalSite.style.display = 'inline-block'; modalSite.textContent = 'Visitar site'; }
+            else { modalSite.style.display = 'none'; }
+
+            // imagens: tenta obter imagens reais (pode demorar se testar muitas urls)
+            const imagens = await obterImagensDoProjeto(projeto);
+            // preencher galeria
+            if (imagens.length) {
+                mainImgWrap.innerHTML = `<a id="mainImgLink" href="${imagens[0]}" target="_blank" rel="noopener"><img src="${imagens[0]}" alt=""></a>`;
+                thumbsNode.innerHTML = imagens.map((u, i) => `<img data-src="${u}" src="${u}" alt="thumb ${i + 1}" class="${i === 0 ? 'active' : ''}">`).join('');
+                // listeners thumbs
+                thumbsNode.querySelectorAll('img').forEach(imgEl => {
+                    imgEl.addEventListener('click', () => {
+                        thumbsNode.querySelectorAll('img').forEach(x => x.classList.remove('active'));
+                        imgEl.classList.add('active');
+                        const src = imgEl.dataset.src;
+                        const link = document.getElementById('mainImgLink');
+                        if (link) link.href = src;
+                        mainImgWrap.innerHTML = `<a id="mainImgLink" href="${src}" target="_blank" rel="noopener"><img src="${src}" alt=""></a>`;
+                    });
+                });
+            } else {
+                mainImgWrap.innerHTML = `<img src="https://via.placeholder.com/800x500?text=sem+imagem">`;
+                thumbsNode.innerHTML = '';
+            }
+
+            // mostrar modal
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // impede scroll da página
+        }
+
+        fecharModalBtn.addEventListener('click', () => { overlay.style.display = 'none'; document.body.style.overflow = 'auto'; });
+        overlay.addEventListener('click', (ev) => {
+            if (ev.target === overlay) { overlay.style.display = 'none'; document.body.style.overflow = 'auto'; }
+        });
+
+        /* inicializa */
+        renderProjetos(EXAMPLE_DATA);
+
+    </script>
+    <!-- bootstrap icons (apenas para demo) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.js"></script>
+</body>
+
+</html>

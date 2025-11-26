@@ -115,7 +115,8 @@
   margin-top: 2rem;
 }
 
-.repertorio-card, .projetos-card {
+.repertorio-card,
+.projetos-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -123,11 +124,13 @@
   transition: transform 0.3s ease;
 }
 
-.repertorio-card:hover, .projetos-card:hover {
+.repertorio-card:hover,
+.projetos-card:hover {
   transform: translateY(-5px);
 }
 
-.repertorio-card img, .projetos-card img {
+.repertorio-card img,
+.projetos-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -417,5 +420,9 @@
 
   .galeria-grid {
     grid-template-columns: 1fr;
+  }
+
+  .midia-imagem-grande {
+    display: none;
   }
 }

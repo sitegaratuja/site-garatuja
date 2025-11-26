@@ -1,1 +1,182 @@
 @import 'cores.css';
+
+.projetos-card img {
+    object-position: top center;
+}
+
+/* ============= MODAL ============= */
+.projetos-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.projetos-modal.active {
+    display: flex;
+}
+
+.projetos-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.projetos-modal-box {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 18px;
+    position: relative;
+    background: white;
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    height: 95vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.projetos-imagens {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: auto;
+}
+
+.projetos-textos {
+    padding: 6px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: justify;
+    overflow: auto;
+}
+
+.projetos-close {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    border: none;
+    background: transparent;
+    font-size: 64px;
+    cursor: pointer;
+    padding: 12px;
+    color: var(--color-white);
+    transition: color 0.3s ease;
+}
+
+.projetos-close:hover {
+    color: #8b5cf6;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* ===== IMAGEM GRANDE ===== */
+
+.projetos-imagem-grande {
+    width: 100%;
+    height: 320px;
+    border-radius: 8px;
+    background: #08131b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.projetos-imagem-grande img {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 8px
+}
+
+.projetos-imagem-legenda {
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.8;
+    color: var(--color-white);
+}
+
+/* ===== THUMBNAILS ===== */
+
+.projetos-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #8b5cf6;
+    overflow: auto;
+}
+
+.projetos-thumb-item {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity .3s;
+    text-align: center;
+}
+
+.projetos-thumb-item:hover {
+    scale: 1.1;
+    opacity: 1;
+}
+
+.projetos-thumb-item.active {
+    opacity: 1;
+}
+
+.projetos-thumb-item img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.projetos-thumb-legenda {
+    font-size: 12px;
+    margin-top: 4px;
+    text-align: center;
+}
+
+/* ============= Responsive Styles ============= */
+
+@media (max-width: 1175px) {
+
+    /* Modal vira scroll único */
+    .projetos-modal-box {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 95vw;
+        height: 90vh;
+        overflow-y: scroll; /* o modal todo scrolla */
+        padding-bottom: 40px;
+    }
+
+    /* Se você não quiser imagem grande no mobile */
+    .projetos-imagem-grande {
+        display: none;
+    }
+
+    /* área de imagens e textos não ficam mais com overflow interno */
+    .projetos-imagens,
+    .projetos-textos {
+        overflow: visible;
+    }
+
+    .projetos-close {
+        top: 32px;
+        right: 10px;
+        font-size: 32px;
+        color: var(--color-pink);
+        z-index: 1;
+        position: fixed;
+    }
+}

@@ -5,24 +5,24 @@
         "mes": "março",
         "ano": 2025,
         "horario": "19h30",
-        "nome": "Ondas de nós",
+        "titulo": "Ondas de nós",
         "local": "Teatro Municipal - São Paulo",
         "descricao": "Nossas meninas estao se apresentando no Teatro Municipal de São Paulo, o dia 15 de março de 2023, a partir das 19h30, com o tema 'Ondas de nos'.",
         "fotos": [
             {
                 "id": 0,
-                "src": "/assets/imagens/midia/performance-photo-1.jpg",
+                "src": "performance-photo-1.jpg",
                 "descricao": "Apresentação realizada em 15 de março de 2023"
             },
             {
                 "id": 1,
-                "src": "/assets/imagens/midia/performance-photo-2.jpg",
-                "descricao": "Apresentação realizada em 15 de março de 2023"
+                "src": "performance-photo-2.jpg",
+                "descricao": "Apresentação realizada em 16 de março de 2023"
             },
             {
                 "id": 2,
-                "src": "/assets/imagens/midia/performance-photo-3.jpg",
-                "descricao": "Apresentação realizada em 15 de março de 2023"
+                "src": "performance-photo-3.jpg",
+                "descricao": "Apresentação realizada em 17 de março de 2023"
             }
         ]
     },
@@ -32,23 +32,23 @@
         "mes": "abril",
         "ano": 2025,
         "horario": "20h00",
-        "nome": "Raízes e Asas",
+        "titulo": "Raízes e Asas",
         "local": "Centro Cultural - Rio de Janeiro",
         "descricao": "Nossas meninas estao se apresentando no Centro Cultural de Rio de Janeiro, o dia 22 de abril de 2023, a partir das 20h00, com o tema 'Raízes e Asas'.",
         "fotos": [
             {
                 "id": 0,
-                "src": "/assets/imagens/midia/performance-photo-1.jpg",
+                "src": "performance-photo-1.jpg",
                 "descricao": "Apresentação realizada em 22 de abril de 2023"
             },
             {
                 "id": 1,
-                "src": "/assets/imagens/midia/performance-photo-2.jpg",
+                "src": "performance-photo-2.jpg",
                 "descricao": "Apresentação realizada em 22 de abril de 2023"
             },
             {
                 "id": 2,
-                "src": "/assets/imagens/midia/performance-photo-3.jpg",
+                "src": "performance-photo-3.jpg",
                 "descricao": "Apresentação realizada em 22 de abril de 2023"
             }
         ]
@@ -59,23 +59,23 @@
         "mes": "junho",
         "ano": 2025,
         "horario": "18h00",
-        "nome": "Festival de Dança Contemporânea",
+        "titulo": "Festival de Dança Contemporânea",
         "local": "Praça das Artes - São Paulo",
         "descricao": "Nossas meninas estao se apresentando na Praça das Artes de São Paulo, o dia 10 de junho de 2023, a partir das 18h00, com o tema 'Festival de Dança Contemporânea'.",
         "fotos": [
             {
                 "id": 0,
-                "src": "/assets/imagens/midia/performance-photo-1.jpg",
+                "src": "performance-photo-1.jpg",
                 "descricao": "Apresentação realizada em 10 de junho de 2023"
             },
             {
                 "id": 1,
-                "src": "/assets/imagens/midia/performance-photo-2.jpg",
+                "src": "performance-photo-2.jpg",
                 "descricao": "Apresentação realizada em 10 de junho de 2023"
             },
             {
                 "id": 2,
-                "src": "/assets/imagens/midia/performance-photo-3.jpg",
+                "src": "performance-photo-3.jpg",
                 "descricao": "Apresentação realizada em 10 de junho de 2023"
             }
         ]
@@ -86,23 +86,23 @@
         "mes": "setembro",
         "ano": 2025,
         "horario": "19h30",
-        "nome": "Ondas de nós",
+        "titulo": "Ondas de nós",
         "local": "Teatro Municipal - São Paulo",
         "descricao": "Nossas meninas estao se apresentando no Teatro Municipal de São Paulo, o dia 15 de setembro de 2023, a partir das 19h30, com o tema 'Ondas de nos'.",
         "fotos": [
             {
                 "id": 0,
-                "src": "/assets/imagens/midia/performance-photo-1.jpg",
+                "src": "performance-photo-1.jpg",
                 "descricao": "Apresentação realizada em 15 de setembro de 2023"
             },
             {
                 "id": 1,
-                "src": "/assets/imagens/midia/performance-photo-2.jpg",
+                "src": "performance-photo-2.jpg",
                 "descricao": "Apresentação realizada em 15 de setembro de 2023"
             },
             {
                 "id": 2,
-                "src": "/assets/imagens/midia/performance-photo-3.jpg",
+                "src": "performance-photo-3.jpg",
                 "descricao": "Apresentação realizada em 15 de setembro de 2023"
             }
         ]

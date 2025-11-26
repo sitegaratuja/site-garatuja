@@ -7,7 +7,7 @@
 ```
 ├── assets/
 │   ├── css/ - arquivos de CSS, responsáveis pela estilização e sua responsividade
-│   ├── htmls/ - HTMLs recorrentes (rodapé e cabeçalho (inglês e português))
+│   ├── htmls/ - HTMLs recorrentes (rodapé e cabeçalho (inglês, português e espanhol))
 │   ├── imagens/ - Imagens, separadas por outras pastas
 │   ├── js/ - arquivos de javascript, responsáveis pela animação
 |   ├── jsons/ - arquivos JSON que contém os dados do site

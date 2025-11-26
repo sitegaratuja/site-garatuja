@@ -49,11 +49,30 @@
 
 .projetos-textos {
     padding: 6px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: block;
     text-align: justify;
     overflow: auto;
+}
+
+.projetos-titulo {
+    font-size: 24px;
+    color: var(--color-pink);
+    line-height: 1.2;
+}
+
+.projetos-textos h2 {
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--color-pink);
+    margin-bottom: 8px;
+    margin-top: 12px;
+}
+
+.projetos-textos p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 .projetos-close {
@@ -178,5 +197,9 @@
         color: var(--color-pink);
         z-index: 1;
         position: fixed;
+    }
+
+    .projetos-titulo {
+        font-size: 20px;
     }
 }

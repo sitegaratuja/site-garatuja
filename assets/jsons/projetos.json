@@ -1,10 +1,9 @@
 [
     {
         "id": 0,
-        "linkBase": "acompanhamento_fisioterapeutico/",
+        "linkBase": "acompanhamento_fisioterapeutico",
         "titulo": "Acompanhamento Fisioterapeutico",
         "descricao": "",
-        "texto": "",
         "tumb": "FB_IMG_1763758455137.jpg",
         "redes": [
             {
@@ -30,10 +29,9 @@
     },
     {
         "id": 1,
-        "linkBase": "bazares/",
+        "linkBase": "bazares",
         "titulo": "Bazares",
         "descricao": "Projeto que viabiliza a inclusão de mulheres em atividades de cultura e artesanato em São Sebastião",
-        "texto": "",
         "tumb": "",
         "redes": [
             {
@@ -50,10 +48,9 @@
     },
     {
         "id": 2,
-        "linkBase": "formacao_leitora/",
+        "linkBase": "formacao_leitora",
         "titulo": "Formação Leitora",
         "descricao": "Projeto que viabiliza a inclusão de mulheres em atividades de cultura e artesanato em São Sebastiao",
-        "texto": "",
         "tumb": "FB_IMG_1763757962940.jpg",
         "redes": [
             {
@@ -111,10 +108,9 @@
     },
     {
         "id": 3,
-        "linkBase": "inteligencia_emocional/",
+        "linkBase": "inteligencia_emocional",
         "titulo": "Inteligência Emocional",
         "descricao": "Projeto que viabiliza a inclusão de mulheres em atividades de cultura e artesanato em São Sebastiao",
-        "texto": "A Roda Terapêutica Mulheres Integradas é um encontro mensal destinado exclusivamente às mães e responsáveis femininas das alunas do Instituto Garatuja, com foco em fortalecer o bem-estar emocional, ampliar a autoconsciência e melhorar a qualidade das relações familiares. <br><br> Utilizando a metodologia SEI (Sentido, Evolução e Identidade), o encontro promove práticas de autoconhecimento, reflexão guiada e organização emocional. As participantes são conduzidas a: <br><br> • identificar e compreender suas emoções <br> • reconhecer padrões que influenciam sua rotina e seus relacionamentos <br> • ressignificar experiências desafiadoras <br> • fortalecer autoestima, segurança e autonomia <br> • desenvolver novas formas de cuidado consigo e com suas famílias. <br><br> A Roda oferece um espaço seguro, acolhedor e sigiloso, onde cada mulher tem a oportunidade de compartilhar, aprender e evoluir junto a outras mulheres. O propósito é promover equilíbrio emocional e estimular vínculos mais saudáveis dentro de casa e na comunidade escolar. <br><br> <strong>Terapeuta responsável:</strong> Paula Portela",
         "tumb": "Foto de Maria Alice(3).jpg",
         "redes": [
             {
@@ -164,10 +160,9 @@
     },
     {
         "id": 4,
-        "linkBase": "nutricao_em_movimento/",
+        "linkBase": "nutricao_em_movimento",
         "titulo": "Nutrição em Movimento",
         "descricao": "Projeto que viabiliza a inclusão de mulheres em atividades de cultura e artesanato em São Sebastiao",
-        "texto": "",
         "tumb": "DSC02648.jpg",
         "redes": [
             {
@@ -201,10 +196,9 @@
     },
     {
         "id": 5,
-        "linkBase": "roda_terapeutica/",
-        "titulo": "Roda Terapêutica",
+        "linkBase": "roda_terapeutica",
+        "titulo": "Roda Terapêutica Mulheres Integradas – Instituto Garatuja",
         "descricao": "Projeto que viabiliza a inclusão de mulheres em atividades de cultura e artesanato em São Sebastiao",
-        "texto": "",
         "tumb": "FB_IMG_1763756726085.jpg",
         "redes": [
             {
@@ -242,10 +236,9 @@
     },
     {
         "id": 6,
-        "linkBase": "saberes_sao_sebas/",
+        "linkBase": "saberes_sao_sebas",
         "titulo": "Saberes de São Sebas",
         "descricao": "Projeto que buscamos iniciativas artísticas e culturais protagonizadas por mulheres de São Sebastião-DF que deixam legado e impactam a comunidade com o seu fazer artístico.",
-        "texto": "Nossa busca por mulheres empreendedoras em São Sebastião acabou desaguando dentro de cada uma de nós. Foi um trabalho de reconhecimento mútuo e coletivo, um mergulho no que o feminino tem de mais generoso e acolhedor, corajoso e determinado, solidário e afetuoso. <br><br> Artesã, escritora, dançarina, raizeira, professora, oleira, dona de casa, guia turística, elas têm em comum a paixão pela comunidade onde fincaram raízes e decidiram fazer o Bem, ajudando a realizar sonhos e transformar vidas. <br><br> Enquanto despertam o gosto pela arte e pela cultura com seus projetos, essas mulheres semeiam o futuro de crianças da cidade e empoderam outras mulheres, fortalecendo e valorizando suas identidades. Forma-se uma cadeia amorosa e cuidadora que se multiplica em frutos benfazejos para todos os envolvidos. <br><br> Quem doa e quem recebe? Há cinquenta anos, o tijolo maciço de Dona Leontina ensina a resistir e pertencer. Não por acaso, a Olaria Vereda cruzou o caminho de Aline, tornando-se uma das atrações do roteiro turístico afetivo que resgata a história de São Sebastião. Quem também conhece o poder de uma história é Léia. A arte da sua escrita estimula o gosto pela leitura em uma experiência itinerante de cura que começou com ela mesma. Os livros também deram vida nova à dona Dilma que transformou a garagem de casa em uma biblioteca comunitária. Kennya ajuda seu grupo de mulheres arteiras a reinventar-se, ela mesma se redescobrindo nesse enlace sustentável. <br><br> A timidez de Dani por trás dos passos de dança ensina meninas a coreografar suas próprias vidas no Instituto Garatuja, que foi o primeiro projeto social de dança contemporânea do DF e hoje também é Ponto de Cultura de São Sebastião. O carimbó de Alessandra planta o Pará no coração do Cerrado, onde o pioneirismo de Margot constrói e eterniza a identidade afro. Plantar raízes como Dona Josefa que desde criança já sabia que é da terra que se tira o sustento e o remédio para todos os males. Dayane, do alto do seu cavalo, puxa um cordão de amazonas guerreiras numa cavalgada de empatia e superação. <br><br> O que alinha esse cordão de mulheres que alimentam os sonhos da comunidade de São Sebas é a fé em si mesmas. Dona Eliza amplia e entrega essa fé ao dizer que o pouco com Deus é muito. Movida por tal convicção, ela vai das seis às dez da noite sem descanso, fazendo com que mais de 300 jovens recebam aulas de violão, balé, informática, artesanato e dança de salão. Transformando a dor em arte, Hellen hasteia a bandeira feminista e movimenta o Frida Lab com oficinas de escrita criativa, arteterapia, vídeo, teatro e gestão para o público feminino. O´hara abriu caminho para outras O´haras no mundo do Rap ao levar o toque feminino para as batalhas de rima. Na mesma energia pioneira, Sheila liberta a arte de ambientes fechados e convida o passante a refletir e contemplar frases e desenhos de stencil graffiti nos muros de São Sebas. Viviane e sua quadrilha Chinelo de Couro dançam a alegria de viver em espetáculos que começam bem antes das noites juninas, provando que gente é feita para brilhar e rua não é lugar de ficar. Fechando esse cordão de preciosidades, conhecemos a Tia Madá, capoeirista que confia na grandeza do coração sebastiano e ensina para a criançada, com muita ginga, que desistir é para os fracos. <br><br> Todas essas mulheres virtuosas são como pérolas escondidas em conchas, a maioria das pessoas não enxerga seu valor. O projeto Saberes Culturais veio para juntar essas forças femininas. Veio para ser o fio condutor que as reúne num lindo colar.",
         "tumb": "saberes_de_sao_sebas.jpeg",
         "redes": [
             {
@@ -338,10 +331,9 @@
     },
     {
         "id": 7,
-        "linkBase": "sarau_literario/",
-        "titulo": "Sarau Literário",
+        "linkBase": "sarau_literario",
+        "titulo": "Mostra e Sarau Garatuja",
         "descricao": "Projeto que viabiliza a inclusão de mulheres em atividades de cultura e artesanato em São Sebastiao",
-        "texto": "",
         "tumb": "FB_IMG_1763741008253.jpg",
         "redes": [
             {
@@ -399,10 +391,9 @@
     },
     {
         "id": 8,
-        "linkBase": "visita_as_familias/",
+        "linkBase": "visita_as_familias",
         "titulo": "Visita as familias do Territorio",
         "descricao": "Oficina que promove o cuidado formativo do Garatuja",
-        "texto": "",
         "tumb": "",
         "redes": [
             {

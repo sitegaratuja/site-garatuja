@@ -4,7 +4,13 @@ export async function incluirHtml(tag, html) {
         const elemento = document.querySelector(tag);
         if (!elemento) throw new Error(`Tag <${tag}> não encontrada no documento.`);
 
-        const resposta = await fetch(`/assets/htmls/${html}`);
+        let linkBase = "/assets/htmls/";
+
+        if(tag == "header") linkBase += "menus/";
+        else if(tag == "footer") linkBase += "rodapes/";
+
+        const resposta = await fetch(linkBase + html);
+
         if (!resposta.ok) throw new Error(`Erro ao carregar ${html}: ${resposta.status}`);
 
         const conteudo = await resposta.text();
@@ -88,7 +94,6 @@ export function abrirGaleriaModal(idModal, dados, id) {
     let descricao = null;
     let thumbsBox = null;
     let fotos = null;
-    let texto = null;
 
     const evento = dados.find(item => item.id === id);
     if (!evento) return;
@@ -102,17 +107,17 @@ export function abrirGaleriaModal(idModal, dados, id) {
     }
     else if (idModal == "projetos") {
         modal = document.getElementById("projetosModal");
-        titulo = modal.querySelector(".projetos-titulo");
+        titulo = document.getElementById("projetosTitulo");
         descricao = modal.querySelector(".projetos-descricao");
         thumbsBox = modal.querySelector(".projetos-thumbs");
         fotos = evento.imagens;
-        texto = modal.querySelector(".projetos-texto");
+        incluirHtml(".projetos-texto", ("textos/projetos/" + evento.linkBase + ".html"));
     }
 
     // Preencher texto
     titulo.textContent = evento.titulo;
     descricao.textContent = evento.descricao;
-    if (idModal == "projetos") texto.textContent = evento.texto;
+    if (idModal == "projetos") 
 
     // Limpar thumbs antigas
     thumbsBox.innerHTML = "";

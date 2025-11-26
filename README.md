@@ -26,7 +26,7 @@ São as páginas que contem o conteúdo principal do site.
 Aqui será a página principal, com o cabeçalho, o menu e o conteúdo principal.
 
 * Na mídia
-* voluntarios
+* voluntariado
 
 ### Sobre.html
 

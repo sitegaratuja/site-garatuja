@@ -54,11 +54,18 @@ Terão os outros projetos que o Garatuja desenvolveu.
 
 ### en_index.html
 
-Terá algumas informações me inglês.
+Terá algumas informações em inglês.
 
 * História simples
 * Missão, visão e valores
 
+### es_index.html
+
+Terá algumas informações em espanhol.
+
+* História simples
+* Missão, visão e valores
+* 
 ---
 
 Feito com muito amor e música por danirsena e lopesJaque

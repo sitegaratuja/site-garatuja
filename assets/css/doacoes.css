@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
     background-color: aliceblue;
     margin-right: 64px;
     max-height: 100%;
@@ -97,5 +97,31 @@
 
     .donations-description {
         font-size: 16px;
+    }
+}
+
+.container-bancos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.banco-item {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .container-bancos {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .banco-item {
+        text-align: center;
     }
 }

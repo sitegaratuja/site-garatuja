@@ -88,10 +88,11 @@
   display: block;
   text-decoration: none;
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  width: 320px;
+  width: 100%;
+  max-width: 350px;
   transition: transform 0.3s ease;
 }
 

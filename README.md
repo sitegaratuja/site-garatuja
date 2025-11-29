@@ -14,7 +14,7 @@
 |   ├── style.css - CSS principal, que une todos os da pasta CSS
 |   └── script.js - JavaScript principal, que une todos da pasta js
 └── README.md - o documento que você está lendo essas informações, não afeta em nada o site
-├── index.html (e outros .html, incluindo os internacionais) - são os sites em si
+├── index.html (e outros .html, incluindo os internacionais) - são os sites visíveis em si
 ```
 
 ## Guias

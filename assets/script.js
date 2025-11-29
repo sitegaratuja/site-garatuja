@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         await incluirHtml("header", "menu.html");
         await incluirHtml("footer", "rodape.html");
-        carregarTransparencia() //carrega o modal de transparencia
 
         // ------------- Função que marca o link ativo no menu
         const links = document.querySelectorAll(".nav-menu > li > a");
@@ -45,6 +44,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (document.getElementById("faqList")) carregarFAQ() // carrega o FAQ do index.html
     if (document.getElementById("partnersGrid")) carregarParceiros() // carrega os parceiros do index.html
 
+    carregarTransparencia() //carrega o modal de transparencia
+
     // 2.2. Sobre.html
     if (document.getElementById("timeline")) {
         carregarTimeline().then(() => {
@@ -57,9 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     // 2.3. Companhia.html
-    if (document.getElementById("espetaculos")) {
-        await carregarCompanhia();
-    }
+    if (document.getElementById("espetaculos")) await carregarCompanhia();
 
     // 2.4. Projetos.html
     if (document.getElementById("projetos")) {

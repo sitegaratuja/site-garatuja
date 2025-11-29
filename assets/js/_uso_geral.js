@@ -6,8 +6,8 @@ export async function incluirHtml(tag, html) {
 
         let linkBase = "/assets/htmls/";
 
-        if(tag == "header") linkBase += "menus/";
-        else if(tag == "footer") linkBase += "rodapes/";
+        if (tag == "header") linkBase += "menus/";
+        else if (tag == "footer") linkBase += "rodapes/";
 
         const resposta = await fetch(linkBase + html);
 
@@ -34,52 +34,60 @@ export async function carregarDados(arquivo) {
 }
 
 // Essa função carrega o modal de transparencia
-export function carregarTransparencia() {
+export async function carregarTransparencia() {
+
+    let relatorios = [];
 
     const transparenciaList = document.getElementById("transparenciaList");
 
-    carregarDados("transparencia.json").then((resposta) => {
-        transparenciaList.innerHTML = resposta
-            .map(
-                (item, index) => `
+    let location = (window.location.pathname == "/en_index.html") ? "en" : window.location.pathname == "/es_index.html" ? "es" : "br";
+
+    await carregarDados("transparencia.json").then((resposta) => {
+        relatorios = resposta;
+    });
+
+    transparenciaList.innerHTML = relatorios.map(
+        (item, index) => `
                     <div class="transparencia-item" data-index="${index}">
-                    <button class="transparencia-question">
-                        ${item.titulo}
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="transparencia-answer">
-                        <p>${item.descricao}</p>
-                        <ul>
-                        ${item.listaDeRelatorios
-                        .map(
-                            (relatorio) =>
-                                `<li><a href="${relatorio.link}" target="_blank">${relatorio.nome}</a></li>`
-                        )
-                        .join("")}
-                        </ul>
-                    </div>
+                        <button class="transparencia-question">
+                            ${location == "en" ? item.en_titulo : location == "es" ? item.es_titulo : item.titulo}
+                            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div class="transparencia-answer">
+                            <p>
+                                ${location == "en" ? item.en_descricao : location == "es" ? item.es_descricao : item.descricao}
+                            </p>
+                            <ul>
+                            ${item.listaDeRelatorios
+                .map(
+                    (relatorio) =>
+                        `<li><a href="/assets/transparencia/${relatorio.link}" target="_blank">${relatorio.nome}</a></li>`
+                )
+                .join("")
+            }
+                            </ul>
+                        </div>
                     </div>
                 `
-            )
-            .join("");
+    )
+        .join("");
 
-        document.querySelectorAll(".transparencia-question").forEach((question) => {
-            question.addEventListener("click", (e) => {
-                const faqItem = e.target.closest(".transparencia-item");
-                const isActive = faqItem.classList.contains("active");
+    document.querySelectorAll(".transparencia-question").forEach((question) => {
+        question.addEventListener("click", (e) => {
+            const faqItem = e.target.closest(".transparencia-item");
+            const isActive = faqItem.classList.contains("active");
 
-                // Fecha todos
-                document.querySelectorAll(".transparencia-item").forEach((item) => {
-                    item.classList.remove("active");
-                });
-
-                // Abre o clicado (se não estava ativo)
-                if (!isActive) {
-                    faqItem.classList.add("active");
-                }
+            // Fecha todos
+            document.querySelectorAll(".transparencia-item").forEach((item) => {
+                item.classList.remove("active");
             });
+
+            // Abre o clicado (se não estava ativo)
+            if (!isActive) {
+                faqItem.classList.add("active");
+            }
         });
     });
 }
@@ -117,10 +125,10 @@ export function abrirGaleriaModal(idModal, dados, id) {
     // Preencher texto
     titulo.textContent = evento.titulo;
     descricao.textContent = evento.descricao;
-    if (idModal == "projetos") 
+    if (idModal == "projetos")
 
-    // Limpar thumbs antigas
-    thumbsBox.innerHTML = "";
+        // Limpar thumbs antigas
+        thumbsBox.innerHTML = "";
 
     let baseurl = "";
     if (idModal == "projetos") baseurl = "/" + evento.linkBase + "/";

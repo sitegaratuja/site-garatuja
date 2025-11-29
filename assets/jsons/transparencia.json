@@ -2,39 +2,67 @@
     {
         "index": 1,
         "titulo": "Estatuto",
+        "en_titulo": "Statute",
+        "es_titulo": "Estatuto",
         "descricao": "Segue o nosso estatuto e CNPJ",
+        "en_descricao": "Follow our statute and CNPJ",
+        "es_descricao": "Sigue nuestro estatuto y CNPJ",
         "listaDeRelatorios": [
             {
                 "nome": "Estatuto Social Garatuja",
-                "link": "/assets/documentos/estatuto_social_garatuja.pdf"
+                "en_nome": "Social Statute Garatuja",
+                "es_nome": "Estatuto Social Garatuja",
+                "link": "estatuto_social_garatuja.pdf"
             }
         ]
     },
     {
         "index": 2,
         "titulo": "Relatório de atividades",
+        "en_titulo": "Activities report",
+        "es_titulo": "Reporte de actividades",
         "descricao": "Segue os relatórios de prestação de contas 2025",
+        "en_descricao": "Follow the reports of 2025",
+        "es_descricao": "Sigue los reportes de 2025",
         "listaDeRelatorios": [
             {
                 "nome": "Relatório de atividades (DRE) 2024",
-                "link": "/assets/documentos/dre_2024.pdf"
+                "en_nome": "Activities report (DRE) 2024",
+                "es_nome": "Reporte de actividades (DRE) 2024",
+                "link": "dre_2024.pdf"
             },
             {
                 "nome": "Relatório de atividades (DRE) 2023",
-                "link": "/assets/documentos/dre_2023.pdf"
+                "en_nome": "Activities report (DRE) 2023",
+                "es_nome": "Reporte de actividades (DRE) 2023",
+                "link": "dre_2023.pdf"
+            },
+            {
+                "nome": "Relatório de atividades (DRE) 2022",
+                "en_nome": "Activities report (DRE) 2022",
+                "es_nome": "Reporte de actividades (DRE) 2022",
+                "link": "dre_2022.pdf"
             }
         ]
     },
     {
         "index": 3,
         "titulo": "Documentos contábeis",
+        "en_titulo": "Financial documents",
+        "es_titulo": "Documentos contables",
         "descricao": "Segue os relatórios de prestação de contas 2024",
+        "en_descricao": "Follow the reports of 2024",
+        "es_descricao": "Sigue los reportes de 2024",
         "listaDeRelatorios": []
     },
     {
         "index": 4,
         "titulo": "Termos de fomento",
+        "en_titulo": "Scholarship terms",
+        "es_titulo": "Terminos de fomento",
         "descricao": "Segue os relatórios de prestação de contas 2023",
+        "en_descricao": "Follow the reports of 2023",
+        "es_descricao": "Sigue los reportes de 2023",
         "listaDeRelatorios": []
     }
 ]

@@ -47,7 +47,7 @@ Focado para apresentar a Companhia de Dança Garatuja
 
 ### projetos.html
 
-Terão os outros projetos que o Garatuja desenvolveu.
+Terão os outros projetos que o Garatuja desenvolveu
 
 * Agenda
 * Galeria

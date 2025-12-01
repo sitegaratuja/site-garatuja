@@ -24,7 +24,7 @@ export async function carregarHero() {
             // Cria nova imagem
             const newImage = document.createElement("div");
             newImage.classList.add("hero-image");
-            newImage.style.backgroundImage = `url('assets/imagens/midia/${slides[newIndex].image}')`;
+            newImage.style.backgroundImage = `url('/assets/imagens/midia/${slides[newIndex].image}')`;
 
             // Define direção de entrada
             newImage.classList.add(direction === 1 ? "slide-in-right" : "slide-in-left");
@@ -72,7 +72,7 @@ export async function carregarHero() {
         nextBtn?.addEventListener("click", nextSlide);
 
         // Inicializa o primeiro slide
-        heroImageContainer.style.backgroundImage = `url('assets/imagens/midia/${slides[0].image}')`;
+        heroImageContainer.style.backgroundImage = `url('/assets/imagens/midia/${slides[0].image}')`;
         heroImageContainer.classList.add("active");
         heroTitle.textContent = slides[0].title;
         heroSubtitle.textContent = slides[0].subtitle;
@@ -109,36 +109,36 @@ export async function carregarDepoimentos() {
 
     // --- 4. Atualiza o carrossel ---
     function atualizarCarrossel(indexParaIr = 0) {
-    depoimentosAtual = indexParaIr;
+        depoimentosAtual = indexParaIr;
 
-    const card = document.querySelector(".depoimento-card");
-    const quote = document.getElementById("depoimentoQuote");
-    const name = document.getElementById("depoimentoName");
-    const role = document.getElementById("depoimentoRole");
+        const card = document.querySelector(".depoimento-card");
+        const quote = document.getElementById("depoimentoQuote");
+        const name = document.getElementById("depoimentoName");
+        const role = document.getElementById("depoimentoRole");
 
-    // Remove animações antigas
-    card.classList.remove("slide-in");
-    card.classList.add("slide-out");
+        // Remove animações antigas
+        card.classList.remove("slide-in");
+        card.classList.add("slide-out");
 
-    // Espera a saída terminar antes de trocar o conteúdo
-    setTimeout(() => {
-        quote.textContent = dadosDepoimentos[indexParaIr].quote;
-        name.textContent = dadosDepoimentos[indexParaIr].name;
-        role.textContent = dadosDepoimentos[indexParaIr].role;
+        // Espera a saída terminar antes de trocar o conteúdo
+        setTimeout(() => {
+            quote.textContent = dadosDepoimentos[indexParaIr].quote;
+            name.textContent = dadosDepoimentos[indexParaIr].name;
+            role.textContent = dadosDepoimentos[indexParaIr].role;
 
-        container.style.backgroundImage = `url(${dadosDepoimentos[indexParaIr].imagemFundo})`;
+            container.style.backgroundImage = `url(${dadosDepoimentos[indexParaIr].imagemFundo})`;
 
-        // Inicia animação de entrada
-        card.classList.remove("slide-out");
-        card.classList.add("slide-in");
+            // Inicia animação de entrada
+            card.classList.remove("slide-out");
+            card.classList.add("slide-in");
 
-        // Atualiza dots se existirem
-        dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === depoimentosAtual);
-        });
+            // Atualiza dots se existirem
+            dots.forEach((dot, index) => {
+                dot.classList.toggle("active", index === depoimentosAtual);
+            });
 
-    }, 350); // mesmo tempo da animação de saída
-}
+        }, 350); // mesmo tempo da animação de saída
+    }
 
 
     // --- 5. Eventos dos dots ---
@@ -181,7 +181,7 @@ export function carregarParceiros() {
         partnersGrid.innerHTML = `
             ${resposta.map((parceiro) => `
                 <div class="partner-logo">
-                    <img src="assets/imagens/parceiros/${parceiro.logo}" alt="${parceiro.name}">
+                    <img src="/assets/imagens/parceiros/${parceiro.logo}" alt="${parceiro.name}">
                 </div>
             `).join("")}
         `;

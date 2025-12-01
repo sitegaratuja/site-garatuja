@@ -23,7 +23,7 @@ São as páginas que contem o conteúdo principal do site.
 
 ### Index.html
 
-Aqui será a página principal, com o cabeçalho, o menu e o conteúdo principal.
+Aqui será a página principal, com o cabeçalho, o menu e o conteúdo principal
 
 * Na mídia
 * voluntariado

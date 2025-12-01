@@ -1,4 +1,4 @@
-import { carregarDados } from "_uso_geral.js";
+import { carregarDados } from "./_uso_geral.js";
 
 export async function carregarHero() {
     try {

@@ -1,5 +1,5 @@
 // carregarTimeline.js
-import { carregarDados } from "_uso_geral.js";
+import { carregarDados } from "./_uso_geral.js";
 
 let dadosTimeline = [];
 

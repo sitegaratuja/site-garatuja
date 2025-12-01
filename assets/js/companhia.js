@@ -1,4 +1,4 @@
-import { carregarDados, abrirGaleriaModal } from "_uso_geral.js";
+import { carregarDados, abrirGaleriaModal } from "./_uso_geral.js";
 
 let dadosGaleria = [];
 carregarDados("companhia_galeria.json")

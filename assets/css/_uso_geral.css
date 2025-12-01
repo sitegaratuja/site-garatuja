@@ -49,19 +49,19 @@ body {
 }
 
 .hero-about {
-    background-image: url('/assets/imagens/midia/quem_somos.jpg');
+    background-image: url('../imagens/midia/quem_somos.jpg');
 }
 
 .hero-projetos {
-    background-image: url("/assets/imagens/midia/projetos.jpg");
+    background-image: url("../imagens/midia/projetos.jpg");
 }
 
 .companhia-hero {
-    background-image: url("/assets/imagens/midia/companhiaDanca.jpg");
+    background-image: url("../imagens/midia/companhiaDanca.jpg");
 }
 
 .na-midia-hero {
-    background-image: url("/assets/imagens/midia/depoimento2.avif");
+    background-image: url("../imagens/midia/depoimento2.avif");
 }
 
 .container {

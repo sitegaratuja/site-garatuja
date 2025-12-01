@@ -4,7 +4,7 @@
 
 .donations {
     padding: 120px 0;
-    background-image: url('/assets/imagens/midia/onda_de_nos.webp');
+    background-image: url('../imagens/midia/onda_de_nos.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

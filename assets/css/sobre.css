@@ -67,7 +67,7 @@
 
 .origin-section {
   padding: 80px;
-  background-image: url("/assets/imagens/midia/sobre_significado.png");
+  background-image: url("../imagens/midia/sobre_significado.png");
   background-size: cover;
   background-position: center;
   min-height: 95vh;
@@ -270,7 +270,7 @@
 
 .timeline-horizontal {
   padding: 80px 0;
-  background-image: url("/assets/imagens/midia/pes.jpg");
+  background-image: url("../imagens/midia/pes.jpg");
   background-size: cover;
   background-position: center;
   background-color: rgba(0, 0, 0, 0.7);

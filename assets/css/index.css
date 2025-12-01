@@ -26,24 +26,6 @@
   z-index: 1;
 }
 
-@keyframes slideshow {
-
-  0%,
-  33% {
-    background-image: url("/assets/imagens/midia/contemporary-dance-performance.jpg");
-  }
-
-  34%,
-  66% {
-    background-image: url("/assets/imagens/midia/street-dance-session.jpg");
-  }
-
-  67%,
-  100% {
-    background-image: url("/assets/imagens/midia/classical-ballet-scene.jpg");
-  }
-}
-
 .hero-image {
   position: absolute;
   inset: 0;
@@ -200,7 +182,7 @@
   align-items: center;
   padding: 120px 120px;
   width: 100%;
-  background-image: url('/assets/imagens/local/teste.jpg');
+  background-image: url('../imagens/local/teste.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

@@ -20,7 +20,7 @@ export async function incluirHtml(tag, html) {
     }
 }
 
-// Essa função carrega dados de um arquivo JSON localizado em /assets/jsons/
+// Essa função carrega dados de um arquivo JSON localizado em assets/jsons/
 export async function carregarDados(arquivo) {
 
     const url = `assets/jsons/${arquivo}`;
@@ -142,11 +142,11 @@ export function abrirGaleriaModal(idModal, dados, id) {
         div.dataset.index = index;
 
         if (foto.link) div.innerHTML = `
-            <a href="${(foto.link ? foto.link : "#")}" target="_blank"><img src="/assets/imagens/${idModal}/${baseurl + foto.src}" alt=""></a>
+            <a href="${(foto.link ? foto.link : "#")}" target="_blank"><img src="assets/imagens/${idModal}/${baseurl + foto.src}" alt=""></a>
             <div class="${((idModal == "companhia") ? "midia" : idModal)}-thumb-legenda">${foto.descricao}</div>
         `;
         else div.innerHTML = `
-            <img src="/assets/imagens/${idModal}/${baseurl + foto.src}" alt="">
+            <img src="assets/imagens/${idModal}/${baseurl + foto.src}" alt="">
             <div class="${((idModal == "companhia") ? "midia" : idModal)}-thumb-legenda">${foto.descricao}</div>
         `;
 
@@ -213,7 +213,7 @@ function atualizarImagemGrande(idModal, evento) {
         thumbs[currentIndex].classList.add("active");
     */
 
-    grandeImg.src = "/assets/imagens/" + idModal + "/" + baseURL + "/" + foto["src"];
+    grandeImg.src = "assets/imagens/" + idModal + "/" + baseURL + "/" + foto["src"];
     grandeLegenda.textContent = foto.descricao;
 
     thumbs.forEach(t => t.classList.remove("active"));

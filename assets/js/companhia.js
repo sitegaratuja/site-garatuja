@@ -26,7 +26,7 @@ export async function carregarEspetaculos() {
 
     const companhiaEspetaculos = document.getElementById("companhiaEspetaculos")
 
-    let dados = carregarDados('companhia_espetaculos.json').then((resposta) => {
+    carregarDados('companhia_espetaculos.json').then((resposta) => {
         companhiaEspetaculos.innerHTML = `
             ${resposta.map((espetaculo) => `
                 <div class="evento-card">

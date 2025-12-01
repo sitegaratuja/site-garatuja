@@ -708,8 +708,8 @@
     font-size: 36px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .depoimento-quote {

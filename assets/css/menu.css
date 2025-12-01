@@ -58,22 +58,6 @@ nav {
 
 /* ============= SUBMENU ============= */
 
-.bi-arrow-down,
-.nav-menu>li:hover .bi-arrow-right {
-  display: none;
-}
-
-.nav-menu>li:hover .submenu,
-.nav-menu>li:hover .bi-arrow-down {
-  display: block;
-}
-
-/* serve para não exibir o espaço no link antes de aparecer o submenu */
-.nav-menu>li:hover .link-com-submenu {
-  display: flex;
-  align-items: center;
-}
-
 .submenu {
   position: absolute;
   top: calc(100% + 0.3rem);
@@ -101,7 +85,7 @@ nav {
 
 /* ============= Responsividade ============= */
 
-@media (min-width: 1175px) {
+@media (min-width: 1201px) {
 
   /* efeito da barrinha abaixo */
   .nav-menu>li>a::after {
@@ -120,9 +104,25 @@ nav {
   .nav-menu>li>a.active::after {
     transform: translateX(-50%) scaleX(1);
   }
+
+  .bi-arrow-down,
+  .nav-menu>li:hover .bi-arrow-right {
+    display: none;
+  }
+
+  .nav-menu>li:hover .submenu,
+  .nav-menu>li:hover .bi-arrow-down {
+    display: block;
+  }
+
+  /* serve para não exibir o espaço no link antes de aparecer o submenu */
+  .nav-menu>li:hover .link-com-submenu {
+    display: flex;
+    align-items: center;
+  }
 }
 
-@media (max-width: 1175px) {
+@media (max-width: 1200px) {
 
   .nav-toggle {
     display: flex;
@@ -186,7 +186,7 @@ nav {
     max-height: 500px;
   }
 
-  .submenu a {
-    padding: 0.75rem 2rem;
+  .bi-arrow-down, .close {
+    display: none;
   }
 }

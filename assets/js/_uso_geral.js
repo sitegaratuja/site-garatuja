@@ -4,7 +4,7 @@ export async function incluirHtml(tag, html) {
         const elemento = document.querySelector(tag);
         if (!elemento) throw new Error(`Tag <${tag}> não encontrada no documento.`);
 
-        let linkBase = "/assets/htmls/";
+        let linkBase = "assets/htmls/";
 
         if (tag == "header") linkBase += "menus/";
         else if (tag == "footer") linkBase += "rodapes/";
@@ -23,7 +23,7 @@ export async function incluirHtml(tag, html) {
 // Essa função carrega dados de um arquivo JSON localizado em /assets/jsons/
 export async function carregarDados(arquivo) {
 
-    const url = `/assets/jsons/${arquivo}`;
+    const url = `assets/jsons/${arquivo}`;
 
     return fetch(url).then((resposta) => {
         if (!resposta.ok) {
@@ -63,7 +63,7 @@ export async function carregarTransparencia() {
                             ${item.listaDeRelatorios
                 .map(
                     (relatorio) =>
-                        `<li><a href="/assets/transparencia/${relatorio.link}" target="_blank">${relatorio.nome}</a></li>`
+                        `<li><a href="assets/transparencia/${relatorio.link}" target="_blank">${relatorio.nome}</a></li>`
                 )
                 .join("")
             }

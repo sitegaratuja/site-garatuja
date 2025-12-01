@@ -1,4 +1,4 @@
-import { carregarDados, abrirGaleriaModal } from "./_uso_geral.js";
+import { carregarDados, abrirGaleriaModal } from "_uso_geral.js";
 
 let dadosProjetos = [];
 
@@ -14,8 +14,8 @@ export async function carregarProjetos() {
         "instagram": "<i class='bi bi-instagram'></i>",
         "facebook": "<i class='bi bi-facebook'></i>",
         "youtube": "<i class='bi bi-youtube'></i>",
-        "linkedin": "/assets/imagens/midia/linkedin.png",
-        "twitter": "/assets/imagens/midia/twitter.png"
+        "linkedin": "assets/imagens/midia/linkedin.png",
+        "twitter": "assets/imagens/midia/twitter.png"
     }
 
     const projectsGrid = document.getElementById("projetos")
@@ -23,7 +23,7 @@ export async function carregarProjetos() {
         projectsGrid.innerHTML = `
             ${resposta.map((project) => `
                 <div class="projetos-card">
-                    <img src="/assets/imagens/projetos/${project.linkBase}/${project.tumb}" alt="${project.titulo}">
+                    <img src="assets/imagens/projetos/${project.linkBase}/${project.tumb}" alt="${project.titulo}">
                     <div class="repertorio-content">
                         <h4>${project.titulo} <br>${project.redes.map((rede) => `<a href="${rede.link}" target="_blank"> ${icons[rede.icon]}</a> `).join('')}</h4>
                         <p class="repertorio-desc">${project.descricao}</p>

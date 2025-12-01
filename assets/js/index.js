@@ -1,4 +1,4 @@
-import { carregarDados } from "./_uso_geral.js";
+import { carregarDados } from "_uso_geral.js";
 
 export async function carregarHero() {
     try {
@@ -24,7 +24,7 @@ export async function carregarHero() {
             // Cria nova imagem
             const newImage = document.createElement("div");
             newImage.classList.add("hero-image");
-            newImage.style.backgroundImage = `url('/assets/imagens/midia/${slides[newIndex].image}')`;
+            newImage.style.backgroundImage = `url('assets/imagens/midia/${slides[newIndex].image}')`;
 
             // Define direção de entrada
             newImage.classList.add(direction === 1 ? "slide-in-right" : "slide-in-left");
@@ -72,7 +72,7 @@ export async function carregarHero() {
         nextBtn?.addEventListener("click", nextSlide);
 
         // Inicializa o primeiro slide
-        heroImageContainer.style.backgroundImage = `url('/assets/imagens/midia/${slides[0].image}')`;
+        heroImageContainer.style.backgroundImage = `url('assets/imagens/midia/${slides[0].image}')`;
         heroImageContainer.classList.add("active");
         heroTitle.textContent = slides[0].title;
         heroSubtitle.textContent = slides[0].subtitle;
@@ -181,7 +181,7 @@ export function carregarParceiros() {
         partnersGrid.innerHTML = `
             ${resposta.map((parceiro) => `
                 <div class="partner-logo">
-                    <img src="/assets/imagens/parceiros/${parceiro.logo}" alt="${parceiro.name}">
+                    <img src="assets/imagens/parceiros/${parceiro.logo}" alt="${parceiro.name}">
                 </div>
             `).join("")}
         `;

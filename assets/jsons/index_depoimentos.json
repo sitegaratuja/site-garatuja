@@ -3,18 +3,18 @@
         "quote": "Amo esse projeto, tenho orgulho de dizer que já fiz parte, e sinto muita falta.",
         "name": "Sarah Leslie",
         "role": "Ex-aluna",
-        "imagemFundo": "/assets/imagens/midia/depoimento1.avif"
+        "imagemFundo": "assets/imagens/midia/depoimento1.avif"
     },
     {
         "quote": "Merece muito apoio! Foco em educação e artes. Pessoas sérias ajudando quem mais precisa.",
         "name": "Clarissa Evelin",
         "role": "Mãe de uma ex-aluna",
-        "imagemFundo": "/assets/imagens/midia/depoimento2.avif"
+        "imagemFundo": "assets/imagens/midia/depoimento2.avif"
     },
     {
         "quote": "Uma ótima iniciativa para ajudar nossas meninas a se ocuparem com atividades construtivas!",
         "name": "Jeane Souza",
         "role": "Mãe de uma ex-aluna",
-        "imagemFundo": "/assets/imagens/midia/depoimento3.avif"
+        "imagemFundo": "assets/imagens/midia/depoimento3.avif"
     }
 ]

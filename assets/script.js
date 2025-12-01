@@ -1,9 +1,9 @@
-import { incluirHtml, carregarTransparencia } from "./js/_uso_geral.js";
-import { carregarCompanhia } from "./js/companhia.js";
-import { carregarHero, carregarDepoimentos, carregarFAQ, carregarParceiros } from "./js/index.js";
-import { carregarTimeline, initTimelineInteractions, fecharModal } from "./js/sobre.js";
-import { carregarProjetos } from "./js/projetos.js";
-import { abrirModalDoacoes } from "./js/doacoes.js";
+import { incluirHtml, carregarTransparencia } from "js/_uso_geral.js";
+import { carregarCompanhia } from "js/companhia.js";
+import { carregarHero, carregarDepoimentos, carregarFAQ, carregarParceiros } from "js/index.js";
+import { carregarTimeline, initTimelineInteractions, fecharModal } from "js/sobre.js";
+import { carregarProjetos } from "js/projetos.js";
+import { abrirModalDoacoes } from "js/doacoes.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 

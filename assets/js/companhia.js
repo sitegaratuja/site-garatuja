@@ -1,4 +1,4 @@
-import { carregarDados, abrirGaleriaModal } from "./_uso_geral.js";
+import { carregarDados, abrirGaleriaModal } from "_uso_geral.js";
 
 let dadosGaleria = [];
 carregarDados("companhia_galeria.json")
@@ -50,7 +50,7 @@ export async function carregarGaleria() {
 
     const companhiaGaleria = document.getElementById("companhiaGaleria");
 
-    const urlBase = "/assets/imagens/companhia/";
+    const urlBase = "assets/imagens/companhia/";
 
     companhiaGaleria.innerHTML = dadosGaleria.map(
         (imagem) => `

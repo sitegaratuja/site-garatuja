@@ -61,7 +61,7 @@ Terá algumas informações em inglês.
 
 ### es_index.html
 
-Terá algumas informações em espanhol.
+Terá algumas informações em espanhol
 
 * História simples
 * Missão, visão e valores

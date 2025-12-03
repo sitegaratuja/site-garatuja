@@ -1,109 +1,250 @@
-@import 'cores.css';
+:root {
+    /* Cor de Fundo do Footer (Geralmente a cor primária escura da marca) */
+    --footer-bg: #3C0F66;
 
-/* Footer */
-footer {
-    background: var(--color-dark);
-    color: var(--color-white);
-    padding: 80px 0 24px;
+    /* Cor do Texto (Geralmente cinza claro ou branco) */
+    --footer-text: #CBD5E0;
+
+    /* Cor dos Títulos (Branco ou destaque claro) */
+    --footer-title: #FFFFFF;
+
+    /* Cor de Destaque (Cor secundária da marca para hover e ícones) */
+    --accent-color: #F6AD55;
+
+    /* Espaçamentos Padrão (Não alterar) */
+    --spacing-md: 1rem;
+    --spacing-xl: 4rem;
+}
+
+/* =========================================
+   ESTRUTURA (NÃO ALTERAR)
+   ========================================= */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: var(--spacing-xl) 0 2rem;
+    font-family: 'Poppins', sans-serif;
+    /* Certifique-se de importar a fonte */
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    margin: 0 auto;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 48px;
-    margin-bottom: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: start;
 }
 
-/* ============= Footer About (1ª coluna) ============= */
+/* --- Elementos Internos --- */
 
-.footer-about p {
-    margin-bottom: 24px;
-    opacity: 0.8;
-}
+/* Marca */
 
 .footer-logo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 24px;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .footer-logo img {
-    width: auto;
-    height: 40px;
+    max-width: 140px;
+    height: auto;
+    display: block;
+    margin-bottom: var(--spacing-md);
 }
 
+.brand-description {
+    color: var(--footer-text);
+    margin: 1rem 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 300px;
+    /* Limita largura do texto para não esticar */
+}
+
+/* Redes Sociais */
 .social-links {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-.social-links a {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: var(--color-white);
+.social-icon {
+    color: var(--footer-text);
+    font-size: 1.5rem;
     transition: all 0.3s ease;
 }
 
-.social-links a:hover {
-    background: var(--color-purple);
-    transform: translateY(-2px);
+.social-icon:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
 }
 
-/* ============= Footer Links (2ª coluna) ============= */
-
-.footer-links h4 {
-    margin-bottom: 16px;
-    font-size: 18px;
+/* Títulos e Listas */
+.footer-links h4,
+.footer-contact h4 {
+    color: var(--footer-title);
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
-.footer-links ul {
+.footer-links ul,
+.footer-contact ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer-links li {
-    margin-bottom: 12px;
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 0.75rem;
+    color: var(--footer-text);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
 }
 
-.footer-links a {
-    color: var(--color-white);
+.footer-links li a {
+    color: var(--footer-text);
     text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+/* Contato */
+.footer-contact i {
+    color: var(--accent-color);
+    width: 20px;
+    text-align: center;
+}
+
+.footer-contact a {
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: var(--accent-color);
+}
+
+/* Logo Decorativa Grande */
+.footer-large-logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-large-logo img {
+    max-width: 150px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.footer-large-logo img:hover {
     opacity: 1;
 }
 
-/* ============= Responsividade ============= */
+/* Créditos e Divisor */
+.footer-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-bottom: 2rem;
+    width: 100%;
+}
 
-@media (max-width: 1024px) {
-    
-    .footer-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-        /* colunas iguais em telas médias */
-        gap: 32px;
+.footer-credits {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* Animação do Coração Code for Causes */
+.institute-credit .fa-heart {
+    color: #e53e3e;
+    animation: heartbeat 1.5s infinite;
+}
+
+.institute-link {
+    color: var(--footer-text);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px dotted var(--footer-text);
+}
+
+.institute-link:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.credits-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.credits-links a {
+    color: var(--footer-text);
+    text-decoration: none;
+}
+
+.credits-links a:hover {
+    text-decoration: underline;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
 
+/* Responsividade (Mobile) */
 @media (max-width: 768px) {
+    .site-footer {
+        padding: 3rem 0 2rem;
+    }
 
     .footer-grid {
         grid-template-columns: 1fr;
-        /* empilha as colunas em telas pequenas */
-        gap: 24px;
+        gap: 2.5rem;
+        text-align: center;
     }
 
-    .footer-about, .footer-links, .footer-logo, .social-links {
-        text-align: center;
-        align-items: center;
+    .footer-large-logo {
+        display: none;
+    }
+
+    /* Oculta logo decorativa no mobile */
+    .social-links, .footer-contact li, .footer-links li {
         justify-content: center;
+    }
+
+    .brand-description {
+        margin: 1rem auto;
     }
 }
